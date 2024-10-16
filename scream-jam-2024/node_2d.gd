@@ -16,5 +16,6 @@ func _input(event):
 	print(apple,beta)
 	if abs(apple.x - beta.x) <= 1 and abs(apple.y - beta.y) <= 1:
 		# also have the broadcast move to the enemies here
+		# check for collisions
 		position = ground.map_to_local(ground.local_to_map(base.to_local(get_global_mouse_position())))
 		
