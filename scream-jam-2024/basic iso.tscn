@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=4 uid="uid://c4i7meoq8n84x"]
+
+[ext_resource type="TileSet" uid="uid://t357gnsrojuh" path="res://default.tres" id="1_e75ie"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//AAAAAAAAAAD/////AAAAAAAAAAD+////AAAAAAAAAAD+/wAAAAAAAAAAAAD+/wEAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAEAAAAAAAAAAAA=")
+tile_set = ExtResource("1_e75ie")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD///7/AAAGAAAAAAA=")
+tile_set = ExtResource("1_e75ie")
+y_sort_origin = 1
