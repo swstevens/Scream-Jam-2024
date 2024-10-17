@@ -2,6 +2,14 @@ extends Node2D
 
 @onready var ground: TileMapLayer = $"../Ground"
 @onready var base: Node2D = $".."
+@onready var move_dl: Sprite2D = $Sprite2D3 # 0,+1
+@onready var move_ur: Sprite2D = $Sprite2D5 # 0,-1
+@onready var move_ul: Sprite2D = $Sprite2D9 # -1,0
+@onready var move_dr: Sprite2D = $Sprite2D6 # +1,0
+@onready var move_r: Sprite2D = $Sprite2D7 # +1,-1
+@onready var move_l: Sprite2D = $Sprite2D8 # -1,+1
+@onready var move_d: Sprite2D = $Sprite2D4 # +1,+1
+@onready var move_u: Sprite2D = $Sprite2D10 # -1,-1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -31,6 +39,14 @@ func _input(event):
 					return
 			# also have the broadcast move to the enemies here
 			position = ground.map_to_local(ground.local_to_map(base.to_local(get_global_mouse_position())))
+			var clickStore: Vector2i = apple
+			clickStore.x +=1
+			if TileCanBeSteppedOn(ground.get_cell_atlas_coords(clickStore)):
+				move_dr.show()
+			else:
+				move_dr.hide()
+			
+			
 
 func TileCanBeSteppedOn(tile: Vector2i) -> bool:
 	#so far no tiles in y coord
