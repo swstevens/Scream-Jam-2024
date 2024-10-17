@@ -1,4 +1,5 @@
 extends Node2D
+@onready var enemy: Node2D = $"../enemy"
 
 @onready var ground: TileMapLayer = $"../Ground"
 @onready var base: Node2D = $".."
@@ -55,6 +56,9 @@ func _input(event):
 					item[1].show()
 				else:
 					item[1].hide()
+			enemy.move()
+			if position == enemy.position:
+				print("I died :(")
 			
 			
 
