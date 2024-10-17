@@ -10,9 +10,11 @@ extends Node2D
 @onready var move_l: Sprite2D = $Sprite2D8 # -1,+1
 @onready var move_d: Sprite2D = $Sprite2D4 # +1,+1
 @onready var move_u: Sprite2D = $Sprite2D10 # -1,-1
-
+var directions
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	directions = [[Vector2i(0,1),move_dl],[Vector2i(0,-1),move_ur],[Vector2i(1,0),move_dr],[Vector2i(-1,0),move_ul],[Vector2i(1,1),move_d],[Vector2i(-1,1),move_l],[Vector2i(1,-1),move_r],[Vector2i(-1,-1),move_u]]
+
 	pass
 
 func _input(event):
@@ -39,12 +41,20 @@ func _input(event):
 					return
 			# also have the broadcast move to the enemies here
 			position = ground.map_to_local(ground.local_to_map(base.to_local(get_global_mouse_position())))
-			var clickStore: Vector2i = apple
-			clickStore.x +=1
-			if TileCanBeSteppedOn(ground.get_cell_atlas_coords(clickStore)):
-				move_dr.show()
-			else:
-				move_dr.hide()
+			var clickStore: Vector2i
+			for item in directions:
+				#print(item)
+				clickStore = apple + item[0]
+				if TileCanBeSteppedOn(ground.get_cell_atlas_coords(clickStore)):
+					if abs(item[0].x) == abs(item[0].y):
+						var adjTile1Color: Vector2i = ground.get_cell_atlas_coords(Vector2i(apple.x, apple.y + item[0].y))
+						var adjTile2Color: Vector2i = ground.get_cell_atlas_coords(Vector2i(apple.x + item[0].x, apple.y))
+						if !TileCanBeSteppedOn(adjTile1Color) or !TileCanBeSteppedOn(adjTile2Color):
+							item[1].hide()
+							continue
+					item[1].show()
+				else:
+					item[1].hide()
 			
 			
 
