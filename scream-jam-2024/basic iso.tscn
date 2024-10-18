@@ -1,4 +1,3 @@
-
 [gd_scene load_steps=30 format=4 uid="uid://c4i7meoq8n84x"]
 
 [ext_resource type="TileSet" uid="uid://t357gnsrojuh" path="res://default.tres" id="1_e75ie"]
@@ -7,9 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://cbf8waqy0cqu7" path="res://iso_tileset.png" id="4_2204e"]
 [ext_resource type="Texture2D" uid="uid://b21y2f46l3cnu" path="res://loose sprites.png" id="4_jqat1"]
 [ext_resource type="Script" path="res://enemy.gd" id="5_kdk4b"]
-[ext_resource type="Texture2D" uid="uid://bf34u1poepoyg" path="res://Zombie.png" id="6_8sfbs"]
+[ext_resource type="Texture2D" uid="uid://dapnqabsdbfqt" path="res://Zombie.png" id="6_8sfbs"]
 [ext_resource type="Script" path="res://enemy_chaser.gd" id="7_vh5ff"]
-
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vw4w1"]
 atlas = ExtResource("4_2204e")
@@ -28,6 +26,7 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [Vector2i(0, 0)]
+}
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
@@ -39,7 +38,7 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [Vector2i(0, 0)]
-
+}
 
 [sub_resource type="Animation" id="Animation_82nnu"]
 resource_name = "walk down"
@@ -276,10 +275,10 @@ tile_map_data = PackedByteArray("AAD///7/AAAGAAAAAAADAPr/AAAGAAAAAAD5//r/AAAGAAA
 tile_set = ExtResource("1_e75ie")
 y_sort_origin = 1
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="player" type="Node2D" parent="."]
 script = ExtResource("3_pvoa6")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+[node name="Sprite2D" type="Sprite2D" parent="player"]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(0, -8)
@@ -287,7 +286,7 @@ texture = ExtResource("4_jqat1")
 hframes = 8
 vframes = 8
 
-[node name="Sprite2D3" type="Sprite2D" parent="Node2D"]
+[node name="Sprite2D3" type="Sprite2D" parent="player"]
 self_modulate = Color(1, 1, 1, 0.784314)
 z_index = 1
 y_sort_enabled = true
@@ -295,21 +294,21 @@ position = Vector2(0, -8)
 texture = SubResource("AtlasTexture_vw4w1")
 offset = Vector2(-16, 16)
 
-[node name="Sprite2D5" type="Sprite2D" parent="Node2D"]
+[node name="Sprite2D5" type="Sprite2D" parent="player"]
 self_modulate = Color(1, 1, 1, 0.784314)
 y_sort_enabled = true
 position = Vector2(0, -8)
 texture = SubResource("AtlasTexture_vw4w1")
 offset = Vector2(16, 0)
 
-[node name="Sprite2D9" type="Sprite2D" parent="Node2D"]
+[node name="Sprite2D9" type="Sprite2D" parent="player"]
 self_modulate = Color(1, 1, 1, 0.784314)
 y_sort_enabled = true
 position = Vector2(0, -8)
 texture = SubResource("AtlasTexture_vw4w1")
 offset = Vector2(-16, 0)
 
-[node name="Sprite2D6" type="Sprite2D" parent="Node2D"]
+[node name="Sprite2D6" type="Sprite2D" parent="player"]
 self_modulate = Color(1, 1, 1, 0.784314)
 z_index = 1
 y_sort_enabled = true
@@ -317,21 +316,21 @@ position = Vector2(0, -8)
 texture = SubResource("AtlasTexture_vw4w1")
 offset = Vector2(16, 16)
 
-[node name="Sprite2D7" type="Sprite2D" parent="Node2D"]
+[node name="Sprite2D7" type="Sprite2D" parent="player"]
 self_modulate = Color(1, 1, 1, 0.784314)
 y_sort_enabled = true
 position = Vector2(0, -8)
 texture = SubResource("AtlasTexture_vw4w1")
 offset = Vector2(32, 8)
 
-[node name="Sprite2D8" type="Sprite2D" parent="Node2D"]
+[node name="Sprite2D8" type="Sprite2D" parent="player"]
 self_modulate = Color(1, 1, 1, 0.784314)
 y_sort_enabled = true
 position = Vector2(0, -8)
 texture = SubResource("AtlasTexture_vw4w1")
 offset = Vector2(-32, 8)
 
-[node name="Sprite2D4" type="Sprite2D" parent="Node2D"]
+[node name="Sprite2D4" type="Sprite2D" parent="player"]
 self_modulate = Color(1, 1, 1, 0.784314)
 z_index = 1
 y_sort_enabled = true
@@ -339,7 +338,7 @@ position = Vector2(0, -8)
 texture = SubResource("AtlasTexture_vw4w1")
 offset = Vector2(0, 24)
 
-[node name="Sprite2D10" type="Sprite2D" parent="Node2D"]
+[node name="Sprite2D10" type="Sprite2D" parent="player"]
 self_modulate = Color(1, 1, 1, 0.784314)
 y_sort_enabled = true
 position = Vector2(0, -8)

@@ -4,6 +4,9 @@ extends Node2D
 @onready var base: Node2D = $".."
 @onready var animations = $AnimationPlayer
 
+@onready var dead: Label = $"../UI/dead"
+@onready var won: Label = $"../UI/won"
+
 @onready var move_dl: Sprite2D = $Sprite2D3 # 0,+1
 @onready var move_ur: Sprite2D = $Sprite2D5 # 0,-1
 @onready var move_ul: Sprite2D = $Sprite2D9 # -1,0
@@ -13,11 +16,13 @@ extends Node2D
 @onready var move_d: Sprite2D = $Sprite2D4 # +1,+1
 @onready var move_u: Sprite2D = $Sprite2D10 # -1,-1
 var directions
+var enemies = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	directions = [[Vector2i(0,1),move_dl],[Vector2i(0,-1),move_ur],[Vector2i(1,0),move_dr],[Vector2i(-1,0),move_ul],[Vector2i(1,1),move_d],[Vector2i(-1,1),move_l],[Vector2i(1,-1),move_r],[Vector2i(-1,-1),move_u]]
-
+	enemies = get_tree().get_root().find_children("enemy*", "", true, false)
+	print("Found ", enemies.size(), " enemies")
 	pass
 
 func _input(event):
@@ -45,7 +50,6 @@ func _input(event):
 					return
 			# also have the broadcast move to the enemies here
 			position = ground.map_to_local(ground.local_to_map(base.to_local(get_global_mouse_position())))
-	
 			var clickStore: Vector2i
 			for item in directions:
 				#print(item)
@@ -60,6 +64,14 @@ func _input(event):
 					item[1].show()
 				else:
 					item[1].hide()
+			for enemy in enemies:
+				enemy.move(ground.local_to_map(base.to_local(get_global_mouse_position())))
+			for enemy in enemies:
+				if position == enemy.position:
+					print("I died :(")
+					dead.show()
+			if ground.get_cell_atlas_coords(ground.local_to_map(base.to_local(global_position))).x == 2:
+				won.show()
 	
 func updateAnimation(MovementVector: Vector2i):
 	var animationString: String = "walk "
