@@ -1,0 +1,116 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccpdr3i5ulqom"]
+
+[ext_resource type="Script" path="res://levels.gd" id="1_6j88b"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6j88b")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="GridContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 5
+columns = 5
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "1"
+
+[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "2"
+
+[node name="Button3" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "3"
+
+[node name="Button4" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "4"
+
+[node name="Button5" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "5"
+
+[node name="Button6" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "6"
+
+[node name="Button7" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "7"
+
+[node name="Button8" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "8"
+
+[node name="Button9" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "9"
+
+[node name="Button10" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "10"
+
+[node name="Button11" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "11"
+
+[node name="Button12" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "12"
+
+[node name="Button13" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "13"
+
+[node name="Button14" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "14"
+
+[node name="Button15" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "15"
+
+[node name="Button16" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "16"
+
+[node name="Button17" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "17"
+
+[node name="Button18" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "18"
+
+[node name="Button19" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "19"
+
+[node name="Button20" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "20"
+
+[node name="Back" type="Button" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "Back"
+
+[connection signal="pressed" from="MarginContainer/Back" to="." method="_on_back_pressed"]
