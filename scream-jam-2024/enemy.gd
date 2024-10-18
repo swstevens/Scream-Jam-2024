@@ -1,13 +1,15 @@
 extends Node2D
 
+class_name Enemy
+
 @export var direction: Vector2i = Vector2i(1,0)
 @onready var ground: TileMapLayer = $"../Ground"
 @onready var base: Node2D = $".."
-
+@onready var nextmove: Sprite2D = $nextmove
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
+
 	pass # Replace with function body.
 
 
@@ -15,7 +17,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func move()->void:
+func move(player_loc: Vector2i)->void:
 	print("im trying")
 	#where our character is
 	var beta: Vector2i = ground.local_to_map(base.to_local(global_position))
