@@ -4,6 +4,8 @@ extends Node2D
 
 @onready var ground: TileMapLayer = $"../Ground"
 @onready var base: Node2D = $".."
+@onready var animations = $AnimationPlayer
+
 @onready var move_dl: Sprite2D = $Sprite2D3 # 0,+1
 @onready var move_ur: Sprite2D = $Sprite2D5 # 0,-1
 @onready var move_ul: Sprite2D = $Sprite2D9 # -1,0
@@ -34,6 +36,7 @@ func _input(event):
 	print(apple,beta)
 	
 	if abs(apple.x - beta.x) <= 1 and abs(apple.y - beta.y) <= 1:
+		updateAnimation(Vector2i(apple.x - beta.x, apple.y - beta.y))
 		var colorOfTile: Vector2i = ground.get_cell_atlas_coords(ground.local_to_map(base.to_local(get_global_mouse_position())))
 		if TileCanBeSteppedOn(colorOfTile):
 			#if the player is moving diagonally, we have to check if there are walls directly
@@ -46,6 +49,7 @@ func _input(event):
 					return
 			# also have the broadcast move to the enemies here
 			position = ground.map_to_local(ground.local_to_map(base.to_local(get_global_mouse_position())))
+	
 			var clickStore: Vector2i
 			for item in directions:
 				#print(item)
@@ -68,7 +72,28 @@ func _input(event):
 					dead.show()
 			if ground.get_cell_atlas_coords(ground.local_to_map(base.to_local(global_position))).x == 2:
 				won.show()
-			
+	
+func updateAnimation(MovementVector: Vector2i):
+	var animationString: String = "walk "
+	print(MovementVector.x, MovementVector.y)
+	if MovementVector.x == 1 and MovementVector.y == 1:
+		animationString += "down"
+	elif MovementVector.x == 0 and MovementVector.y == 1:
+		animationString += "downleft"
+	elif MovementVector.x == -1 and MovementVector.y == 1:
+		animationString += "left"
+	elif MovementVector.x == -1 and MovementVector.y == 0:
+		animationString += "upleft"
+	elif MovementVector.x == -1 and MovementVector.y == -1:
+		animationString += "up"
+	elif MovementVector.x == 0 and MovementVector.y == -1:
+		animationString += "upright"
+	elif MovementVector.x == 1 and MovementVector.y == -1:
+		animationString += "right"
+	else:
+		animationString += "downright"
+		
+	animations.play(animationString)
 
 func TileCanBeSteppedOn(tile: Vector2i) -> bool:
 	#so far no tiles in y coord
