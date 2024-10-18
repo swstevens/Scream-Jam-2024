@@ -1,4 +1,5 @@
 extends Enemy
+var seen : bool = false
 
 func move(player_loc: Vector2i)->void:
 	print("im trying to chase")
@@ -9,13 +10,16 @@ func move(player_loc: Vector2i)->void:
 		print(Vector2(player_loc-enemy_loc).normalized()) 
 		direction = Vector2i(Vector2(player_loc-enemy_loc).normalized())
 		var colorOfTile: Vector2i = ground.get_cell_atlas_coords(direction+enemy_loc)
-
-		if TileCanBeSteppedOn(colorOfTile):
+		
+		if TileCanBeSteppedOn(colorOfTile) and seen:
 		##if the player is moving diagonally, we have to check if there are walls directly
 		##adjacent to the player, so we don't move 'in between' walls to go to a corner tile.
 			## also have the broadcast move to the enemies here
 			print("we can move!")
 			position = ground.map_to_local(direction+enemy_loc)
+		seen = true
+	else:
+		seen = false
 	#print("enemy clicked ", "enemy current")
 	#print(direction)
 	#
