@@ -1,15 +1,93 @@
-[gd_scene load_steps=17 format=4 uid="uid://c4i7meoq8n84x"]
+[gd_scene load_steps=20 format=4 uid="uid://c4i7meoq8n84x"]
 
 [ext_resource type="TileSet" uid="uid://t357gnsrojuh" path="res://default.tres" id="1_e75ie"]
 [ext_resource type="Script" path="res://get_map_coord.gd" id="1_v372y"]
 [ext_resource type="Script" path="res://node_2d.gd" id="3_pvoa6"]
 [ext_resource type="Texture2D" uid="uid://cbf8waqy0cqu7" path="res://iso_tileset.png" id="4_2204e"]
+[ext_resource type="Script" path="res://enemy.gd" id="5_kdk4b"]
+[ext_resource type="Texture2D" uid="uid://bf34u1poepoyg" path="res://Zombie.png" id="6_8sfbs"]
+[ext_resource type="Script" path="res://enemy_chaser.gd" id="7_vh5ff"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u183f"]
+atlas = ExtResource("4_2204e")
+region = Rect2(128, 0, 32, 32)
+
 [ext_resource type="Texture2D" uid="uid://b21y2f46l3cnu" path="res://loose sprites.png" id="4_jqat1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vw4w1"]
 atlas = ExtResource("4_2204e")
 region = Rect2(224, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_cqyoh"]
+atlas = ExtResource("6_8sfbs")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phemv"]
+atlas = ExtResource("6_8sfbs")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svvwr"]
+atlas = ExtResource("6_8sfbs")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gpqnh"]
+atlas = ExtResource("6_8sfbs")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7c7av"]
+atlas = ExtResource("6_8sfbs")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmp7w"]
+atlas = ExtResource("6_8sfbs")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2t0oa"]
+atlas = ExtResource("6_8sfbs")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y65kk"]
+atlas = ExtResource("6_8sfbs")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7e0oi"]
+atlas = ExtResource("6_8sfbs")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qqueb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cqyoh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phemv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svvwr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gpqnh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7c7av")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmp7w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2t0oa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y65kk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7e0oi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 [sub_resource type="Animation" id="Animation_82nnu"]
 resource_name = "walk down"
 length = 0.4
@@ -189,10 +267,10 @@ tile_map_data = PackedByteArray("AAD///7/AAAGAAAAAAADAPr/AAAGAAAAAAD5//r/AAAGAAA
 tile_set = ExtResource("1_e75ie")
 y_sort_origin = 1
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="player" type="Node2D" parent="."]
 script = ExtResource("3_pvoa6")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+[node name="Sprite2D" type="Sprite2D" parent="player"]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(0, -8)
@@ -200,7 +278,7 @@ texture = ExtResource("4_jqat1")
 hframes = 8
 vframes = 8
 
-[node name="Sprite2D3" type="Sprite2D" parent="Node2D"]
+[node name="Sprite2D3" type="Sprite2D" parent="player"]
 self_modulate = Color(1, 1, 1, 0.784314)
 z_index = 1
 y_sort_enabled = true
@@ -208,21 +286,21 @@ position = Vector2(0, -8)
 texture = SubResource("AtlasTexture_vw4w1")
 offset = Vector2(-16, 16)
 
-[node name="Sprite2D5" type="Sprite2D" parent="Node2D"]
+[node name="Sprite2D5" type="Sprite2D" parent="player"]
 self_modulate = Color(1, 1, 1, 0.784314)
 y_sort_enabled = true
 position = Vector2(0, -8)
 texture = SubResource("AtlasTexture_vw4w1")
 offset = Vector2(16, 0)
 
-[node name="Sprite2D9" type="Sprite2D" parent="Node2D"]
+[node name="Sprite2D9" type="Sprite2D" parent="player"]
 self_modulate = Color(1, 1, 1, 0.784314)
 y_sort_enabled = true
 position = Vector2(0, -8)
 texture = SubResource("AtlasTexture_vw4w1")
 offset = Vector2(-16, 0)
 
-[node name="Sprite2D6" type="Sprite2D" parent="Node2D"]
+[node name="Sprite2D6" type="Sprite2D" parent="player"]
 self_modulate = Color(1, 1, 1, 0.784314)
 z_index = 1
 y_sort_enabled = true
@@ -230,21 +308,21 @@ position = Vector2(0, -8)
 texture = SubResource("AtlasTexture_vw4w1")
 offset = Vector2(16, 16)
 
-[node name="Sprite2D7" type="Sprite2D" parent="Node2D"]
+[node name="Sprite2D7" type="Sprite2D" parent="player"]
 self_modulate = Color(1, 1, 1, 0.784314)
 y_sort_enabled = true
 position = Vector2(0, -8)
 texture = SubResource("AtlasTexture_vw4w1")
 offset = Vector2(32, 8)
 
-[node name="Sprite2D8" type="Sprite2D" parent="Node2D"]
+[node name="Sprite2D8" type="Sprite2D" parent="player"]
 self_modulate = Color(1, 1, 1, 0.784314)
 y_sort_enabled = true
 position = Vector2(0, -8)
 texture = SubResource("AtlasTexture_vw4w1")
 offset = Vector2(-32, 8)
 
-[node name="Sprite2D4" type="Sprite2D" parent="Node2D"]
+[node name="Sprite2D4" type="Sprite2D" parent="player"]
 self_modulate = Color(1, 1, 1, 0.784314)
 z_index = 1
 y_sort_enabled = true
@@ -252,13 +330,104 @@ position = Vector2(0, -8)
 texture = SubResource("AtlasTexture_vw4w1")
 offset = Vector2(0, 24)
 
-[node name="Sprite2D10" type="Sprite2D" parent="Node2D"]
+[node name="Sprite2D10" type="Sprite2D" parent="player"]
 self_modulate = Color(1, 1, 1, 0.784314)
 y_sort_enabled = true
 position = Vector2(0, -8)
 texture = SubResource("AtlasTexture_vw4w1")
 offset = Vector2(0, -8)
 
+[node name="enemy_a" type="Node2D" parent="."]
+position = Vector2(64, -48)
+script = ExtResource("5_kdk4b")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemy_a"]
+position = Vector2(4, -15)
+sprite_frames = SubResource("SpriteFrames_qqueb")
+
+[node name="nextmove" type="Sprite2D" parent="enemy_a"]
+self_modulate = Color(1, 1, 1, 0.784314)
+z_index = 1
+y_sort_enabled = true
+position = Vector2(16, -15)
+texture = SubResource("AtlasTexture_vw4w1")
+offset = Vector2(-16, 16)
+
+[node name="enemy_chaser" type="Node2D" parent="."]
+position = Vector2(-64.5443, 48.2903)
+script = ExtResource("7_vh5ff")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemy_chaser"]
+position = Vector2(4, -15)
+sprite_frames = SubResource("SpriteFrames_qqueb")
+
+[node name="nextmove" type="Sprite2D" parent="enemy_chaser"]
+self_modulate = Color(1, 1, 1, 0.784314)
+z_index = 1
+y_sort_enabled = true
+position = Vector2(16, -15)
+texture = SubResource("AtlasTexture_vw4w1")
+offset = Vector2(-16, 16)
+
+[node name="UI" type="Control" parent="."]
+z_index = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="dead" type="Label" parent="UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "You Died"
+
+[node name="won" type="Label" parent="UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "You Won!"
+
+[node name="enemy_b" type="Node2D" parent="."]
+position = Vector2(-96, -16)
+script = ExtResource("5_kdk4b")
+direction = Vector2i(0, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemy_b"]
+position = Vector2(4, -15)
+sprite_frames = SubResource("SpriteFrames_qqueb")
+
+[node name="nextmove" type="Sprite2D" parent="enemy_b"]
+self_modulate = Color(1, 1, 1, 0.784314)
+z_index = 1
+y_sort_enabled = true
+position = Vector2(16, -15)
+texture = SubResource("AtlasTexture_vw4w1")
+offset = Vector2(-16, 16)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D"]
 libraries = {
 "": SubResource("AnimationLibrary_2h7bs")
