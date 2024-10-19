@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b21y2f46l3cnu"
-path="res://.godot/imported/loose sprites.png-54b098bcc64bfda1556a5f7996fd81a2.ctex"
+uid="uid://dapnqabsdbfqt"
+path="res://.godot/imported/Zombie.png-9c77f6445df58004ab392198120b73a7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://loose sprites.png"
-dest_files=["res://.godot/imported/loose sprites.png-54b098bcc64bfda1556a5f7996fd81a2.ctex"]
+source_file="res://textures/Zombie.png"
+dest_files=["res://.godot/imported/Zombie.png-9c77f6445df58004ab392198120b73a7.ctex"]
 
 [params]
 

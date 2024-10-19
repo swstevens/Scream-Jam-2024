@@ -1,5 +1,5 @@
 extends Node2D
-const ENEMY_DUMB = preload("res://enemy_dumb.tscn")
+const ENEMY_DUMB = preload("res://scenes/enemy_dumb.tscn")
 @export var timer_limit = 5
 @export var counter = 0
 var id_num = 0

@@ -23,6 +23,7 @@ func _ready() -> void:
 	directions = [[Vector2i(0,1),move_dl],[Vector2i(0,-1),move_ur],[Vector2i(1,0),move_dr],[Vector2i(-1,0),move_ul],[Vector2i(1,1),move_d],[Vector2i(-1,1),move_l],[Vector2i(1,-1),move_r],[Vector2i(-1,-1),move_u]]
 	enemies = get_tree().get_root().find_children("enemy*", "", true, false)
 	print("Found ", enemies.size(), " enemies")
+	updateTiles()
 	pass
 
 func _input(event):
@@ -76,21 +77,25 @@ func _input(event):
 			# Finally, we need to update the tile indicators so that viable next steps
 			# are visible to the player. Do this after teleporting so that it's updated
 			# with the new final position, not the tile that was clicked.
-			var clickStore: Vector2i
-			for item in directions:
-				#print(item)
-				clickStore = ground.local_to_map(position) + item[0]
-				if TileCanBeSteppedOn(ground.get_cell_atlas_coords(clickStore)):
-					if abs(item[0].x) == abs(item[0].y):
-						var localPos = ground.local_to_map(position)
-						var adjTile1Color: Vector2i = ground.get_cell_atlas_coords(Vector2i(localPos.x, localPos.y + item[0].y))
-						var adjTile2Color: Vector2i = ground.get_cell_atlas_coords(Vector2i(localPos.x + item[0].x, localPos.y))
-						if !TileCanBeSteppedOn(adjTile1Color) or !TileCanBeSteppedOn(adjTile2Color):
-							item[1].hide()
-							continue
-					item[1].show()
-				else:
+			updateTiles()
+
+func updateTiles():
+	var clickStore: Vector2i
+
+	for item in directions:
+		#print(item)
+		clickStore = ground.local_to_map(position) + item[0]
+		if TileCanBeSteppedOn(ground.get_cell_atlas_coords(clickStore)):
+			if abs(item[0].x) == abs(item[0].y):
+				var localPos = ground.local_to_map(position)
+				var adjTile1Color: Vector2i = ground.get_cell_atlas_coords(Vector2i(localPos.x, localPos.y + item[0].y))
+				var adjTile2Color: Vector2i = ground.get_cell_atlas_coords(Vector2i(localPos.x + item[0].x, localPos.y))
+				if !TileCanBeSteppedOn(adjTile1Color) or !TileCanBeSteppedOn(adjTile2Color):
 					item[1].hide()
+					continue
+			item[1].show()
+		else:
+			item[1].hide()
 
 func updateAnimation(MovementVector: Vector2i):
 	var animationString: String = "walk "
