@@ -4,17 +4,21 @@ extends Node2D
 @onready var Ground: TileMapLayer = $"Ground"
 var normalWalkTile: Vector2i = Vector2i(0,0)
 
-# key1 = 1, -4 : door1 = 4, -4
+@export var maxLevelScore: int = 0
+@export var levelScoreDecliner: int = 0
+
 var key1Pressed = false
-@export var key1Tile: Vector2i = Vector2i(1, -4)
-@export var door1Tile: Vector2i = Vector2i(4, -4)
+@export var key1Tile: Vector2i = Vector2i(0, 0)
+@export var door1Tile: Vector2i = Vector2i(0, 0)
 @export var keydoorActive = false
 
-@export var teleporterA1 = Vector2i(-5, -1)
-@export var teleporterA2 = Vector2i(-5, -4)
+@export var teleporterA1 = Vector2i(0, 0)
+@export var teleporterA2 = Vector2i(0, 0)
 @export var teleporterActive = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Score.levelScore = maxLevelScore
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
