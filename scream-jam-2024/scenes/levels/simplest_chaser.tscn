@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://c76dh1ahj6nkg"]
+[gd_scene load_steps=30 format=4 uid="uid://ca6fidtntsdou"]
 
 [ext_resource type="Script" path="res://scripts/get_map_coord.gd" id="1_jj4rq"]
 [ext_resource type="TileSet" uid="uid://t357gnsrojuh" path="res://textures/default.tres" id="2_p8po5"]

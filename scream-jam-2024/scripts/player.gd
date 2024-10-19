@@ -75,6 +75,10 @@ func _input(event):
 			# If it's a victory tile, show the victory screen.
 			if colorOfTile.x == 2:
 				won.show()
+				Score.UpdateTotalScore(Score.totalScore + Score.levelScore)
+			else:
+				Score.DecrementLevelScore(base.levelScoreDecliner)
+
 			# If it's a teleporter tile, update the position of the player.
 			if colorOfTile.x == 5:
 				position = ground.map_to_local(base.teleportPlayerTo())
