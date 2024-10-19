@@ -193,6 +193,7 @@ position = Vector2(213, 120)
 script = ExtResource("1_6f6hg")
 key1Tile = Vector2i(-3, 2)
 door1Tile = Vector2i(-1, 0)
+keydoorActive = true
 
 [node name="Ground" type="TileMapLayer" parent="."]
 z_as_relative = false

@@ -265,6 +265,8 @@ z_as_relative = false
 y_sort_enabled = true
 position = Vector2(213, 120)
 script = ExtResource("1_ixcs5")
+keydoorActive = true
+teleporterActive = true
 
 [node name="Ground" type="TileMapLayer" parent="."]
 z_as_relative = false
