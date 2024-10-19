@@ -68,6 +68,8 @@ func _input(event):
 			# UPDATES
 
 			# Since we are moving our character, perform the enemy movements
+			enemies = get_tree().get_root().find_children("enemy*", "", true, false)
+
 			for enemy in enemies:
 				enemy.move(apple)
 			for spawner in spawners:
