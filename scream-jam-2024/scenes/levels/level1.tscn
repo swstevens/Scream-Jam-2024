@@ -1,10 +1,9 @@
-
-[gd_scene load_steps=21 format=4 uid="uid://cjw58pwky5yfa"]
+[gd_scene load_steps=22 format=4 uid="uid://cjw58pwky5yfa"]
 
 [ext_resource type="Script" path="res://scripts/get_map_coord.gd" id="1_va1pe"]
 [ext_resource type="TileSet" uid="uid://t357gnsrojuh" path="res://textures/default.tres" id="2_pk1ri"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="3_42xld"]
-[ext_resource type="Script" path="res://scenes/levels/shadows.gd" id="3_rd4d5"]
+[ext_resource type="Script" path="res://scripts/shadows.gd" id="3_rd4d5"]
 [ext_resource type="Texture2D" uid="uid://b21y2f46l3cnu" path="res://textures/loose sprites.png" id="4_pdha2"]
 [ext_resource type="Texture2D" uid="uid://cbf8waqy0cqu7" path="res://textures/iso_tileset.png" id="5_2a7h4"]
 [ext_resource type="Script" path="res://scripts/level_score.gd" id="6_2ovee"]
@@ -190,13 +189,11 @@ _data = {
 "walk upright": SubResource("Animation_486o4")
 }
 
-
 [sub_resource type="LabelSettings" id="LabelSettings_4bis2"]
 font_size = 8
 
 [sub_resource type="LabelSettings" id="LabelSettings_xdvcg"]
 font_size = 8
-
 
 [node name="Base" type="Node2D"]
 z_as_relative = false
@@ -352,7 +349,6 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "You Won!"
-
 
 [node name="levelScore" type="Label" parent="UI"]
 layout_mode = 0
