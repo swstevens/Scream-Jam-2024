@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://7v40cjkvdk04"]
+[gd_scene load_steps=37 format=4 uid="uid://7v40cjkvdk04"]
 
 [ext_resource type="Script" path="res://scripts/get_map_coord.gd" id="1_maawk"]
 [ext_resource type="TileSet" uid="uid://t357gnsrojuh" path="res://textures/default.tres" id="2_xmio5"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b21y2f46l3cnu" path="res://textures/loose sprites.png" id="4_iowd8"]
 [ext_resource type="Texture2D" uid="uid://cbf8waqy0cqu7" path="res://textures/iso_tileset.png" id="5_75c7j"]
 [ext_resource type="Script" path="res://scripts/spawner.gd" id="6_pc23i"]
+[ext_resource type="Texture2D" uid="uid://cipjpyssytj0q" path="res://textures/Green Portal Sprite Sheet.png" id="7_0idcr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vw4w1"]
 atlas = ExtResource("5_75c7j")
@@ -191,6 +192,131 @@ _data = {
 atlas = ExtResource("5_75c7j")
 region = Rect2(224, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_oon6u"]
+atlas = ExtResource("7_0idcr")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwq85"]
+atlas = ExtResource("7_0idcr")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uf0fs"]
+atlas = ExtResource("7_0idcr")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vl2jo"]
+atlas = ExtResource("7_0idcr")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22wmv"]
+atlas = ExtResource("7_0idcr")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6idd"]
+atlas = ExtResource("7_0idcr")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bh0tx"]
+atlas = ExtResource("7_0idcr")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixw7v"]
+atlas = ExtResource("7_0idcr")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ngf0r"]
+atlas = ExtResource("7_0idcr")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6bmw"]
+atlas = ExtResource("7_0idcr")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkolu"]
+atlas = ExtResource("7_0idcr")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0nkp"]
+atlas = ExtResource("7_0idcr")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ts4o"]
+atlas = ExtResource("7_0idcr")
+region = Rect2(256, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjj7y"]
+atlas = ExtResource("7_0idcr")
+region = Rect2(320, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d8u8f"]
+atlas = ExtResource("7_0idcr")
+region = Rect2(384, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c1ojk"]
+atlas = ExtResource("7_0idcr")
+region = Rect2(448, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_inkwf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oon6u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vwq85")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uf0fs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vl2jo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22wmv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e6idd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bh0tx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ixw7v")
+}],
+"loop": true,
+"name": &"float",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ngf0r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6bmw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lkolu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s0nkp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ts4o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjj7y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d8u8f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c1ojk")
+}],
+"loop": false,
+"name": &"spawn",
+"speed": 20.0
+}]
+
 [node name="Base" type="Node2D"]
 z_as_relative = false
 y_sort_enabled = true
@@ -355,6 +481,13 @@ position = Vector2(16, -15)
 texture = SubResource("AtlasTexture_jentn")
 offset = Vector2(-16, 16)
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="spawner11"]
+z_index = 2
+position = Vector2(0.0238953, -11.1848)
+scale = Vector2(0.515625, 0.5)
+sprite_frames = SubResource("SpriteFrames_inkwf")
+animation = &"float"
+
 [node name="spawner12" type="Node2D" parent="."]
 z_as_relative = false
 y_sort_enabled = true
@@ -372,6 +505,13 @@ y_sort_enabled = true
 position = Vector2(16, -15)
 texture = SubResource("AtlasTexture_jentn")
 offset = Vector2(-16, 16)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="spawner12"]
+z_index = 2
+position = Vector2(0.0238953, -11.1848)
+scale = Vector2(0.515625, 0.5)
+sprite_frames = SubResource("SpriteFrames_inkwf")
+animation = &"float"
 
 [node name="spawner13" type="Node2D" parent="."]
 z_as_relative = false
@@ -391,6 +531,13 @@ position = Vector2(16, -15)
 texture = SubResource("AtlasTexture_jentn")
 offset = Vector2(-16, 16)
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="spawner13"]
+z_index = 2
+position = Vector2(0.0238953, -11.1848)
+scale = Vector2(0.515625, 0.5)
+sprite_frames = SubResource("SpriteFrames_inkwf")
+animation = &"float"
+
 [node name="spawner14" type="Node2D" parent="."]
 z_as_relative = false
 y_sort_enabled = true
@@ -408,6 +555,13 @@ y_sort_enabled = true
 position = Vector2(16, -15)
 texture = SubResource("AtlasTexture_jentn")
 offset = Vector2(-16, 16)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="spawner14"]
+z_index = 2
+position = Vector2(0.0238953, -11.1848)
+scale = Vector2(0.515625, 0.5)
+sprite_frames = SubResource("SpriteFrames_inkwf")
+animation = &"float"
 
 [node name="spawner16" type="Node2D" parent="."]
 z_as_relative = false
@@ -427,6 +581,13 @@ position = Vector2(16, -15)
 texture = SubResource("AtlasTexture_jentn")
 offset = Vector2(-16, 16)
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="spawner16"]
+z_index = 2
+position = Vector2(0.0238953, -11.1848)
+scale = Vector2(0.515625, 0.5)
+sprite_frames = SubResource("SpriteFrames_inkwf")
+animation = &"float"
+
 [node name="spawner17" type="Node2D" parent="."]
 z_as_relative = false
 y_sort_enabled = true
@@ -444,6 +605,13 @@ y_sort_enabled = true
 position = Vector2(16, -15)
 texture = SubResource("AtlasTexture_jentn")
 offset = Vector2(-16, 16)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="spawner17"]
+z_index = 2
+position = Vector2(0.0238953, -11.1848)
+scale = Vector2(0.515625, 0.5)
+sprite_frames = SubResource("SpriteFrames_inkwf")
+animation = &"float"
 
 [node name="spawner18" type="Node2D" parent="."]
 z_as_relative = false
@@ -463,6 +631,13 @@ position = Vector2(16, -15)
 texture = SubResource("AtlasTexture_jentn")
 offset = Vector2(-16, 16)
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="spawner18"]
+z_index = 2
+position = Vector2(0.0238953, -11.1848)
+scale = Vector2(0.515625, 0.5)
+sprite_frames = SubResource("SpriteFrames_inkwf")
+animation = &"float"
+
 [node name="spawner19" type="Node2D" parent="."]
 z_as_relative = false
 y_sort_enabled = true
@@ -480,3 +655,10 @@ y_sort_enabled = true
 position = Vector2(16, -15)
 texture = SubResource("AtlasTexture_jentn")
 offset = Vector2(-16, 16)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="spawner19"]
+z_index = 2
+position = Vector2(0.0238953, -11.1848)
+scale = Vector2(0.515625, 0.5)
+sprite_frames = SubResource("SpriteFrames_inkwf")
+animation = &"float"

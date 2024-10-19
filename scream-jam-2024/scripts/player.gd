@@ -1,6 +1,8 @@
 extends Node2D
 
 @onready var ground: TileMapLayer = $"../Ground"
+@onready var shadows: TileMapLayer = $"../shadows"
+
 @onready var base: Node2D = $".."
 @onready var animations = $AnimationPlayer
 
@@ -21,12 +23,16 @@ var spawners = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	position = ground.map_to_local(ground.local_to_map(base.to_local(global_position)))
+	var grid_pos = ground.local_to_map(base.to_local(global_position))
+	position = ground.map_to_local(grid_pos)
 	directions = [[Vector2i(0,1),move_dl],[Vector2i(0,-1),move_ur],[Vector2i(1,0),move_dr],[Vector2i(-1,0),move_ul],[Vector2i(1,1),move_d],[Vector2i(-1,1),move_l],[Vector2i(1,-1),move_r],[Vector2i(-1,-1),move_u]]
 	enemies = get_tree().get_root().find_children("enemy*", "", true, false)
 	spawners = get_tree().get_root().find_children("spawner*", "", true, false)
 	print("Found ", enemies.size(), " enemies")
 	updateTiles()
+	if shadows:
+		shadows.update_shadows(ground.local_to_map(base.to_local(global_position)))
+	updateEnemies(grid_pos)
 	pass
 
 func _input(event):
@@ -60,15 +66,17 @@ func _input(event):
 			# Update the position of the character to where we clicked our mouse.
 			position = ground.map_to_local(apple)
 			enemies = get_tree().get_root().find_children("enemy*", "", true, false)
+			
+			# UPDATES
 
 			# Since we are moving our character, perform the enemy movements
 			for enemy in enemies:
 				enemy.move(apple)
 			for spawner in spawners:
 				spawner.move(apple)
-			for enemy in enemies:
-				if position == enemy.position:
-					dead.show()
+			updateEnemies(apple)
+				
+				
 			
 			# Finally, perform 'special tile' checks.
 			
@@ -83,6 +91,8 @@ func _input(event):
 			# are visible to the player. Do this after teleporting so that it's updated
 			# with the new final position, not the tile that was clicked.
 			updateTiles()
+			if shadows:
+				shadows.update_shadows(ground.local_to_map(base.to_local(global_position)))
 
 func updateTiles():
 	var clickStore: Vector2i
@@ -101,6 +111,18 @@ func updateTiles():
 			item[1].show()
 		else:
 			item[1].hide()
+		
+func updateEnemies(player_loc: Vector2i):
+
+	for enemy in enemies:
+		var enemy_loc = ground.local_to_map(base.to_local(enemy.global_position))
+		print(abs(enemy_loc.x-player_loc.x) + abs(enemy_loc.y+player_loc.y))
+		if abs(enemy_loc.x-player_loc.x) + abs(enemy_loc.y-player_loc.y) <= 3:
+			enemy.show()
+		else:
+			enemy.hide()
+		if position == enemy.position:
+			dead.show()
 
 func updateAnimation(MovementVector: Vector2i):
 	var animationString: String = "walk "
