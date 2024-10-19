@@ -1,13 +1,14 @@
-[gd_scene load_steps=17 format=4 uid="uid://cjw58pwky5yfa"]
+[gd_scene load_steps=19 format=4 uid="uid://p8xop8amfl6s"]
 
-[ext_resource type="Script" path="res://scripts/get_map_coord.gd" id="1_va1pe"]
-[ext_resource type="TileSet" uid="uid://t357gnsrojuh" path="res://textures/default.tres" id="2_pk1ri"]
-[ext_resource type="Script" path="res://scripts/player.gd" id="3_42xld"]
-[ext_resource type="Texture2D" uid="uid://b21y2f46l3cnu" path="res://textures/loose sprites.png" id="4_pdha2"]
-[ext_resource type="Texture2D" uid="uid://cbf8waqy0cqu7" path="res://textures/iso_tileset.png" id="5_2a7h4"]
+[ext_resource type="Script" path="res://scripts/get_map_coord.gd" id="1_wylec"]
+[ext_resource type="TileSet" uid="uid://t357gnsrojuh" path="res://textures/default.tres" id="2_a8k85"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="3_bk8lb"]
+[ext_resource type="Texture2D" uid="uid://b21y2f46l3cnu" path="res://textures/loose sprites.png" id="4_koi5c"]
+[ext_resource type="Texture2D" uid="uid://cbf8waqy0cqu7" path="res://textures/iso_tileset.png" id="5_14hfy"]
+[ext_resource type="Script" path="res://scripts/spawner.gd" id="6_e7qvw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vw4w1"]
-atlas = ExtResource("5_2a7h4")
+atlas = ExtResource("5_14hfy")
 region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="Animation" id="Animation_fjavp"]
@@ -186,35 +187,39 @@ _data = {
 "walk upright": SubResource("Animation_486o4")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_jentn"]
+atlas = ExtResource("5_14hfy")
+region = Rect2(224, 0, 32, 32)
+
 [node name="Base" type="Node2D"]
 z_as_relative = false
 y_sort_enabled = true
 position = Vector2(213, 120)
-script = ExtResource("1_va1pe")
+script = ExtResource("1_wylec")
 
 [node name="Ground" type="TileMapLayer" parent="."]
 z_as_relative = false
-tile_map_data = PackedByteArray("AAD//wAAAAAAAAAAAAD/////AAAAAAAAAAD///7/AAAAAAAAAAD///3/AAACAAAAAAD//wEAAAAAAAAAAAD//wIAAAAAAAAAAAD//wMAAAAAAAAAAAD//wQAAAADAAAAAAAAAAQAAAADAAAAAAAAAAMAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//AAAAAAAAAAAAAP7/AAAAAAAAAAAAAP3/AAAAAAAAAAD+//3/AAAAAAAAAAD+//7/AAAAAAAAAAD+////AAAAAAAAAAD+/wAAAAAAAAAAAAD+/wEAAAAAAAAAAAD+/wMAAAAAAAAAAAD+/wIAAAAAAAAAAAD+/wQAAAADAAAAAAD9/wQAAAADAAAAAAD9/wMAAAAAAAAAAAD9/wIAAAAAAAAAAAD9/wEAAAAAAAAAAAD9/wAAAAAAAAAAAAD9////AAAAAAAAAAD9//7/AAAAAAAAAAD9//3/AAAAAAAAAAACAAQAAAADAAAAAAABAAQAAAADAAAAAAABAAMAAAAAAAAAAAABAAIAAAAAAAAAAAABAAEAAAAAAAAAAAABAAAAAAAAAAAAAAABAP//AAAAAAAAAAABAP7/AAAAAAAAAAABAP3/AAAAAAAAAAACAAMAAAAAAAAAAAACAAEAAAAAAAAAAAACAAIAAAAAAAAAAAACAAAAAAAAAAAAAAACAP//AAAAAAAAAAACAP7/AAAAAAAAAAACAP3/AAAAAAAAAAACAPz/AAADAAAAAAABAPz/AAADAAAAAAAAAPz/AAADAAAAAAD///z/AAADAAAAAAD+//z/AAADAAAAAAD9//z/AAADAAAAAAD8//z/AAADAAAAAAD8//3/AAAAAAAAAAD8//7/AAAAAAAAAAD8////AAAAAAAAAAD8/wAAAAAAAAAAAAD8/wEAAAAAAAAAAAD8/wIAAAAAAAAAAAD8/wMAAAAAAAAAAAD8/wQAAAADAAAAAAADAAIAAAADAAAAAAADAAEAAAADAAAAAAADAAAAAAADAAAAAAADAP//AAADAAAAAAADAPz/AAADAAAAAAADAP3/AAADAAAAAAADAP7/AAADAAAAAAADAAMAAAADAAAAAAADAAQAAAADAAAAAAD7//z/AAADAAAAAAD7//3/AAADAAAAAAD7//7/AAADAAAAAAD7////AAADAAAAAAD7/wAAAAADAAAAAAD7/wEAAAADAAAAAAD7/wIAAAADAAAAAAD7/wMAAAADAAAAAAD7/wQAAAADAAAAAAA=")
-tile_set = ExtResource("2_pk1ri")
+tile_map_data = PackedByteArray("AAD//wAAAAADAAAAAAD/////AAAAAAAAAAD///7/AAAAAAAAAAD///3/AAAAAAAAAAD//wEAAAAAAAAAAAD//wIAAAAAAAAAAAD//wMAAAAAAAAAAAD//wQAAAAAAAAAAAAAAAQAAAADAAAAAAAAAAMAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//AAAAAAAAAAAAAP7/AAAAAAAAAAAAAP3/AAAAAAAAAAD+//3/AAAAAAAAAAD+//7/AAAAAAAAAAD+////AAAAAAAAAAD+/wAAAAAAAAAAAAD+/wEAAAAAAAAAAAD+/wMAAAAAAAAAAAD+/wIAAAAAAAAAAAD+/wQAAAAAAAAAAAD9/wQAAAAAAAAAAAD9/wMAAAAAAAAAAAD9/wIAAAAAAAAAAAD9/wEAAAAAAAAAAAD9/wAAAAAAAAAAAAD9////AAAAAAAAAAD9//7/AAAAAAAAAAD9//3/AAAAAAAAAAACAAQAAAADAAAAAAABAAQAAAAAAAAAAAABAAMAAAAAAAAAAAABAAIAAAAAAAAAAAABAAEAAAAAAAAAAAABAAAAAAAAAAAAAAABAP//AAAAAAAAAAABAP7/AAAAAAAAAAABAP3/AAAAAAAAAAACAAMAAAADAAAAAAACAAEAAAADAAAAAAACAAIAAAADAAAAAAACAAAAAAADAAAAAAACAP//AAADAAAAAAACAP7/AAADAAAAAAACAP3/AAADAAAAAAACAPz/AAADAAAAAAABAPz/AAAAAAAAAAAAAPz/AAAAAAAAAAD///z/AAAAAAAAAAD+//z/AAADAAAAAAD9//z/AAAAAAAAAAD8//z/AAADAAAAAAD8//3/AAADAAAAAAD8//7/AAADAAAAAAD8////AAADAAAAAAD8/wAAAAADAAAAAAD8/wEAAAADAAAAAAD8/wIAAAADAAAAAAD8/wMAAAADAAAAAAD8/wQAAAADAAAAAAD9/wUAAAAAAAAAAAD+/wUAAAAAAAAAAAD//wUAAAAAAAAAAAACAAUAAAADAAAAAAABAAUAAAAAAAAAAAAAAAUAAAAAAAAAAAD8/wUAAAADAAAAAAD8//v/AAADAAAAAAD9//v/AAAAAAAAAAD+//v/AAAAAAAAAAD///v/AAAAAAAAAAAAAPv/AAAAAAAAAAABAPv/AAAAAAAAAAACAPv/AAADAAAAAAD8/wYAAAADAAAAAAD9/wYAAAAAAAAAAAD+/wYAAAAAAAAAAAD8//r/AAADAAAAAAD9//r/AAACAAAAAAD+//r/AAACAAAAAAD///r/AAACAAAAAAAAAPr/AAACAAAAAAABAPr/AAACAAAAAAACAPr/AAADAAAAAAD//wYAAAAAAAAAAAAAAAYAAAAAAAAAAAABAAYAAAAAAAAAAAACAAYAAAADAAAAAAD8/wcAAAADAAAAAAD9/wcAAAADAAAAAAD+/wcAAAADAAAAAAD//wcAAAADAAAAAAAAAAcAAAADAAAAAAABAAcAAAADAAAAAAACAAcAAAADAAAAAAACAPn/AAADAAAAAAABAPn/AAADAAAAAAAAAPn/AAADAAAAAAD///n/AAADAAAAAAD9//n/AAADAAAAAAD8//n/AAADAAAAAAD+//n/AAADAAAAAAA=")
+tile_set = ExtResource("2_a8k85")
 
 [node name="Walls" type="TileMapLayer" parent="."]
 z_index = 2
 z_as_relative = false
 y_sort_enabled = true
-tile_set = ExtResource("2_pk1ri")
+tile_set = ExtResource("2_a8k85")
 y_sort_origin = 1
 
 [node name="player" type="Node2D" parent="."]
 y_sort_enabled = true
-position = Vector2(-47.9411, 24.6696)
-script = ExtResource("3_42xld")
+position = Vector2(-99.4616, 46.8241)
+script = ExtResource("3_bk8lb")
 
 [node name="Sprite2D" type="Sprite2D" parent="player"]
 z_index = 2
 z_as_relative = false
 y_sort_enabled = true
 position = Vector2(0, -8)
-texture = ExtResource("4_pdha2")
+texture = ExtResource("4_koi5c")
 hframes = 8
 vframes = 8
 
@@ -331,3 +336,93 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "You Won!"
+
+[node name="spawner11" type="Node2D" parent="."]
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(112.06, -23.8152)
+script = ExtResource("6_e7qvw")
+timer_limit = 6
+counter = 6
+direction = Vector2i(0, 1)
+
+[node name="nextmove" type="Sprite2D" parent="spawner11"]
+self_modulate = Color(1, 1, 1, 0.784314)
+z_index = 1
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(16, -15)
+texture = SubResource("AtlasTexture_jentn")
+offset = Vector2(-16, 16)
+
+[node name="spawner12" type="Node2D" parent="."]
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(47.7698, -56.7538)
+script = ExtResource("6_e7qvw")
+timer_limit = 6
+counter = 6
+direction = Vector2i(0, 1)
+
+[node name="nextmove" type="Sprite2D" parent="spawner12"]
+self_modulate = Color(1, 1, 1, 0.784314)
+z_index = 1
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(16, -15)
+texture = SubResource("AtlasTexture_jentn")
+offset = Vector2(-16, 16)
+
+[node name="spawner13" type="Node2D" parent="."]
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(95.5559, -33.3797)
+script = ExtResource("6_e7qvw")
+timer_limit = 6
+counter = 6
+direction = Vector2i(0, 1)
+
+[node name="nextmove" type="Sprite2D" parent="spawner13"]
+self_modulate = Color(1, 1, 1, 0.784314)
+z_index = 1
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(16, -15)
+texture = SubResource("AtlasTexture_jentn")
+offset = Vector2(-16, 16)
+
+[node name="spawner14" type="Node2D" parent="."]
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(79.2924, -40.8043)
+script = ExtResource("6_e7qvw")
+timer_limit = 6
+counter = 6
+direction = Vector2i(0, 1)
+
+[node name="nextmove" type="Sprite2D" parent="spawner14"]
+self_modulate = Color(1, 1, 1, 0.784314)
+z_index = 1
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(16, -15)
+texture = SubResource("AtlasTexture_jentn")
+offset = Vector2(-16, 16)
+
+[node name="spawner16" type="Node2D" parent="."]
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(61.9683, -46.4612)
+script = ExtResource("6_e7qvw")
+timer_limit = 6
+counter = 6
+direction = Vector2i(0, 1)
+
+[node name="nextmove" type="Sprite2D" parent="spawner16"]
+self_modulate = Color(1, 1, 1, 0.784314)
+z_index = 1
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(16, -15)
+texture = SubResource("AtlasTexture_jentn")
+offset = Vector2(-16, 16)

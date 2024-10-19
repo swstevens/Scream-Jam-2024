@@ -1,13 +1,15 @@
-[gd_scene load_steps=17 format=4 uid="uid://cjw58pwky5yfa"]
+[gd_scene load_steps=30 format=4 uid="uid://bcxdf5c5vlqeq"]
 
-[ext_resource type="Script" path="res://scripts/get_map_coord.gd" id="1_va1pe"]
-[ext_resource type="TileSet" uid="uid://t357gnsrojuh" path="res://textures/default.tres" id="2_pk1ri"]
-[ext_resource type="Script" path="res://scripts/player.gd" id="3_42xld"]
-[ext_resource type="Texture2D" uid="uid://b21y2f46l3cnu" path="res://textures/loose sprites.png" id="4_pdha2"]
-[ext_resource type="Texture2D" uid="uid://cbf8waqy0cqu7" path="res://textures/iso_tileset.png" id="5_2a7h4"]
+[ext_resource type="Script" path="res://scripts/get_map_coord.gd" id="1_8nj77"]
+[ext_resource type="TileSet" uid="uid://t357gnsrojuh" path="res://textures/default.tres" id="2_r8pl2"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="3_l3big"]
+[ext_resource type="Texture2D" uid="uid://b21y2f46l3cnu" path="res://textures/loose sprites.png" id="4_gnek2"]
+[ext_resource type="Texture2D" uid="uid://cbf8waqy0cqu7" path="res://textures/iso_tileset.png" id="5_8n4a0"]
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="6_p4iph"]
+[ext_resource type="Texture2D" uid="uid://dapnqabsdbfqt" path="res://textures/Zombie.png" id="7_3lilr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vw4w1"]
-atlas = ExtResource("5_2a7h4")
+atlas = ExtResource("5_8n4a0")
 region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="Animation" id="Animation_fjavp"]
@@ -186,35 +188,110 @@ _data = {
 "walk upright": SubResource("Animation_486o4")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_cqyoh"]
+atlas = ExtResource("7_3lilr")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phemv"]
+atlas = ExtResource("7_3lilr")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svvwr"]
+atlas = ExtResource("7_3lilr")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gpqnh"]
+atlas = ExtResource("7_3lilr")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7c7av"]
+atlas = ExtResource("7_3lilr")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmp7w"]
+atlas = ExtResource("7_3lilr")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2t0oa"]
+atlas = ExtResource("7_3lilr")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y65kk"]
+atlas = ExtResource("7_3lilr")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7e0oi"]
+atlas = ExtResource("7_3lilr")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0crk8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cqyoh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phemv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svvwr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gpqnh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7c7av")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmp7w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2t0oa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y65kk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7e0oi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjtla"]
+atlas = ExtResource("5_8n4a0")
+region = Rect2(224, 0, 32, 32)
+
 [node name="Base" type="Node2D"]
 z_as_relative = false
 y_sort_enabled = true
 position = Vector2(213, 120)
-script = ExtResource("1_va1pe")
+script = ExtResource("1_8nj77")
 
 [node name="Ground" type="TileMapLayer" parent="."]
 z_as_relative = false
 tile_map_data = PackedByteArray("AAD//wAAAAAAAAAAAAD/////AAAAAAAAAAD///7/AAAAAAAAAAD///3/AAACAAAAAAD//wEAAAAAAAAAAAD//wIAAAAAAAAAAAD//wMAAAAAAAAAAAD//wQAAAADAAAAAAAAAAQAAAADAAAAAAAAAAMAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//AAAAAAAAAAAAAP7/AAAAAAAAAAAAAP3/AAAAAAAAAAD+//3/AAAAAAAAAAD+//7/AAAAAAAAAAD+////AAAAAAAAAAD+/wAAAAAAAAAAAAD+/wEAAAAAAAAAAAD+/wMAAAAAAAAAAAD+/wIAAAAAAAAAAAD+/wQAAAADAAAAAAD9/wQAAAADAAAAAAD9/wMAAAAAAAAAAAD9/wIAAAAAAAAAAAD9/wEAAAAAAAAAAAD9/wAAAAAAAAAAAAD9////AAAAAAAAAAD9//7/AAAAAAAAAAD9//3/AAAAAAAAAAACAAQAAAADAAAAAAABAAQAAAADAAAAAAABAAMAAAAAAAAAAAABAAIAAAAAAAAAAAABAAEAAAAAAAAAAAABAAAAAAAAAAAAAAABAP//AAAAAAAAAAABAP7/AAAAAAAAAAABAP3/AAAAAAAAAAACAAMAAAAAAAAAAAACAAEAAAAAAAAAAAACAAIAAAAAAAAAAAACAAAAAAAAAAAAAAACAP//AAAAAAAAAAACAP7/AAAAAAAAAAACAP3/AAAAAAAAAAACAPz/AAADAAAAAAABAPz/AAADAAAAAAAAAPz/AAADAAAAAAD///z/AAADAAAAAAD+//z/AAADAAAAAAD9//z/AAADAAAAAAD8//z/AAADAAAAAAD8//3/AAAAAAAAAAD8//7/AAAAAAAAAAD8////AAAAAAAAAAD8/wAAAAAAAAAAAAD8/wEAAAAAAAAAAAD8/wIAAAAAAAAAAAD8/wMAAAAAAAAAAAD8/wQAAAADAAAAAAADAAIAAAADAAAAAAADAAEAAAADAAAAAAADAAAAAAADAAAAAAADAP//AAADAAAAAAADAPz/AAADAAAAAAADAP3/AAADAAAAAAADAP7/AAADAAAAAAADAAMAAAADAAAAAAADAAQAAAADAAAAAAD7//z/AAADAAAAAAD7//3/AAADAAAAAAD7//7/AAADAAAAAAD7////AAADAAAAAAD7/wAAAAADAAAAAAD7/wEAAAADAAAAAAD7/wIAAAADAAAAAAD7/wMAAAADAAAAAAD7/wQAAAADAAAAAAA=")
-tile_set = ExtResource("2_pk1ri")
+tile_set = ExtResource("2_r8pl2")
 
 [node name="Walls" type="TileMapLayer" parent="."]
 z_index = 2
 z_as_relative = false
 y_sort_enabled = true
-tile_set = ExtResource("2_pk1ri")
+tile_set = ExtResource("2_r8pl2")
 y_sort_origin = 1
 
 [node name="player" type="Node2D" parent="."]
 y_sort_enabled = true
 position = Vector2(-47.9411, 24.6696)
-script = ExtResource("3_42xld")
+script = ExtResource("3_l3big")
 
 [node name="Sprite2D" type="Sprite2D" parent="player"]
 z_index = 2
 z_as_relative = false
 y_sort_enabled = true
 position = Vector2(0, -8)
-texture = ExtResource("4_pdha2")
+texture = ExtResource("4_gnek2")
 hframes = 8
 vframes = 8
 
@@ -331,3 +408,43 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "You Won!"
+
+[node name="enemy_a" type="Node2D" parent="."]
+z_index = 2
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(-64.4982, -16.6796)
+script = ExtResource("6_p4iph")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemy_a"]
+position = Vector2(4, -15)
+sprite_frames = SubResource("SpriteFrames_0crk8")
+
+[node name="nextmove" type="Sprite2D" parent="enemy_a"]
+self_modulate = Color(1, 1, 1, 0.784314)
+z_index = 1
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(16, -15)
+texture = SubResource("AtlasTexture_bjtla")
+offset = Vector2(-16, 16)
+
+[node name="enemy_a2" type="Node2D" parent="."]
+z_index = 2
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(-32.0552, -31.7987)
+script = ExtResource("6_p4iph")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemy_a2"]
+position = Vector2(4, -15)
+sprite_frames = SubResource("SpriteFrames_0crk8")
+
+[node name="nextmove" type="Sprite2D" parent="enemy_a2"]
+self_modulate = Color(1, 1, 1, 0.784314)
+z_index = 1
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(16, -15)
+texture = SubResource("AtlasTexture_bjtla")
+offset = Vector2(-16, 16)
