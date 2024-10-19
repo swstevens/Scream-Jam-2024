@@ -1,16 +1,16 @@
 [gd_scene load_steps=30 format=4 uid="uid://c4i7meoq8n84x"]
 
-[ext_resource type="TileSet" uid="uid://t357gnsrojuh" path="res://default.tres" id="1_e75ie"]
-[ext_resource type="Script" path="res://get_map_coord.gd" id="1_v372y"]
-[ext_resource type="Script" path="res://player.gd" id="3_vrbug"]
-[ext_resource type="Texture2D" uid="uid://cbf8waqy0cqu7" path="res://iso_tileset.png" id="4_2204e"]
-[ext_resource type="Texture2D" uid="uid://b21y2f46l3cnu" path="res://loose sprites.png" id="4_jqat1"]
-[ext_resource type="Script" path="res://enemy.gd" id="5_kdk4b"]
-[ext_resource type="Texture2D" uid="uid://dapnqabsdbfqt" path="res://Zombie.png" id="6_8sfbs"]
-[ext_resource type="Script" path="res://enemy_chaser.gd" id="7_vh5ff"]
+[ext_resource type="Script" path="res://scripts/get_map_coord.gd" id="1_ixcs5"]
+[ext_resource type="TileSet" uid="uid://t357gnsrojuh" path="res://textures/default.tres" id="2_kvwkn"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="3_38l51"]
+[ext_resource type="Texture2D" uid="uid://b21y2f46l3cnu" path="res://textures/loose sprites.png" id="4_8vd8k"]
+[ext_resource type="Texture2D" uid="uid://cbf8waqy0cqu7" path="res://textures/iso_tileset.png" id="5_04wim"]
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="6_1kmws"]
+[ext_resource type="Texture2D" uid="uid://dapnqabsdbfqt" path="res://textures/Zombie.png" id="7_jr5q4"]
+[ext_resource type="Script" path="res://scripts/enemy_chaser.gd" id="8_jee2q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vw4w1"]
-atlas = ExtResource("4_2204e")
+atlas = ExtResource("5_04wim")
 region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="Animation" id="Animation_fjavp"]
@@ -190,39 +190,39 @@ _data = {
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cqyoh"]
-atlas = ExtResource("6_8sfbs")
+atlas = ExtResource("7_jr5q4")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_phemv"]
-atlas = ExtResource("6_8sfbs")
+atlas = ExtResource("7_jr5q4")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_svvwr"]
-atlas = ExtResource("6_8sfbs")
+atlas = ExtResource("7_jr5q4")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gpqnh"]
-atlas = ExtResource("6_8sfbs")
+atlas = ExtResource("7_jr5q4")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7c7av"]
-atlas = ExtResource("6_8sfbs")
+atlas = ExtResource("7_jr5q4")
 region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pmp7w"]
-atlas = ExtResource("6_8sfbs")
+atlas = ExtResource("7_jr5q4")
 region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2t0oa"]
-atlas = ExtResource("6_8sfbs")
+atlas = ExtResource("7_jr5q4")
 region = Rect2(192, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y65kk"]
-atlas = ExtResource("6_8sfbs")
+atlas = ExtResource("7_jr5q4")
 region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7e0oi"]
-atlas = ExtResource("6_8sfbs")
+atlas = ExtResource("7_jr5q4")
 region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qqueb"]
@@ -264,31 +264,31 @@ animations = [{
 z_as_relative = false
 y_sort_enabled = true
 position = Vector2(160, 120)
-script = ExtResource("1_v372y")
+script = ExtResource("1_ixcs5")
 
 [node name="Ground" type="TileMapLayer" parent="."]
 z_as_relative = false
 tile_map_data = PackedByteArray("AAD//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//AAAAAAAAAAD/////AAAAAAAAAAD+////AAAAAAAAAAD+/wAAAAAAAAAAAAD+/wEAAAAAAAAAAAAAAAEAAAAAAAAAAAD//wQAAAAAAAAAAAD//wUAAAAAAAAAAAD///7/AAAAAAAAAAD///3/AAAAAAAAAAD///z/AAADAAAAAAD///v/AAAAAAAAAAAAAPv/AAAAAAAAAAAAAPz/AAAAAAAAAAABAPz/AAAEAAAAAAACAPz/AAAAAAAAAAADAPz/AAADAAAAAAACAPv/AAAAAAAAAAABAPv/AAAAAAAAAAAEAPv/AAACAAAAAAAEAPz/AAABAAAAAAAEAP3/AAAAAAAAAAAEAP7/AAAAAAAAAAAEAAEAAAAAAAAAAAAEAP//AAAAAAAAAAAEAAAAAAADAAAAAAAEAAIAAAAAAAAAAAAEAAMAAAAAAAAAAAAEAAQAAAAAAAAAAAAEAAUAAAAAAAAAAAAAAAUAAAAAAAAAAAABAAUAAAAAAAAAAAACAAUAAAAAAAAAAAADAAUAAAAAAAAAAAADAP3/AAADAAAAAAADAP7/AAADAAAAAAADAP//AAAAAAAAAAADAAAAAAADAAAAAAADAAEAAAADAAAAAAACAAAAAAAAAAAAAAABAP//AAADAAAAAAABAP7/AAAAAAAAAAABAP3/AAAAAAAAAAAAAP7/AAADAAAAAAACAP3/AAAAAAAAAAABAAAAAAADAAAAAAAAAP3/AAAAAAAAAAACAP7/AAADAAAAAAABAAEAAAADAAAAAAABAAIAAAADAAAAAAABAAMAAAADAAAAAAAAAAMAAAAAAAAAAAABAAQAAAADAAAAAAACAAQAAAAAAAAAAAACAAMAAAAAAAAAAAADAAMAAAADAAAAAAACAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAQAAAAAAAAAAAADAAQAAAAAAAAAAAADAAIAAAADAAAAAAD+//v/AAAAAAAAAAD6//3/AAAAAAAAAAD6//7/AAADAAAAAAD6////AAADAAAAAAD7////AAAFAAAAAAD7/wAAAAAAAAAAAAD7/wEAAAAAAAAAAAD6/wEAAAADAAAAAAD6/wAAAAAAAAAAAAD6/wIAAAAAAAAAAAD6/wMAAAADAAAAAAD6/wQAAAAAAAAAAAD7/wQAAAAAAAAAAAD6/wUAAAADAAAAAAD7/wUAAAAAAAAAAAD8/wUAAAADAAAAAAD9/wUAAAAAAAAAAAD+/wUAAAAAAAAAAAD8/wQAAAAAAAAAAAD7/wMAAAAAAAAAAAD8/wMAAAADAAAAAAD+/wMAAAAAAAAAAAD9/wQAAAAAAAAAAAD+/wQAAAADAAAAAAD7/wIAAAAAAAAAAAD8/wIAAAAAAAAAAAD9/wIAAAADAAAAAAD+/wIAAAADAAAAAAD8/wEAAAADAAAAAAD8/wAAAAAAAAAAAAD8////AAADAAAAAAD7//7/AAADAAAAAAD8//7/AAADAAAAAAD9//7/AAADAAAAAAD8//3/AAAAAAAAAAD7//3/AAAAAAAAAAD9//3/AAADAAAAAAD+//7/AAADAAAAAAD+//3/AAAAAAAAAAD8//z/AAAAAAAAAAD7//z/AAAFAAAAAAD9//z/AAADAAAAAAD+//z/AAAAAAAAAAACAP//AAAAAAAAAAD9////AAAAAAAAAAD9/wAAAAAAAAAAAAD9/wEAAAAAAAAAAAD9/wMAAAAAAAAAAAD//wMAAAADAAAAAAD//wEAAAAAAAAAAAD//wIAAAAAAAAAAAACAAIAAAAAAAAAAAD5//3/AAADAAAAAAD5//7/AAADAAAAAAD5////AAADAAAAAAD5/wAAAAADAAAAAAD5/wEAAAADAAAAAAD5/wIAAAADAAAAAAD5/wMAAAADAAAAAAD5/wQAAAADAAAAAAD5/wUAAAADAAAAAAD5/wYAAAADAAAAAAD6/wYAAAADAAAAAAD7/wYAAAADAAAAAAD8/wYAAAADAAAAAAD9/wYAAAADAAAAAAD+/wYAAAADAAAAAAD//wYAAAADAAAAAAAAAAYAAAADAAAAAAABAAYAAAADAAAAAAACAAYAAAADAAAAAAADAAYAAAADAAAAAAAEAAYAAAADAAAAAAAFAAYAAAADAAAAAAAFAAUAAAADAAAAAAAFAAQAAAADAAAAAAAFAAMAAAADAAAAAAAFAAIAAAADAAAAAAAFAAEAAAADAAAAAAAFAAAAAAADAAAAAAAFAP//AAADAAAAAAAFAP7/AAADAAAAAAAFAP3/AAADAAAAAAAFAPz/AAADAAAAAAAFAPv/AAADAAAAAAAFAPr/AAADAAAAAAAEAPr/AAADAAAAAAADAPr/AAADAAAAAAACAPr/AAADAAAAAAABAPr/AAADAAAAAAAAAPr/AAADAAAAAAD///r/AAADAAAAAAD+//r/AAADAAAAAAD9//r/AAADAAAAAAD8//r/AAADAAAAAAD7//r/AAADAAAAAAD6//r/AAADAAAAAAD5//r/AAADAAAAAAD5//v/AAADAAAAAAD5//z/AAADAAAAAAADAPv/AAADAAAAAAD6//z/AAAAAAAAAAD6//v/AAADAAAAAAD7//v/AAAAAAAAAAD8//v/AAAAAAAAAAD9//v/AAADAAAAAAA=")
-tile_set = ExtResource("1_e75ie")
+tile_set = ExtResource("2_kvwkn")
 
 [node name="Walls" type="TileMapLayer" parent="."]
 z_index = 2
 z_as_relative = false
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAD8//r/AAAGAAAAAAD8//v/AAAGAAAAAAD8//z/AAAGAAAAAAD8//3/AAAGAAAAAAD9//3/AAAGAAAAAAD7//3/AAAGAAAAAAD6//3/AAAGAAAAAAD5//3/AAAGAAAAAAD5//7/AAAGAAAAAAD7//7/AAAGAAAAAAD5/wAAAAAGAAAAAAD7/wAAAAAGAAAAAAD5/wIAAAAGAAAAAAD7/wIAAAAGAAAAAAD5/wQAAAAGAAAAAAD7/wQAAAAGAAAAAAD8/wEAAAAGAAAAAAD9/wEAAAAGAAAAAAD+/wIAAAAGAAAAAAD9/wMAAAAGAAAAAAAAAAMAAAAGAAAAAAAAAAIAAAAGAAAAAAAAAAEAAAAGAAAAAAAAAAAAAAAGAAAAAAAAAP//AAAGAAAAAAAAAP7/AAAGAAAAAAD///3/AAAGAAAAAAD+//v/AAAGAAAAAAABAP3/AAAGAAAAAAACAP3/AAAGAAAAAAACAPz/AAAGAAAAAAACAPv/AAAGAAAAAAACAPr/AAAGAAAAAAADAP//AAAGAAAAAAACAP//AAAGAAAAAAACAAAAAAAGAAAAAAACAAEAAAAGAAAAAAACAAIAAAAGAAAAAAD5//r/AAAGAAAAAAA=")
-tile_set = ExtResource("1_e75ie")
+tile_set = ExtResource("2_kvwkn")
 y_sort_origin = 1
 
 [node name="player" type="Node2D" parent="."]
 y_sort_enabled = true
-script = ExtResource("3_vrbug")
+script = ExtResource("3_38l51")
 
 [node name="Sprite2D" type="Sprite2D" parent="player"]
 z_index = 2
 z_as_relative = false
 y_sort_enabled = true
 position = Vector2(0, -8)
-texture = ExtResource("4_jqat1")
+texture = ExtResource("4_8vd8k")
 hframes = 8
 vframes = 8
 
@@ -368,7 +368,7 @@ z_index = 2
 z_as_relative = false
 y_sort_enabled = true
 position = Vector2(64, -48)
-script = ExtResource("5_kdk4b")
+script = ExtResource("6_1kmws")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemy_a"]
 position = Vector2(4, -15)
@@ -387,7 +387,7 @@ offset = Vector2(-16, 16)
 z_as_relative = false
 y_sort_enabled = true
 position = Vector2(-64.5443, 48.2903)
-script = ExtResource("7_vh5ff")
+script = ExtResource("8_jee2q")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemy_chaser"]
 z_index = 2
@@ -452,7 +452,7 @@ text = "You Won!"
 z_as_relative = false
 y_sort_enabled = true
 position = Vector2(-96, -16)
-script = ExtResource("5_kdk4b")
+script = ExtResource("6_1kmws")
 direction = Vector2i(0, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemy_b"]
