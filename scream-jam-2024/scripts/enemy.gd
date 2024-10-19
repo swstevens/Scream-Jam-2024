@@ -5,9 +5,13 @@ class_name Enemy
 @export var direction: Vector2i = Vector2i(1,0)
 @onready var ground: TileMapLayer = $"../Ground"
 @onready var base: Node2D = $".."
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	position = ground.map_to_local(ground.local_to_map(base.to_local(global_position)))
+	#animated_sprite_2d.play('default')
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

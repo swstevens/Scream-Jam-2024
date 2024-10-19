@@ -6,11 +6,11 @@ var normalWalkTile: Vector2i = Vector2i(0,0)
 
 # key1 = 1, -4 : door1 = 4, -4
 var key1Pressed = false
-var key1Tile: Vector2i = Vector2i(1, -4)
-var door1Tile: Vector2i = Vector2i(4, -4)
+@export var key1Tile: Vector2i = Vector2i(1, -4)
+@export var door1Tile: Vector2i = Vector2i(4, -4)
 
-var teleporterA1 = Vector2i(-5, -1)
-var teleporterA2 = Vector2i(-5, -4)
+@export var teleporterA1 = Vector2i(-5, -1)
+@export var teleporterA2 = Vector2i(-5, -4)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

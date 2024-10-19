@@ -17,11 +17,14 @@ extends Node2D
 @onready var move_u: Sprite2D = $Sprite2D10 # -1,-1
 var directions
 var enemies = []
+var spawners = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	position = ground.map_to_local(ground.local_to_map(base.to_local(global_position)))
 	directions = [[Vector2i(0,1),move_dl],[Vector2i(0,-1),move_ur],[Vector2i(1,0),move_dr],[Vector2i(-1,0),move_ul],[Vector2i(1,1),move_d],[Vector2i(-1,1),move_l],[Vector2i(1,-1),move_r],[Vector2i(-1,-1),move_u]]
 	enemies = get_tree().get_root().find_children("enemy*", "", true, false)
+	spawners = get_tree().get_root().find_children("spawner*", "", true, false)
 	print("Found ", enemies.size(), " enemies")
 	updateTiles()
 	pass
@@ -61,6 +64,8 @@ func _input(event):
 			# Since we are moving our character, perform the enemy movements
 			for enemy in enemies:
 				enemy.move(apple)
+			for spawner in spawners:
+				spawner.move(apple)
 			for enemy in enemies:
 				if position == enemy.position:
 					dead.show()
