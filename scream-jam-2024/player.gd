@@ -37,7 +37,11 @@ func _input(event):
 	print(apple,beta)
 	
 	if abs(apple.x - beta.x) <= 1 and abs(apple.y - beta.y) <= 1:
+		# update the player animation based on where we clicked
 		updateAnimation(Vector2i(apple.x - beta.x, apple.y - beta.y))
+		
+		# get the color of the tile that was clicked and see if we can step on it
+		# if we can't step on it, don't move the character, but we also don't use a turn.
 		var colorOfTile: Vector2i = ground.get_cell_atlas_coords(ground.local_to_map(base.to_local(get_global_mouse_position())))
 		if TileCanBeSteppedOn(colorOfTile):
 			#if the player is moving diagonally, we have to check if there are walls directly
@@ -48,31 +52,45 @@ func _input(event):
 				#if either tile cannot be stepped on, early return before we update the position
 				if !TileCanBeSteppedOn(adjTile1Color) or !TileCanBeSteppedOn(adjTile2Color):
 					return
-			# also have the broadcast move to the enemies here
-			position = ground.map_to_local(ground.local_to_map(base.to_local(get_global_mouse_position())))
+			
+			# Update the position of the character to where we clicked our mouse.
+			position = ground.map_to_local(apple)
+			
+			# Since we are moving our character, perform the enemy movements
+			for enemy in enemies:
+				enemy.move(apple)
+			for enemy in enemies:
+				if position == enemy.position:
+					dead.show()
+			
+			# Finally, perform 'special tile' checks.
+			
+			# If it's a victory tile, show the victory screen.
+			if colorOfTile.x == 2:
+				won.show()
+			# If it's a teleporter tile, update the position of the player.
+			if colorOfTile.x == 5:
+				position = ground.map_to_local(base.teleportPlayerTo())
+
+			# Finally, we need to update the tile indicators so that viable next steps
+			# are visible to the player. Do this after teleporting so that it's updated
+			# with the new final position, not the tile that was clicked.
 			var clickStore: Vector2i
 			for item in directions:
 				#print(item)
-				clickStore = apple + item[0]
+				clickStore = ground.local_to_map(position) + item[0]
 				if TileCanBeSteppedOn(ground.get_cell_atlas_coords(clickStore)):
 					if abs(item[0].x) == abs(item[0].y):
-						var adjTile1Color: Vector2i = ground.get_cell_atlas_coords(Vector2i(apple.x, apple.y + item[0].y))
-						var adjTile2Color: Vector2i = ground.get_cell_atlas_coords(Vector2i(apple.x + item[0].x, apple.y))
+						var localPos = ground.local_to_map(position)
+						var adjTile1Color: Vector2i = ground.get_cell_atlas_coords(Vector2i(localPos.x, localPos.y + item[0].y))
+						var adjTile2Color: Vector2i = ground.get_cell_atlas_coords(Vector2i(localPos.x + item[0].x, localPos.y))
 						if !TileCanBeSteppedOn(adjTile1Color) or !TileCanBeSteppedOn(adjTile2Color):
 							item[1].hide()
 							continue
 					item[1].show()
 				else:
 					item[1].hide()
-			for enemy in enemies:
-				enemy.move(ground.local_to_map(base.to_local(get_global_mouse_position())))
-			for enemy in enemies:
-				if position == enemy.position:
-					print("I died :(")
-					dead.show()
-			if ground.get_cell_atlas_coords(ground.local_to_map(base.to_local(global_position))).x == 2:
-				won.show()
-	
+
 func updateAnimation(MovementVector: Vector2i):
 	var animationString: String = "walk "
 	print(MovementVector.x, MovementVector.y)
