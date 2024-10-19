@@ -1,10 +1,12 @@
-[gd_scene load_steps=17 format=4 uid="uid://clycduodbh3yu"]
+[gd_scene load_steps=21 format=4 uid="uid://clycduodbh3yu"]
 
 [ext_resource type="Script" path="res://scripts/get_map_coord.gd" id="1_6lx40"]
 [ext_resource type="TileSet" uid="uid://t357gnsrojuh" path="res://textures/default.tres" id="2_r2sbh"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="3_axulg"]
 [ext_resource type="Texture2D" uid="uid://b21y2f46l3cnu" path="res://textures/loose sprites.png" id="4_elkbb"]
 [ext_resource type="Texture2D" uid="uid://cbf8waqy0cqu7" path="res://textures/iso_tileset.png" id="5_sptne"]
+[ext_resource type="Script" path="res://scripts/level_score.gd" id="6_5sj0c"]
+[ext_resource type="Script" path="res://scenes/levels/total_score.gd" id="7_60pqm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vw4w1"]
 atlas = ExtResource("5_sptne")
@@ -186,6 +188,12 @@ _data = {
 "walk upright": SubResource("Animation_486o4")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_orw81"]
+font_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_bngyr"]
+font_size = 8
+
 [node name="Base" type="Node2D"]
 z_as_relative = false
 y_sort_enabled = true
@@ -334,3 +342,19 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "You Won!"
+
+[node name="levelScore" type="Label" parent="UI"]
+offset_left = -213.0
+offset_top = -120.0
+offset_right = -173.0
+offset_bottom = -97.0
+label_settings = SubResource("LabelSettings_orw81")
+script = ExtResource("6_5sj0c")
+
+[node name="totalScore" type="Label" parent="UI"]
+offset_left = -213.0
+offset_top = -107.0
+offset_right = -173.0
+offset_bottom = -84.0
+label_settings = SubResource("LabelSettings_bngyr")
+script = ExtResource("7_60pqm")
