@@ -55,7 +55,8 @@ func _input(event):
 			
 			# Update the position of the character to where we clicked our mouse.
 			position = ground.map_to_local(apple)
-			
+			enemies = get_tree().get_root().find_children("enemy*", "", true, false)
+
 			# Since we are moving our character, perform the enemy movements
 			for enemy in enemies:
 				enemy.move(apple)

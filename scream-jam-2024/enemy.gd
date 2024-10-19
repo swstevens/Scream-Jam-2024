@@ -5,7 +5,6 @@ class_name Enemy
 @export var direction: Vector2i = Vector2i(1,0)
 @onready var ground: TileMapLayer = $"../Ground"
 @onready var base: Node2D = $".."
-@onready var nextmove: Sprite2D = $nextmove
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
