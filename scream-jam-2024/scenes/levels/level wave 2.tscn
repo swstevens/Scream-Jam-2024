@@ -317,7 +317,7 @@ animations = [{
 "speed": 20.0
 }]
 
-[node name="Base" type="Node2D"]
+[node name="Base2" type="Node2D"]
 z_as_relative = false
 y_sort_enabled = true
 position = Vector2(213, 120)

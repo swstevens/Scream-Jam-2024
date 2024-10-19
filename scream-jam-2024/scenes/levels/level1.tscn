@@ -1,5 +1,4 @@
-
-[gd_scene load_steps=21 format=4 uid="uid://cjw58pwky5yfa"]
+[gd_scene load_steps=24 format=4 uid="uid://cjw58pwky5yfa"]
 
 [ext_resource type="Script" path="res://scripts/get_map_coord.gd" id="1_va1pe"]
 [ext_resource type="TileSet" uid="uid://t357gnsrojuh" path="res://textures/default.tres" id="2_pk1ri"]
@@ -9,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cbf8waqy0cqu7" path="res://textures/iso_tileset.png" id="5_2a7h4"]
 [ext_resource type="Script" path="res://scripts/level_score.gd" id="6_2ovee"]
 [ext_resource type="Script" path="res://scenes/levels/total_score.gd" id="7_fqub2"]
+[ext_resource type="Script" path="res://scenes/levels/total_lives.gd" id="9_sxd78"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vw4w1"]
 atlas = ExtResource("5_2a7h4")
@@ -190,13 +190,14 @@ _data = {
 "walk upright": SubResource("Animation_486o4")
 }
 
-
 [sub_resource type="LabelSettings" id="LabelSettings_4bis2"]
 font_size = 8
 
 [sub_resource type="LabelSettings" id="LabelSettings_xdvcg"]
 font_size = 8
 
+[sub_resource type="LabelSettings" id="LabelSettings_dfk3j"]
+font_size = 8
 
 [node name="Base" type="Node2D"]
 z_as_relative = false
@@ -222,6 +223,7 @@ script = ExtResource("3_rd4d5")
 z_index = 2
 z_as_relative = false
 y_sort_enabled = true
+tile_map_data = PackedByteArray("AAD8/wIAAAAGAAAAAAD8/wEAAAAGAAAAAAD8/wAAAAAGAAAAAAD8////AAAGAAAAAAD8//7/AAAGAAAAAAD8//3/AAAGAAAAAAD8//z/AAAGAAAAAAAAAAIAAAAGAAAAAAAAAAEAAAAGAAAAAAAAAAAAAAAGAAAAAAAAAP//AAAGAAAAAAAAAP7/AAAGAAAAAAAAAP3/AAAGAAAAAAAAAPz/AAAGAAAAAAD9//z/AAAGAAAAAAD///z/AAAGAAAAAAD8/wMAAAAGAAAAAAD9/wMAAAAGAAAAAAD+/wMAAAAGAAAAAAD//wMAAAAGAAAAAAAAAAMAAAAGAAAAAAA=")
 tile_set = ExtResource("2_pk1ri")
 y_sort_origin = 1
 
@@ -353,7 +355,6 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "You Won!"
 
-
 [node name="levelScore" type="Label" parent="UI"]
 layout_mode = 0
 offset_left = -213.0
@@ -371,3 +372,12 @@ offset_right = -173.0
 offset_bottom = -84.0
 label_settings = SubResource("LabelSettings_xdvcg")
 script = ExtResource("7_fqub2")
+
+[node name="totalLives" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 149.0
+offset_top = -120.0
+offset_right = 189.0
+offset_bottom = -97.0
+label_settings = SubResource("LabelSettings_dfk3j")
+script = ExtResource("9_sxd78")
