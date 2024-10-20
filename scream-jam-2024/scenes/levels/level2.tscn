@@ -443,6 +443,7 @@ label_settings = SubResource("LabelSettings_1de2t")
 script = ExtResource("7_6jbbu")
 
 [node name="totalLives" type="Label" parent="UI"]
+layout_mode = 0
 offset_left = 149.0
 offset_top = -120.0
 offset_right = 189.0
