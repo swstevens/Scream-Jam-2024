@@ -9,6 +9,8 @@ extends Node2D
 @onready var dead: Label = $"../UI/dead"
 @onready var won: Label = $"../UI/won"
 
+@export var fogOfWarOn = false
+
 @onready var move_dl: Sprite2D = $Sprite2D3 # 0,+1
 @onready var move_ur: Sprite2D = $Sprite2D5 # 0,-1
 @onready var move_ul: Sprite2D = $Sprite2D9 # -1,0
@@ -32,9 +34,10 @@ func _ready() -> void:
 	spawners = get_tree().get_root().find_children("spawner*", "", true, false)
 	print("Found ", enemies.size(), " enemies")
 	updateTiles()
-	if shadows:
-		shadows.update_shadows(ground.local_to_map(base.to_local(global_position)))
-	updateEnemies(grid_pos)
+	if fogOfWarOn:
+		if shadows:
+			shadows.update_shadows(ground.local_to_map(base.to_local(global_position)))
+		updateEnemies(grid_pos)
 	pass
 
 func _input(event):
@@ -77,7 +80,7 @@ func _input(event):
 			for spawner in spawners:
 				spawner.move(apple)
 			enemies = get_tree().get_root().find_children("enemy*", "", true, false)
-
+			
 			updateEnemies(apple)
 			
 			# Finally, perform 'special tile' checks.
@@ -123,10 +126,11 @@ func updateEnemies(player_loc: Vector2i):
 	for enemy in enemies:
 		var enemy_loc = ground.local_to_map(base.to_local(enemy.global_position))
 		print(abs(enemy_loc.x-player_loc.x) + abs(enemy_loc.y+player_loc.y))
-		if abs(enemy_loc.x-player_loc.x) + abs(enemy_loc.y-player_loc.y) <= 3:
-			enemy.show()
-		else:
-			enemy.hide()
+		if fogOfWarOn:
+			if abs(enemy_loc.x-player_loc.x) + abs(enemy_loc.y-player_loc.y) <= 3:
+				enemy.show()
+			else:
+				enemy.hide()
 		if position == enemy.position:
 			performDeathRoutine()
 
