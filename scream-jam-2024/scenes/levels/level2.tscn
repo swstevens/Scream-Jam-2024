@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://bcxdf5c5vlqeq"]
+[gd_scene load_steps=36 format=4 uid="uid://bcxdf5c5vlqeq"]
 
 [ext_resource type="Script" path="res://scripts/get_map_coord.gd" id="1_8nj77"]
 [ext_resource type="TileSet" uid="uid://t357gnsrojuh" path="res://textures/default.tres" id="2_r8pl2"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="6_p4iph"]
 [ext_resource type="Texture2D" uid="uid://dapnqabsdbfqt" path="res://textures/Zombie.png" id="7_3lilr"]
 [ext_resource type="Script" path="res://scenes/levels/total_score.gd" id="7_6jbbu"]
+[ext_resource type="Script" path="res://scenes/levels/total_lives.gd" id="8_h5vbi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vw4w1"]
 atlas = ExtResource("5_8n4a0")
@@ -196,6 +197,9 @@ font_size = 8
 [sub_resource type="LabelSettings" id="LabelSettings_1de2t"]
 font_size = 8
 
+[sub_resource type="LabelSettings" id="LabelSettings_h3ms2"]
+font_size = 8
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_cqyoh"]
 atlas = ExtResource("7_3lilr")
 region = Rect2(0, 0, 32, 32)
@@ -271,7 +275,7 @@ animations = [{
 atlas = ExtResource("5_8n4a0")
 region = Rect2(224, 0, 32, 32)
 
-[node name="Base" type="Node2D"]
+[node name="Base2" type="Node2D"]
 z_as_relative = false
 y_sort_enabled = true
 position = Vector2(213, 120)
@@ -288,6 +292,7 @@ tile_set = ExtResource("2_r8pl2")
 z_index = 2
 z_as_relative = false
 y_sort_enabled = true
+tile_map_data = PackedByteArray("AAACAAMAAAAGAAAAAAACAAIAAAAGAAAAAAACAAEAAAAGAAAAAAACAAAAAAAGAAAAAAACAP//AAAGAAAAAAACAP7/AAAGAAAAAAACAP3/AAAGAAAAAAACAPz/AAAGAAAAAAACAPv/AAAGAAAAAAD6//v/AAAGAAAAAAD7//v/AAAGAAAAAAD8//v/AAAGAAAAAAD9//v/AAAGAAAAAAD+//v/AAAGAAAAAAD///v/AAAGAAAAAAAAAPv/AAAGAAAAAAABAPv/AAAGAAAAAAD6//z/AAAGAAAAAAD6//3/AAAGAAAAAAD6//7/AAAGAAAAAAD6////AAAGAAAAAAD6/wAAAAAGAAAAAAD6/wEAAAAGAAAAAAD6/wIAAAAGAAAAAAD6/wMAAAAGAAAAAAD7/wMAAAAGAAAAAAD8/wMAAAAGAAAAAAD9/wMAAAAGAAAAAAD+/wMAAAAGAAAAAAD//wMAAAAGAAAAAAAAAAMAAAAGAAAAAAABAAMAAAAGAAAAAAD8/wEAAAAGAAAAAAAAAP3/AAAGAAAAAAAAAAEAAAAGAAAAAAD8//3/AAAGAAAAAAA=")
 tile_set = ExtResource("2_r8pl2")
 y_sort_origin = 1
 
@@ -436,6 +441,14 @@ offset_right = -173.0
 offset_bottom = -84.0
 label_settings = SubResource("LabelSettings_1de2t")
 script = ExtResource("7_6jbbu")
+
+[node name="totalLives" type="Label" parent="UI"]
+offset_left = 149.0
+offset_top = -120.0
+offset_right = 189.0
+offset_bottom = -97.0
+label_settings = SubResource("LabelSettings_h3ms2")
+script = ExtResource("8_h5vbi")
 
 [node name="enemy_a" type="Node2D" parent="."]
 z_index = 2

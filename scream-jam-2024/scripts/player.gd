@@ -21,6 +21,8 @@ var directions
 var enemies = []
 var spawners = []
 
+var lives = 3
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var grid_pos = ground.local_to_map(base.to_local(global_position))
@@ -77,8 +79,6 @@ func _input(event):
 			enemies = get_tree().get_root().find_children("enemy*", "", true, false)
 
 			updateEnemies(apple)
-				
-				
 			
 			# Finally, perform 'special tile' checks.
 			
@@ -86,6 +86,7 @@ func _input(event):
 			if colorOfTile.x == 2:
 				won.show()
 				Score.UpdateTotalScore(Score.totalScore + Score.levelScore)
+				Score.SetLevelHasBeenCompleted()
 			else:
 				Score.DecrementLevelScore(base.levelScoreDecliner)
 
@@ -119,7 +120,6 @@ func updateTiles():
 			item[1].hide()
 		
 func updateEnemies(player_loc: Vector2i):
-
 	for enemy in enemies:
 		var enemy_loc = ground.local_to_map(base.to_local(enemy.global_position))
 		print(abs(enemy_loc.x-player_loc.x) + abs(enemy_loc.y+player_loc.y))
@@ -128,7 +128,7 @@ func updateEnemies(player_loc: Vector2i):
 		else:
 			enemy.hide()
 		if position == enemy.position:
-			dead.show()
+			performDeathRoutine()
 
 func updateAnimation(MovementVector: Vector2i):
 	var animationString: String = "walk "
@@ -164,3 +164,12 @@ func TileCanBeSteppedOn(tile: Vector2i) -> bool:
 			return true
 		_:
 			return true
+
+func performDeathRoutine():
+	dead.show()
+	Score.DecrementLives()
+	if Score.getLives() == 0:
+		print("game over")
+
+	await get_tree().create_timer(2.0).timeout
+	get_tree().reload_current_scene()

@@ -18,7 +18,9 @@ var key1Pressed = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Score.levelScore = maxLevelScore
+	if Score.isFirstTimeLoadingLevel:
+		Score.levelScore = maxLevelScore
+		Score.SetLevelHasBeenLoaded()
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
