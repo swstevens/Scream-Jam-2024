@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/get_map_coord.gd" id="1_fvxvq"]
 [ext_resource type="TileSet" uid="uid://t357gnsrojuh" path="res://textures/default.tres" id="2_6uab0"]
-[ext_resource type="Script" path="res://scenes/levels/shadows.gd" id="3_3n0ko"]
+[ext_resource type="Script" path="res://scripts/shadows.gd" id="3_3n0ko"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="3_jx586"]
 [ext_resource type="Texture2D" uid="uid://b21y2f46l3cnu" path="res://textures/loose sprites.png" id="4_8pev2"]
 [ext_resource type="Texture2D" uid="uid://cbf8waqy0cqu7" path="res://textures/iso_tileset.png" id="5_s655h"]
