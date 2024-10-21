@@ -7,6 +7,14 @@ var normalWalkTile: Vector2i = Vector2i(0,0)
 @export var maxLevelScore: int = 0
 @export var levelScoreDecliner: int = 0
 
+@onready var next: Button = $UI/VBoxContainer/Next
+@onready var retry: Button = $UI/VBoxContainer/Retry
+@onready var levels: Button = $UI/VBoxContainer/Levels
+@onready var dead_text: Label = $UI/dead
+@onready var won_text: Label = $UI/won
+
+@export var level_number = 1
+
 var key1Pressed = false
 @export var key1Tile: Vector2i = Vector2i(0, 0)
 @export var door1Tile: Vector2i = Vector2i(0, 0)
@@ -30,6 +38,19 @@ func _process(_delta: float) -> void:
 		if key1Pressed == false:
 			Ground.set_cell(door1Tile, 0, normalWalkTile, 0)
 		key1Pressed = true
+
+func won() -> void:
+	level_completion.level_completed[level_number-1] = 1
+	Player.set_process_input(false)
+	won_text.show()
+	next.show()
+	levels.show()
+
+func lost() -> void:
+	Player.set_process_input(false)
+	dead_text.show()
+	retry.show()
+	levels.show()
 
 func teleportPlayerTo() -> Vector2i:
 	if teleporterActive:

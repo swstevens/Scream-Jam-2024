@@ -119,4 +119,5 @@ size_flags_horizontal = 0
 size_flags_vertical = 8
 text = "Back"
 
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button1_pressed"]
 [connection signal="pressed" from="MarginContainer/Back" to="." method="_on_back_pressed"]

@@ -11,6 +11,7 @@ extends Node2D
 
 @export var fogOfWarOn = false
 
+
 @onready var move_dl: Sprite2D = $Sprite2D3 # 0,+1
 @onready var move_ur: Sprite2D = $Sprite2D5 # 0,-1
 @onready var move_ul: Sprite2D = $Sprite2D9 # -1,0
@@ -87,6 +88,7 @@ func _input(event):
 			
 			# If it's a victory tile, show the victory screen.
 			if colorOfTile.x == 2:
+				base.won()
 				won.show()
 				Score.UpdateTotalScore(Score.totalScore + Score.levelScore)
 				Score.SetLevelHasBeenCompleted()
@@ -170,7 +172,7 @@ func TileCanBeSteppedOn(tile: Vector2i) -> bool:
 			return true
 
 func performDeathRoutine():
-	dead.show()
+	base.lost()
 	Score.DecrementLives()
 	if Score.getLives() == 0:
 		print("game over")
