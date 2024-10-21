@@ -1,7 +1,7 @@
-[gd_scene load_steps=35 format=4 uid="uid://cjw58pwky5yfa"]
+[gd_scene load_steps=36 format=4 uid="uid://cjw58pwky5yfa"]
 
 [ext_resource type="Script" path="res://scripts/get_map_coord.gd" id="1_va1pe"]
-[ext_resource type="TileSet" uid="uid://t357gnsrojuh" path="res://textures/area1.tres" id="2_pk1ri"]
+[ext_resource type="TileSet" uid="uid://cy5cesw80bnhu" path="res://textures/area1.tres" id="2_pk1ri"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="3_42xld"]
 [ext_resource type="AudioStream" uid="uid://dbboemw23xegk" path="res://sounds/Level Victory.mp3" id="3_jqsjl"]
 [ext_resource type="Texture2D" uid="uid://b21y2f46l3cnu" path="res://textures/loose sprites.png" id="4_pdha2"]
@@ -436,9 +436,6 @@ visible = false
 layout_mode = 2
 text = "Levels"
 
-[connection signal="pressed" from="UI/VBoxContainer/Next" to="UI/VBoxContainer" method="_on_next_pressed"]
-[connection signal="pressed" from="UI/VBoxContainer/Retry" to="UI/VBoxContainer" method="_on_retry_pressed"]
-[connection signal="pressed" from="UI/VBoxContainer/Levels" to="UI/VBoxContainer" method="_on_levels_pressed"]
 [node name="8-bit-adventure" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_j10ru")
 volume_db = -24.0
@@ -466,3 +463,7 @@ volume_db = -32.0
 [node name="8-bit-success" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_3k7b8")
 volume_db = -32.0
+
+[connection signal="pressed" from="UI/VBoxContainer/Next" to="UI/VBoxContainer" method="_on_next_pressed"]
+[connection signal="pressed" from="UI/VBoxContainer/Retry" to="UI/VBoxContainer" method="_on_retry_pressed"]
+[connection signal="pressed" from="UI/VBoxContainer/Levels" to="UI/VBoxContainer" method="_on_levels_pressed"]
