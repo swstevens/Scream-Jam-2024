@@ -1,17 +1,31 @@
-[gd_scene load_steps=24 format=4 uid="uid://cjw58pwky5yfa"]
+[gd_scene load_steps=35 format=4 uid="uid://cjw58pwky5yfa"]
 
 [ext_resource type="Script" path="res://scripts/get_map_coord.gd" id="1_va1pe"]
-[ext_resource type="TileSet" uid="uid://t357gnsrojuh" path="res://textures/default.tres" id="2_pk1ri"]
+[ext_resource type="TileSet" uid="uid://t357gnsrojuh" path="res://textures/area1.tres" id="2_pk1ri"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="3_42xld"]
-[ext_resource type="Script" path="res://scripts/shadows.gd" id="3_rd4d5"]
+[ext_resource type="AudioStream" uid="uid://dbboemw23xegk" path="res://sounds/Level Victory.mp3" id="3_jqsjl"]
 [ext_resource type="Texture2D" uid="uid://b21y2f46l3cnu" path="res://textures/loose sprites.png" id="4_pdha2"]
 [ext_resource type="Texture2D" uid="uid://cbf8waqy0cqu7" path="res://textures/iso_tileset.png" id="5_2a7h4"]
 [ext_resource type="Script" path="res://scripts/level_score.gd" id="6_2ovee"]
+[ext_resource type="AudioStream" uid="uid://bnh6c8padev3p" path="res://sounds/Walk.wav" id="6_xsf7o"]
+[ext_resource type="AudioStream" uid="uid://vdqbu3me0eqx" path="res://sounds/Lost Life.wav" id="7_4toxu"]
 [ext_resource type="Script" path="res://scenes/levels/total_score.gd" id="7_fqub2"]
+[ext_resource type="AudioStream" uid="uid://dayr6beq5ix61" path="res://sounds/8-Bit-Determination.mp3" id="9_2lpr3"]
+[ext_resource type="AudioStream" uid="uid://jq6sskna84md" path="res://sounds/8-Bit-Adventure.mp3" id="9_j10ru"]
+[ext_resource type="Texture2D" uid="uid://cr2ofpefw4esk" path="res://textures/area_2_tileset.png" id="9_jqob4"]
 [ext_resource type="Script" path="res://scenes/levels/total_lives.gd" id="9_sxd78"]
+[ext_resource type="AudioStream" uid="uid://bm77iinsahqcu" path="res://sounds/8-Bit-Groove.mp3" id="10_8a6mp"]
+[ext_resource type="AudioStream" uid="uid://nse8551ks35" path="res://sounds/8-Bit-Menu.mp3" id="11_u1uuc"]
+[ext_resource type="AudioStream" uid="uid://bg736hv8a684p" path="res://sounds/8-Bit-Mountains-Ahead.mp3" id="12_nrsev"]
+[ext_resource type="AudioStream" uid="uid://beyth5y08ieft" path="res://sounds/8-Bit-Shadows.mp3" id="13_63q6o"]
+[ext_resource type="AudioStream" uid="uid://dat8sjbvtsnrv" path="res://sounds/8-Bit-Success.mp3" id="14_3k7b8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vw4w1"]
 atlas = ExtResource("5_2a7h4")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l5fo1"]
+atlas = ExtResource("9_jqob4")
 region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="Animation" id="Animation_fjavp"]
@@ -199,33 +213,31 @@ font_size = 8
 [sub_resource type="LabelSettings" id="LabelSettings_dfk3j"]
 font_size = 8
 
-[node name="Base" type="Node2D"]
+[node name="Base2" type="Node2D"]
 z_as_relative = false
 y_sort_enabled = true
 position = Vector2(213, 120)
 script = ExtResource("1_va1pe")
 maxLevelScore = 100
 levelScoreDecliner = 5
+backgroundMusicTrack = 1
 
 [node name="Ground" type="TileMapLayer" parent="."]
 z_as_relative = false
-tile_map_data = PackedByteArray("AAD//wAAAAAAAAAAAAD/////AAAAAAAAAAD///7/AAAAAAAAAAD///3/AAACAAAAAAD//wEAAAAAAAAAAAD//wIAAAAAAAAAAAD//wMAAAAAAAAAAAD//wQAAAADAAAAAAAAAAQAAAADAAAAAAAAAAMAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//AAAAAAAAAAAAAP7/AAAAAAAAAAAAAP3/AAAAAAAAAAD+//3/AAAAAAAAAAD+//7/AAAAAAAAAAD+////AAAAAAAAAAD+/wAAAAAAAAAAAAD+/wEAAAAAAAAAAAD+/wMAAAAAAAAAAAD+/wIAAAAAAAAAAAD+/wQAAAADAAAAAAD9/wQAAAADAAAAAAD9/wMAAAAAAAAAAAD9/wIAAAAAAAAAAAD9/wEAAAAAAAAAAAD9/wAAAAAAAAAAAAD9////AAAAAAAAAAD9//7/AAAAAAAAAAD9//3/AAAAAAAAAAACAAQAAAADAAAAAAABAAQAAAADAAAAAAABAAMAAAAAAAAAAAABAAIAAAAAAAAAAAABAAEAAAAAAAAAAAABAAAAAAAAAAAAAAABAP//AAAAAAAAAAABAP7/AAAAAAAAAAABAP3/AAAAAAAAAAACAAMAAAAAAAAAAAACAAEAAAAAAAAAAAACAAIAAAAAAAAAAAACAAAAAAAAAAAAAAACAP//AAAAAAAAAAACAP7/AAAAAAAAAAACAP3/AAAAAAAAAAACAPz/AAADAAAAAAABAPz/AAADAAAAAAAAAPz/AAADAAAAAAD///z/AAADAAAAAAD+//z/AAADAAAAAAD9//z/AAADAAAAAAD8//z/AAADAAAAAAD8//3/AAAAAAAAAAD8//7/AAAAAAAAAAD8////AAAAAAAAAAD8/wAAAAADAAAAAAD8/wEAAAAAAAAAAAD8/wIAAAAAAAAAAAD8/wMAAAAAAAAAAAD8/wQAAAADAAAAAAADAAIAAAADAAAAAAADAAEAAAADAAAAAAADAAAAAAADAAAAAAADAP//AAADAAAAAAADAPz/AAADAAAAAAADAP3/AAADAAAAAAADAP7/AAADAAAAAAADAAMAAAADAAAAAAADAAQAAAADAAAAAAD7//z/AAADAAAAAAD7//3/AAADAAAAAAD7//7/AAADAAAAAAD7////AAADAAAAAAD7/wAAAAADAAAAAAD7/wEAAAADAAAAAAD7/wIAAAADAAAAAAD7/wMAAAADAAAAAAD7/wQAAAADAAAAAAA=")
+tile_map_data = PackedByteArray("AAD//wAAAAAAAAAAAAD/////AAADAAAAAAD///7/AAAAAAAAAAD///3/AAACAAAAAAD//wEAAAAAAAAAAAD//wIAAAAAAAAAAAD//wMAAAAAAAAAAAD//wQAAAADAAAAAAAAAAQAAAADAAAAAAAAAAMAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAEAAAADAAAAAAAAAAAAAAAAAAAAAAAAAP//AAADAAAAAAAAAP7/AAAAAAAAAAAAAP3/AAAAAAAAAAD+//3/AAAAAAAAAAD+//7/AAADAAAAAAD+////AAADAAAAAAD+/wAAAAADAAAAAAD+/wEAAAAAAAAAAAD+/wMAAAAAAAAAAAD+/wIAAAAAAAAAAAD+/wQAAAADAAAAAAD9/wQAAAADAAAAAAD9/wMAAAADAAAAAAD9/wIAAAADAAAAAAD9/wEAAAAAAAAAAAD9/wAAAAAAAAAAAAD9////AAAAAAAAAAD9//7/AAAAAAAAAAD9//3/AAAAAAAAAAACAAQAAAADAAAAAAABAAQAAAADAAAAAAABAAMAAAADAAAAAAABAAIAAAADAAAAAAABAAEAAAAAAAAAAAABAAAAAAAAAAAAAAABAP//AAAAAAAAAAABAP7/AAAAAAAAAAABAP3/AAAAAAAAAAACAAMAAAAAAAAAAAACAAEAAAADAAAAAAACAAIAAAADAAAAAAACAAAAAAADAAAAAAACAP//AAADAAAAAAACAP7/AAADAAAAAAACAP3/AAADAAAAAAACAPz/AAADAAAAAAABAPz/AAADAAAAAAAAAPz/AAADAAAAAAD///z/AAADAAAAAAD+//z/AAADAAAAAAD9//z/AAADAAAAAAD8//z/AAADAAAAAAD8//3/AAAAAAAAAAD8//7/AAADAAAAAAD8////AAAAAAAAAAD8/wAAAAAAAAAAAAD8/wEAAAAAAAAAAAD8/wIAAAADAAAAAAD8/wMAAAAAAAAAAAD8/wQAAAADAAAAAAADAAIAAAADAAAAAAADAAEAAAADAAAAAAADAAAAAAADAAAAAAADAP//AAADAAAAAAADAPz/AAADAAAAAAADAP3/AAADAAAAAAADAP7/AAADAAAAAAADAAMAAAADAAAAAAADAAQAAAADAAAAAAD7//z/AAADAAAAAAD7//3/AAADAAAAAAD7//7/AAADAAAAAAD7////AAADAAAAAAD7/wAAAAADAAAAAAD7/wEAAAADAAAAAAD7/wIAAAADAAAAAAD7/wMAAAADAAAAAAD7/wQAAAADAAAAAAA=")
 tile_set = ExtResource("2_pk1ri")
-
-[node name="shadows" type="TileMapLayer" parent="."]
-self_modulate = Color(1, 1, 1, 0.768627)
-z_index = 1
-z_as_relative = false
-tile_set = ExtResource("2_pk1ri")
-script = ExtResource("3_rd4d5")
 
 [node name="Walls" type="TileMapLayer" parent="."]
 z_index = 2
 z_as_relative = false
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAD8/wIAAAAGAAAAAAD8/wEAAAAGAAAAAAD8/wAAAAAGAAAAAAD8////AAAGAAAAAAD8//7/AAAGAAAAAAD8//3/AAAGAAAAAAD8//z/AAAGAAAAAAAAAAIAAAAGAAAAAAAAAAEAAAAGAAAAAAAAAAAAAAAGAAAAAAAAAP//AAAGAAAAAAAAAP7/AAAGAAAAAAAAAP3/AAAGAAAAAAAAAPz/AAAGAAAAAAD9//z/AAAGAAAAAAD///z/AAAGAAAAAAD8/wMAAAAGAAAAAAD9/wMAAAAGAAAAAAD+/wMAAAAGAAAAAAD//wMAAAAGAAAAAAAAAAMAAAAGAAAAAAA=")
+tile_map_data = PackedByteArray("AAD///7/AAAGAAAAAAD+//7/AAAGAAAAAAABAPz/AAAGAAAAAAABAP3/AAAGAAAAAAABAP7/AAAGAAAAAAABAP//AAAGAAAAAAABAAAAAAAGAAAAAAABAAEAAAAGAAAAAAAAAAEAAAAGAAAAAAD7/wEAAAAGAAAAAAD8/wEAAAAGAAAAAAD9//7/AAAGAAAAAAD7//3/AAAGAAAAAAAAAAIAAAAGAAAAAAD8/wIAAAAGAAAAAAD9////AAAGAAAAAAD//wAAAAAGAAAAAAD9//3/AAAGAAAAAAD9//z/AAAGAAAAAAD9//v/AAAGAAAAAAD///v/AAAGAAAAAAA=")
 tile_set = ExtResource("2_pk1ri")
 y_sort_origin = 1
+
+[node name="LevelVictory" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_jqsjl")
+volume_db = -24.0
 
 [node name="player" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -306,11 +318,25 @@ position = Vector2(0, -8)
 texture = SubResource("AtlasTexture_vw4w1")
 offset = Vector2(0, -8)
 
+[node name="Sprite2D11" type="Sprite2D" parent="player"]
+self_modulate = Color(1, 1, 1, 0.392157)
+z_index = 1
+z_as_relative = false
+position = Vector2(0, -8)
+texture = SubResource("AtlasTexture_l5fo1")
+offset = Vector2(0, 8)
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="player"]
 root_node = NodePath("../Sprite2D")
 libraries = {
 "": SubResource("AnimationLibrary_2h7bs")
 }
+
+[node name="Walk" type="AudioStreamPlayer" parent="player"]
+stream = ExtResource("6_xsf7o")
+
+[node name="LostLife" type="AudioStreamPlayer" parent="player"]
+stream = ExtResource("7_4toxu")
 
 [node name="UI" type="Control" parent="."]
 z_index = 10
@@ -381,3 +407,31 @@ offset_right = 189.0
 offset_bottom = -97.0
 label_settings = SubResource("LabelSettings_dfk3j")
 script = ExtResource("9_sxd78")
+
+[node name="8-bit-adventure" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_j10ru")
+volume_db = -24.0
+
+[node name="8-bit-determination" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_2lpr3")
+volume_db = -24.0
+
+[node name="8-bit-groove" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_8a6mp")
+volume_db = -32.0
+
+[node name="8-bit-menu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_u1uuc")
+volume_db = -24.0
+
+[node name="8-bit-mountains-ahead" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_nrsev")
+volume_db = -32.0
+
+[node name="8-bit-shadows" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_63q6o")
+volume_db = -32.0
+
+[node name="8-bit-success" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_3k7b8")
+volume_db = -32.0
