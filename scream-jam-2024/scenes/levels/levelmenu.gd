@@ -1,4 +1,5 @@
 extends VBoxContainer
+@export var next_level = ""
 
 
 # Called when the node enters the scene tree for the first time.
@@ -16,7 +17,7 @@ func _on_levels_pressed() -> void:
 
 
 func _on_next_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/levels/level2.tscn")
+	get_tree().change_scene_to_file(next_level)
 
 func _on_retry_pressed() -> void:
 	get_tree().reload_current_scene()
