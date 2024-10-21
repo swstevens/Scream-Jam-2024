@@ -1,7 +1,7 @@
 [gd_scene load_steps=30 format=4 uid="uid://ca6fidtntsdou"]
 
 [ext_resource type="Script" path="res://scripts/get_map_coord.gd" id="1_jj4rq"]
-[ext_resource type="TileSet" uid="uid://t357gnsrojuh" path="res://textures/default.tres" id="2_p8po5"]
+[ext_resource type="TileSet" uid="uid://t357gnsrojuh" path="res://textures/area1.tres" id="2_p8po5"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="3_uyyam"]
 [ext_resource type="Texture2D" uid="uid://b21y2f46l3cnu" path="res://textures/loose sprites.png" id="4_8mjw3"]
 [ext_resource type="Texture2D" uid="uid://cbf8waqy0cqu7" path="res://textures/iso_tileset.png" id="5_ujo48"]

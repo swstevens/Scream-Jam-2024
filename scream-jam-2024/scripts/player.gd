@@ -44,7 +44,7 @@ func _ready() -> void:
 func _input(event):
 	if event.is_action_pressed("move") == false:
 		return
-	
+
 	#where we clicked
 	var apple: Vector2i = ground.local_to_map(base.to_local(get_global_mouse_position()))
 	#where our character is
@@ -70,7 +70,8 @@ func _input(event):
 					return
 			
 			# Update the position of the character to where we clicked our mouse.
-			position = ground.map_to_local(apple)			
+			position = ground.map_to_local(apple)
+			$"Walk".play()
 			# UPDATES
 
 			# Since we are moving our character, perform the enemy movements
@@ -90,6 +91,8 @@ func _input(event):
 			if colorOfTile.x == 2:
 				base.won()
 				won.show()
+				base.stopBackgroundMusic()
+				$"../LevelVictory".play()
 				Score.UpdateTotalScore(Score.totalScore + Score.levelScore)
 				Score.SetLevelHasBeenCompleted()
 			else:
@@ -174,8 +177,9 @@ func TileCanBeSteppedOn(tile: Vector2i) -> bool:
 func performDeathRoutine():
 	base.lost()
 	Score.DecrementLives()
+	base.stopBackgroundMusic()
+	$"LostLife".play()
 	if Score.getLives() == 0:
 		print("game over")
-
 	await get_tree().create_timer(2.0).timeout
 	get_tree().reload_current_scene()
