@@ -8,9 +8,9 @@ extends Node2D
 
 @onready var dead: Label = $"../UI/dead"
 @onready var won: Label = $"../UI/won"
-var canMove = true
 
 @export var fogOfWarOn = false
+
 
 @onready var move_dl: Sprite2D = $Sprite2D3 # 0,+1
 @onready var move_ur: Sprite2D = $Sprite2D5 # 0,-1
@@ -39,13 +39,10 @@ func _ready() -> void:
 		if shadows:
 			shadows.update_shadows(ground.local_to_map(base.to_local(global_position)))
 		updateEnemies(grid_pos)
-	canMove = true
 	pass
 
 func _input(event):
 	if event.is_action_pressed("move") == false:
-		return
-	if !canMove:
 		return
 
 	#where we clicked
@@ -92,7 +89,7 @@ func _input(event):
 			
 			# If it's a victory tile, show the victory screen.
 			if colorOfTile.x == 2:
-				canMove = false
+				base.won()
 				won.show()
 				base.stopBackgroundMusic()
 				$"../LevelVictory".play()
@@ -178,8 +175,7 @@ func TileCanBeSteppedOn(tile: Vector2i) -> bool:
 			return true
 
 func performDeathRoutine():
-	canMove = false
-	dead.show()
+	base.lost()
 	Score.DecrementLives()
 	base.stopBackgroundMusic()
 	$"LostLife".play()
