@@ -18,6 +18,7 @@ config/icon="res://textures/icon.svg"
 [autoload]
 
 Score="*res://scripts/score.gd"
+level_completion="*res://scripts/level_completion.gd"
 
 [display]
 

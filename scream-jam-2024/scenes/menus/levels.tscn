@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://ccpdr3i5ulqom"]
+[gd_scene load_steps=4 format=3 uid="uid://ccpdr3i5ulqom"]
 
 [ext_resource type="Script" path="res://scripts/levels.gd" id="1_yjf2v"]
+[ext_resource type="Script" path="res://scripts/level_button.gd" id="2_sa88e"]
+
+[sub_resource type="Theme" id="Theme_kej6o"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -29,7 +32,10 @@ columns = 5
 
 [node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = SubResource("Theme_kej6o")
 text = "1"
+script = ExtResource("2_sa88e")
+level = 1
 
 [node name="Button2" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
