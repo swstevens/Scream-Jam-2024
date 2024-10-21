@@ -8,6 +8,7 @@ extends Node2D
 
 @onready var dead: Label = $"../UI/dead"
 @onready var won: Label = $"../UI/won"
+var canMove = true
 
 @export var fogOfWarOn = false
 
@@ -38,12 +39,15 @@ func _ready() -> void:
 		if shadows:
 			shadows.update_shadows(ground.local_to_map(base.to_local(global_position)))
 		updateEnemies(grid_pos)
+	canMove = true
 	pass
 
 func _input(event):
 	if event.is_action_pressed("move") == false:
 		return
-	
+	if !canMove:
+		return
+
 	#where we clicked
 	var apple: Vector2i = ground.local_to_map(base.to_local(get_global_mouse_position()))
 	#where our character is
@@ -69,7 +73,8 @@ func _input(event):
 					return
 			
 			# Update the position of the character to where we clicked our mouse.
-			position = ground.map_to_local(apple)			
+			position = ground.map_to_local(apple)
+			$"Walk".play()
 			# UPDATES
 
 			# Since we are moving our character, perform the enemy movements
@@ -87,7 +92,10 @@ func _input(event):
 			
 			# If it's a victory tile, show the victory screen.
 			if colorOfTile.x == 2:
+				canMove = false
 				won.show()
+				base.stopBackgroundMusic()
+				$"../LevelVictory".play()
 				Score.UpdateTotalScore(Score.totalScore + Score.levelScore)
 				Score.SetLevelHasBeenCompleted()
 			else:
@@ -170,10 +178,12 @@ func TileCanBeSteppedOn(tile: Vector2i) -> bool:
 			return true
 
 func performDeathRoutine():
+	canMove = false
 	dead.show()
 	Score.DecrementLives()
+	base.stopBackgroundMusic()
+	$"LostLife".play()
 	if Score.getLives() == 0:
 		print("game over")
-
 	await get_tree().create_timer(2.0).timeout
 	get_tree().reload_current_scene()
