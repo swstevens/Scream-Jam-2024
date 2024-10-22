@@ -1,10 +1,14 @@
-[gd_scene load_steps=17 format=4 uid="uid://ddm51i1tp5pml"]
+[gd_scene load_steps=24 format=4 uid="uid://ddm51i1tp5pml"]
 
 [ext_resource type="Script" path="res://scripts/get_map_coord.gd" id="1_ddqvj"]
 [ext_resource type="TileSet" uid="uid://t357gnsrojuh" path="res://textures/area1.tres" id="2_epbwo"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="3_vgbed"]
 [ext_resource type="Texture2D" uid="uid://b21y2f46l3cnu" path="res://textures/loose sprites.png" id="4_54f06"]
 [ext_resource type="Texture2D" uid="uid://cbf8waqy0cqu7" path="res://textures/iso_tileset.png" id="5_42exi"]
+[ext_resource type="Script" path="res://scripts/level_score.gd" id="6_rvlnl"]
+[ext_resource type="Script" path="res://scenes/levels/total_score.gd" id="7_5pwaj"]
+[ext_resource type="Script" path="res://scenes/levels/total_lives.gd" id="8_f3kbh"]
+[ext_resource type="Script" path="res://scenes/levels/levelmenu.gd" id="9_b2pug"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vw4w1"]
 atlas = ExtResource("5_42exi")
@@ -186,11 +190,21 @@ _data = {
 "walk upright": SubResource("Animation_486o4")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_uudgj"]
+font_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_4iin5"]
+font_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_vddbq"]
+font_size = 8
+
 [node name="Base2" type="Node2D"]
 z_as_relative = false
 y_sort_enabled = true
 position = Vector2(213, 120)
 script = ExtResource("1_ddqvj")
+level_number = 16
 
 [node name="Ground" type="TileMapLayer" parent="."]
 z_as_relative = false
@@ -308,10 +322,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+offset_left = -34.5
+offset_top = -75.0
+offset_right = 34.5
+offset_bottom = -52.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "You Died"
@@ -324,10 +338,70 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+offset_left = -37.0
+offset_top = -75.0
+offset_right = 37.0
+offset_bottom = -52.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "You Won!"
+
+[node name="levelScore" type="Label" parent="UI"]
+visible = false
+layout_mode = 0
+offset_left = -213.0
+offset_top = -120.0
+offset_right = -173.0
+offset_bottom = -97.0
+label_settings = SubResource("LabelSettings_uudgj")
+script = ExtResource("6_rvlnl")
+
+[node name="totalScore" type="Label" parent="UI"]
+visible = false
+layout_mode = 0
+offset_left = -213.0
+offset_top = -107.0
+offset_right = -173.0
+offset_bottom = -84.0
+label_settings = SubResource("LabelSettings_4iin5")
+script = ExtResource("7_5pwaj")
+
+[node name="totalLives" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 149.0
+offset_top = -120.0
+offset_right = 189.0
+offset_bottom = -97.0
+label_settings = SubResource("LabelSettings_vddbq")
+script = ExtResource("8_f3kbh")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+script = ExtResource("9_b2pug")
+next_level = "res://scenes/levels/level17.tscn"
+
+[node name="Next" type="Button" parent="UI/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Next"
+
+[node name="Retry" type="Button" parent="UI/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Retry"
+
+[node name="Levels" type="Button" parent="UI/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Levels"
+
+[connection signal="pressed" from="UI/VBoxContainer/Next" to="UI/VBoxContainer" method="_on_next_pressed"]
+[connection signal="pressed" from="UI/VBoxContainer/Retry" to="UI/VBoxContainer" method="_on_retry_pressed"]
+[connection signal="pressed" from="UI/VBoxContainer/Levels" to="UI/VBoxContainer" method="_on_levels_pressed"]

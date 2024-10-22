@@ -40,78 +40,116 @@ level = 1
 [node name="Button2" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "2"
+script = ExtResource("2_sa88e")
+level = 2
 
 [node name="Button3" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "3"
+script = ExtResource("2_sa88e")
+level = 3
 
 [node name="Button4" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "4"
+script = ExtResource("2_sa88e")
+level = 4
 
 [node name="Button5" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "5"
+script = ExtResource("2_sa88e")
+level = 5
 
 [node name="Button6" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "6"
+script = ExtResource("2_sa88e")
+level = 6
 
 [node name="Button7" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "7"
+script = ExtResource("2_sa88e")
+level = 7
 
 [node name="Button8" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "8"
+script = ExtResource("2_sa88e")
+level = 8
 
 [node name="Button9" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "9"
+script = ExtResource("2_sa88e")
+level = 9
 
 [node name="Button10" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "10"
+script = ExtResource("2_sa88e")
+level = 10
 
 [node name="Button11" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "11"
+script = ExtResource("2_sa88e")
+level = 11
 
 [node name="Button12" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "12"
+script = ExtResource("2_sa88e")
+level = 12
 
 [node name="Button13" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "13"
+script = ExtResource("2_sa88e")
+level = 13
 
 [node name="Button14" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "14"
+script = ExtResource("2_sa88e")
+level = 14
 
 [node name="Button15" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "15"
+script = ExtResource("2_sa88e")
+level = 15
 
 [node name="Button16" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "16"
+script = ExtResource("2_sa88e")
+level = 16
 
 [node name="Button17" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "17"
+script = ExtResource("2_sa88e")
+level = 17
 
 [node name="Button18" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "18"
+script = ExtResource("2_sa88e")
+level = 18
 
 [node name="Button19" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "19"
+script = ExtResource("2_sa88e")
+level = 19
 
 [node name="Button20" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "20"
+script = ExtResource("2_sa88e")
+level = 20
 
 [node name="Back" type="Button" parent="MarginContainer"]
 layout_mode = 2
@@ -120,4 +158,23 @@ size_flags_vertical = 8
 text = "Back"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button1_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button6" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button7" to="." method="_on_button_7_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button8" to="." method="_on_button_8_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button9" to="." method="_on_button_9_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button10" to="." method="_on_button_10_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button11" to="." method="_on_button_11_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button12" to="." method="_on_button_12_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button13" to="." method="_on_button_13_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button14" to="." method="_on_button_14_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button15" to="." method="_on_button_15_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button16" to="." method="_on_button_16_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button17" to="." method="_on_button_17_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button18" to="." method="_on_button_18_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button19" to="." method="_on_button_19_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button20" to="." method="_on_button_20_pressed"]
 [connection signal="pressed" from="MarginContainer/Back" to="." method="_on_back_pressed"]

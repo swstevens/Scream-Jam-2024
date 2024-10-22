@@ -7,7 +7,7 @@ var level_completed : Array[int] = []
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#level_completed.push_back(1)
-	for i in range(15):
+	for i in range(20):
 		level_completed.push_back(0)
 	print(level_completed)
 	pass # Replace with function body.

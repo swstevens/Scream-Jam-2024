@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=4 uid="uid://begj1gb0nhwuq"]
+[gd_scene load_steps=63 format=4 uid="uid://begj1gb0nhwuq"]
 
 [ext_resource type="Script" path="res://scripts/get_map_coord.gd" id="1_7u132"]
 [ext_resource type="TileSet" uid="uid://bvlw3yk5ab4d7" path="res://textures/area2.tres" id="2_a8jam"]
@@ -25,6 +25,7 @@
 [ext_resource type="AudioStream" uid="uid://bg736hv8a684p" path="res://sounds/8-Bit-Mountains-Ahead.mp3" id="20_y7rlo"]
 [ext_resource type="AudioStream" uid="uid://beyth5y08ieft" path="res://sounds/8-Bit-Shadows.mp3" id="21_jde8e"]
 [ext_resource type="AudioStream" uid="uid://dat8sjbvtsnrv" path="res://sounds/8-Bit-Success.mp3" id="22_ihila"]
+[ext_resource type="Script" path="res://scenes/levels/levelmenu.gd" id="26_q2pvg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vw4w1"]
 atlas = ExtResource("5_ovell")
@@ -210,15 +211,6 @@ _data = {
 "walk upright": SubResource("Animation_486o4")
 }
 
-[sub_resource type="LabelSettings" id="LabelSettings_v8ptq"]
-font_size = 8
-
-[sub_resource type="LabelSettings" id="LabelSettings_uthvd"]
-font_size = 8
-
-[sub_resource type="LabelSettings" id="LabelSettings_ogfbe"]
-font_size = 8
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_pr3ux"]
 atlas = ExtResource("16_gx5sq")
 region = Rect2(224, 0, 32, 32)
@@ -362,11 +354,21 @@ animations = [{
 atlas = ExtResource("16_gx5sq")
 region = Rect2(224, 0, 32, 32)
 
+[sub_resource type="LabelSettings" id="LabelSettings_l2180"]
+font_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_u6jcq"]
+font_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_ebttp"]
+font_size = 8
+
 [node name="Base" type="Node2D"]
 z_as_relative = false
 y_sort_enabled = true
 position = Vector2(213, 120)
 script = ExtResource("1_7u132")
+level_number = 7
 key1Tile = Vector2i(-1, -5)
 door1Tile = Vector2i(-1, 6)
 keydoorActive = true
@@ -492,78 +494,6 @@ stream = ExtResource("10_yipud")
 [node name="LostLife" type="AudioStreamPlayer" parent="player"]
 stream = ExtResource("11_mjips")
 volume_db = -24.0
-
-[node name="UI" type="Control" parent="."]
-z_index = 10
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="dead" type="Label" parent="UI"]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "You Died"
-
-[node name="won" type="Label" parent="UI"]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "You Won!"
-
-[node name="levelScore" type="Label" parent="UI"]
-visible = false
-layout_mode = 0
-offset_left = -213.0
-offset_top = -120.0
-offset_right = -173.0
-offset_bottom = -97.0
-label_settings = SubResource("LabelSettings_v8ptq")
-script = ExtResource("6_3uqr2")
-
-[node name="totalScore" type="Label" parent="UI"]
-visible = false
-layout_mode = 0
-offset_left = -213.0
-offset_top = -107.0
-offset_right = -173.0
-offset_bottom = -84.0
-label_settings = SubResource("LabelSettings_uthvd")
-script = ExtResource("7_11wl8")
-
-[node name="totalLives" type="Label" parent="UI"]
-layout_mode = 0
-offset_left = 149.0
-offset_top = -120.0
-offset_right = 189.0
-offset_bottom = -97.0
-label_settings = SubResource("LabelSettings_ogfbe")
-script = ExtResource("13_hc47y")
 
 [node name="enemy_a2" type="Node2D" parent="."]
 z_index = 2
@@ -714,3 +644,106 @@ volume_db = -32.0
 [node name="8-bit-success" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_ihila")
 volume_db = -32.0
+
+[node name="UI" type="Control" parent="."]
+z_index = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="dead" type="Label" parent="UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.5
+offset_top = -75.0
+offset_right = 34.5
+offset_bottom = -52.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "You Died"
+
+[node name="won" type="Label" parent="UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.0
+offset_top = -75.0
+offset_right = 37.0
+offset_bottom = -52.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "You Won!"
+
+[node name="levelScore" type="Label" parent="UI"]
+visible = false
+layout_mode = 0
+offset_left = -213.0
+offset_top = -120.0
+offset_right = -173.0
+offset_bottom = -97.0
+label_settings = SubResource("LabelSettings_l2180")
+script = ExtResource("6_3uqr2")
+
+[node name="totalScore" type="Label" parent="UI"]
+visible = false
+layout_mode = 0
+offset_left = -213.0
+offset_top = -107.0
+offset_right = -173.0
+offset_bottom = -84.0
+label_settings = SubResource("LabelSettings_u6jcq")
+script = ExtResource("7_11wl8")
+
+[node name="totalLives" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 149.0
+offset_top = -120.0
+offset_right = 189.0
+offset_bottom = -97.0
+label_settings = SubResource("LabelSettings_ebttp")
+script = ExtResource("13_hc47y")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+script = ExtResource("26_q2pvg")
+next_level = "res://scenes/levels/level8.tscn"
+
+[node name="Next" type="Button" parent="UI/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Next"
+
+[node name="Retry" type="Button" parent="UI/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Retry"
+
+[node name="Levels" type="Button" parent="UI/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Levels"
+
+[connection signal="pressed" from="UI/VBoxContainer/Next" to="UI/VBoxContainer" method="_on_next_pressed"]
+[connection signal="pressed" from="UI/VBoxContainer/Retry" to="UI/VBoxContainer" method="_on_retry_pressed"]
+[connection signal="pressed" from="UI/VBoxContainer/Levels" to="UI/VBoxContainer" method="_on_levels_pressed"]
