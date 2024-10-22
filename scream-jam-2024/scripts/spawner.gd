@@ -28,28 +28,27 @@ func _ready() -> void:
 	position = ground.map_to_local(ground.local_to_map(base.to_local(global_position)))
 
 func move(player_loc: Vector2i)->void:
-	if totalSpawns < maxSpawns:
-		if counter == timer_limit:
-			var instance
-			if isChaser:
-				instance = ENEMY_SMART.instantiate()
-			else:
-				instance = ENEMY_DUMB.instantiate()
-			instance.position = position
-			instance.name = "enemy_"+name+str(id_num)
-			instance.direction = direction
-			id_num+=1
-			get_parent().add_child(instance)
-			print("GOGOGO")
-			counter = 0
+	if counter == timer_limit:
+		var instance
+		if isChaser:
+			instance = ENEMY_SMART.instantiate()
 		else:
-			counter +=1
-		if timer_limit == counter:
-			if animated_sprite_2d:
-				animated_sprite_2d.show()
-		else:
-			if animated_sprite_2d:
-				animated_sprite_2d.hide()
-		print("timer ",counter)
-		totalSpawns += 1
-		pass
+			instance = ENEMY_DUMB.instantiate()
+		instance.position = position
+		instance.name = "enemy_"+name+str(id_num)
+		instance.direction = direction
+		id_num+=1
+		get_parent().add_child(instance)
+		print("GOGOGO")
+		counter = 0
+	else:
+		counter +=1
+	if timer_limit == counter:
+		if animated_sprite_2d:
+			animated_sprite_2d.show()
+	else:
+		if animated_sprite_2d:
+			animated_sprite_2d.hide()
+	print("timer ",counter)
+	totalSpawns += 1
+	pass
