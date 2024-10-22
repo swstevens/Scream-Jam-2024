@@ -188,12 +188,13 @@ func TileCanBeSteppedOn(tile: Vector2i) -> bool:
 			return true
 
 func performDeathRoutine():
-	base.lost()
 	Score.DecrementLives()
 	base.stopBackgroundMusic()
 	$"LostLife".play()
 	if Score.getLives() == 0:
 		#go back to main menu
+		base.lost()
 		print("game over")
-	await get_tree().create_timer(2.0).timeout
-	get_tree().reload_current_scene()
+	else:
+		await get_tree().create_timer(2.0).timeout
+		get_tree().reload_current_scene()
