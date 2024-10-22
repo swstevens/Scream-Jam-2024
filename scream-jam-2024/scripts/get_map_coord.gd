@@ -37,6 +37,7 @@ var key3Pressed = false
 
 @export var backgroundMusicTrack = 0
 
+var complete = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if Score.isFirstTimeLoadingLevel:
@@ -66,7 +67,17 @@ func _process(_delta: float) -> void:
 			$"Door".play()
 		key3Pressed = true
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("escape") == true and not complete:
+		if levels.visible:
+			Player.set_process_input(true)
+			levels.hide()
+		else:
+			Player.set_process_input(false)
+			levels.show()
+
 func won() -> void:
+	complete = true
 	level_completion.updateLevelComplete(level_number)
 	Player.set_process_input(false)
 	won_text.show()
@@ -74,6 +85,7 @@ func won() -> void:
 	levels.show()
 
 func lost() -> void:
+	complete = true
 	Player.set_process_input(false)
 	dead_text.show()
 	retry.show()
