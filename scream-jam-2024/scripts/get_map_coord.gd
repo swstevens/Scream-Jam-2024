@@ -12,6 +12,7 @@ var normalWalkTile: Vector2i = Vector2i(0,0)
 @onready var levels: Button = $UI/VBoxContainer/Levels
 @onready var dead_text: Label = $UI/dead
 @onready var won_text: Label = $UI/won
+@onready var shadows: TileMapLayer = $shadows
 
 @export var level_number = 1
 
@@ -42,6 +43,8 @@ func _ready() -> void:
 		Score.levelScore = maxLevelScore
 		Score.SetLevelHasBeenLoaded()
 	playBackgroundMusic()
+	if level_completion.fog_of_war and shadows:
+		shadows.show()
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -64,7 +67,7 @@ func _process(_delta: float) -> void:
 		key3Pressed = true
 
 func won() -> void:
-	level_completion.level_completed[level_number-1] = 1
+	level_completion.updateLevelComplete(level_number)
 	Player.set_process_input(false)
 	won_text.show()
 	next.show()

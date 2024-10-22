@@ -157,6 +157,13 @@ size_flags_horizontal = 0
 size_flags_vertical = 8
 text = "Back"
 
+[node name="Fog of War" type="Button" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+toggle_mode = true
+text = "Fog of War: On"
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button1_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button3" to="." method="_on_button_3_pressed"]
@@ -178,3 +185,4 @@ text = "Back"
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button19" to="." method="_on_button_19_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button20" to="." method="_on_button_20_pressed"]
 [connection signal="pressed" from="MarginContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="MarginContainer/Fog of War" to="." method="_on_button_fow_pressed"]

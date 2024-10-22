@@ -1,6 +1,11 @@
 extends Control
+@onready var fog_of_war: Button = $"MarginContainer/Fog of War"
 
-
+func _ready() -> void:
+	if level_completion.fog_of_war:
+		fog_of_war.text = "Fog of War: On"
+	else:
+		fog_of_war.text = "Fog of War: Off"
 
 func _on_back_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/menus/menu.tscn")
@@ -84,3 +89,13 @@ func _on_button_19_pressed() -> void:
 
 func _on_button_20_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/levels/level1.tscn")
+
+
+func _on_button_fow_pressed() -> void:
+	if level_completion.fog_of_war:
+		level_completion.fog_of_war = false
+		fog_of_war.text = "Fog of War: Off"
+	else:
+		level_completion.fog_of_war = true
+		fog_of_war.text = "Fog of War: On"
+		
