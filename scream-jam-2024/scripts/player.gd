@@ -9,7 +9,7 @@ extends Node2D
 @onready var dead: Label = $"../UI/dead"
 @onready var won: Label = $"../UI/won"
 
-@export var fogOfWarOn = false
+@export var fogOfWarOn = level_completion.fog_of_war
 
 
 @onready var move_dl: Sprite2D = $Sprite2D3 # 0,+1
@@ -28,6 +28,7 @@ var lives = 3
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	fogOfWarOn = level_completion.fog_of_war
 	var grid_pos = ground.local_to_map(base.to_local(global_position))
 	position = ground.map_to_local(grid_pos)
 	directions = [[Vector2i(0,1),move_dl],[Vector2i(0,-1),move_ur],[Vector2i(1,0),move_dr],[Vector2i(-1,0),move_ul],[Vector2i(1,1),move_d],[Vector2i(-1,1),move_l],[Vector2i(1,-1),move_r],[Vector2i(-1,-1),move_u]]
@@ -39,7 +40,14 @@ func _ready() -> void:
 	if fogOfWarOn:
 		if shadows:
 			shadows.update_shadows(ground.local_to_map(base.to_local(global_position)))
-		updateEnemies(grid_pos)
+		for enemy in enemies:
+			var enemy_loc = ground.local_to_map(base.to_local(enemy.global_position))
+			print(abs(enemy_loc.x-grid_pos.x) + abs(enemy_loc.y+grid_pos.y))
+			if fogOfWarOn:
+				if abs(enemy_loc.x-grid_pos.x) + abs(enemy_loc.y-grid_pos.y) <= 3:
+					enemy.show()
+				else:
+					enemy.hide()
 	pass
 
 func _input(event):
@@ -82,7 +90,7 @@ func _input(event):
 
 			# Since we are moving our character, perform the enemy movements
 			enemies = get_tree().get_root().find_children("enemy*", "", true, false)
-			updateEnemies(position)
+			updateEnemies(ground.local_to_map(base.to_local(global_position)))
 			for spawner in spawners:
 				spawner.move(apple)
 
@@ -125,20 +133,19 @@ func updateTiles():
 		
 func updateEnemies(player_loc: Vector2i):
 	for enemy in enemies:
-		var enemy_loc = ground.local_to_map(base.to_local(enemy.global_position))
-		print(abs(enemy_loc.x-player_loc.x) + abs(enemy_loc.y+player_loc.y))
-		if fogOfWarOn:
-			if abs(enemy_loc.x-player_loc.x) + abs(enemy_loc.y-player_loc.y) <= 3:
-				enemy.show()
-			else:
-				enemy.hide()
+
 
 		if position == enemy.position:
 			performDeathRoutine()
 		else:
 			# call local_to_map so that the chaser enemy has an accurate coordinate
 			enemy.move(ground.local_to_map(position))
-		
+		var enemy_loc = ground.local_to_map(base.to_local(enemy.global_position))
+		if fogOfWarOn:
+			if (abs(enemy_loc.x-player_loc.x) + abs(enemy_loc.y-player_loc.y)) <= 3:
+				enemy.show()
+			else:
+				enemy.hide()
 		# check twice in case the player stood still (for some reason this is required?)
 		if position == enemy.position:
 			performDeathRoutine()
@@ -181,12 +188,13 @@ func TileCanBeSteppedOn(tile: Vector2i) -> bool:
 			return true
 
 func performDeathRoutine():
-	base.lost()
 	Score.DecrementLives()
 	base.stopBackgroundMusic()
 	$"LostLife".play()
 	if Score.getLives() == 0:
 		#go back to main menu
+		base.lost()
 		print("game over")
-	await get_tree().create_timer(2.0).timeout
-	get_tree().reload_current_scene()
+	else:
+		await get_tree().create_timer(2.0).timeout
+		get_tree().reload_current_scene()

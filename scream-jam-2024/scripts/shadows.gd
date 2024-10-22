@@ -6,11 +6,13 @@ var cells
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	cells = ground.get_used_cells()
+	print(cells)
 	for cell in cells:
 		set_cell(Vector2i(cell.x,cell.y),0,Vector2i(7,0),0)
 	pass # Replace with function body.
 
 func update_shadows(player_loc: Vector2i) -> void:
+	pass
 	for i in range(-4,5):
 		for j in range(-4,5):
 			print(i,j)

@@ -12,12 +12,19 @@ var normalWalkTile: Vector2i = Vector2i(0,0)
 @onready var levels: Button = $UI/VBoxContainer/Levels
 @onready var dead_text: Label = $UI/dead
 @onready var won_text: Label = $UI/won
+@onready var shadows: TileMapLayer = $shadows
 
 @export var level_number = 1
 
 var key1Pressed = false
+var key2Pressed = false
+var key3Pressed = false
 @export var key1Tile: Vector2i = Vector2i(0, 0)
 @export var door1Tile: Vector2i = Vector2i(0, 0)
+@export var key2Tile: Vector2i = Vector2i(100, 0)
+@export var door2Tile: Vector2i = Vector2i(100, 0)
+@export var key3Tile: Vector2i = Vector2i(100, 0)
+@export var door3Tile: Vector2i = Vector2i(100, 0)
 @export var keydoorActive = false
 
 @export var teleporterA1 = Vector2i(0, 0)
@@ -30,12 +37,15 @@ var key1Pressed = false
 
 @export var backgroundMusicTrack = 0
 
+var complete = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if Score.isFirstTimeLoadingLevel:
 		Score.levelScore = maxLevelScore
 		Score.SetLevelHasBeenLoaded()
 	playBackgroundMusic()
+	if level_completion.fog_of_war and shadows:
+		shadows.show()
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -46,15 +56,36 @@ func _process(_delta: float) -> void:
 			Ground.set_cell(door1Tile, 0, normalWalkTile, 0)
 			$"Door".play()
 		key1Pressed = true
+	if keydoorActive and PlayerPos == key2Tile:
+		if key2Pressed == false:
+			Ground.set_cell(door2Tile, 0, normalWalkTile, 0)
+			$"Door".play()
+		key2Pressed = true
+	if keydoorActive and PlayerPos == key3Tile:
+		if key3Pressed == false:
+			Ground.set_cell(door3Tile, 0, normalWalkTile, 0)
+			$"Door".play()
+		key3Pressed = true
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("escape") == true and not complete:
+		if levels.visible:
+			Player.set_process_input(true)
+			levels.hide()
+		else:
+			Player.set_process_input(false)
+			levels.show()
 
 func won() -> void:
-	level_completion.level_completed[level_number-1] = 1
+	complete = true
+	level_completion.updateLevelComplete(level_number)
 	Player.set_process_input(false)
 	won_text.show()
 	next.show()
 	levels.show()
 
 func lost() -> void:
+	complete = true
 	Player.set_process_input(false)
 	dead_text.show()
 	retry.show()

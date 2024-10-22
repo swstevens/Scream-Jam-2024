@@ -1,8 +1,9 @@
-[gd_scene load_steps=50 format=4 uid="uid://bkkv4yjst1njk"]
+[gd_scene load_steps=51 format=4 uid="uid://bkkv4yjst1njk"]
 
 [ext_resource type="Script" path="res://scripts/get_map_coord.gd" id="1_8nj77"]
 [ext_resource type="TileSet" uid="uid://t357gnsrojuh" path="res://textures/area1.tres" id="2_r8pl2"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="3_l3big"]
+[ext_resource type="Script" path="res://scripts/shadows.gd" id="3_xbcyl"]
 [ext_resource type="AudioStream" uid="uid://dbboemw23xegk" path="res://sounds/Level Victory.mp3" id="3_ywpei"]
 [ext_resource type="Texture2D" uid="uid://b21y2f46l3cnu" path="res://textures/loose sprites.png" id="4_gnek2"]
 [ext_resource type="Texture2D" uid="uid://cbf8waqy0cqu7" path="res://textures/iso_tileset.png" id="5_8n4a0"]
@@ -306,6 +307,14 @@ backgroundMusicTrack = 1
 z_as_relative = false
 tile_map_data = PackedByteArray("AAD//wAAAAADAAAAAAD/////AAAAAAAAAAD///7/AAADAAAAAAD//wEAAAADAAAAAAD//wIAAAADAAAAAAD//wMAAAAAAAAAAAD//wQAAAADAAAAAAAAAAQAAAADAAAAAAAAAAMAAAAAAAAAAAAAAAIAAAADAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//AAAAAAAAAAAAAP7/AAADAAAAAAAAAP3/AAAAAAAAAAD+//3/AAAAAAAAAAD+//7/AAADAAAAAAD+/wAAAAAAAAAAAAD+/wEAAAAAAAAAAAD+/wMAAAAAAAAAAAD+/wIAAAAAAAAAAAD+/wQAAAADAAAAAAD9/wQAAAADAAAAAAD9/wMAAAAAAAAAAAD9/wIAAAADAAAAAAD9/wEAAAAAAAAAAAD9/wAAAAAAAAAAAAD9////AAAAAAAAAAD9//7/AAADAAAAAAD9//3/AAAAAAAAAAACAAQAAAADAAAAAAABAAQAAAADAAAAAAABAAMAAAAAAAAAAAABAAIAAAADAAAAAAABAAEAAAAAAAAAAAABAAAAAAAAAAAAAAABAP//AAAAAAAAAAABAP7/AAADAAAAAAABAP3/AAAAAAAAAAACAAMAAAAAAAAAAAACAAEAAAAAAAAAAAACAAIAAAADAAAAAAACAAAAAAAAAAAAAAACAP//AAAAAAAAAAACAP7/AAAAAAAAAAACAP3/AAAAAAAAAAACAPz/AAADAAAAAAABAPz/AAADAAAAAAAAAPz/AAADAAAAAAD///z/AAADAAAAAAD+//z/AAADAAAAAAD9//z/AAADAAAAAAD8//z/AAADAAAAAAD8//3/AAACAAAAAAD8//7/AAADAAAAAAD8////AAAAAAAAAAD8/wAAAAAAAAAAAAD8/wEAAAAAAAAAAAD8/wIAAAADAAAAAAD8/wMAAAAAAAAAAAD8/wQAAAADAAAAAAADAAIAAAADAAAAAAADAAEAAAADAAAAAAADAAAAAAADAAAAAAADAP//AAADAAAAAAADAPz/AAADAAAAAAADAP3/AAADAAAAAAADAP7/AAADAAAAAAADAAMAAAADAAAAAAADAAQAAAADAAAAAAD7//z/AAADAAAAAAD7//3/AAADAAAAAAD7//7/AAADAAAAAAD7////AAADAAAAAAD7/wAAAAADAAAAAAD7/wEAAAADAAAAAAD7/wIAAAADAAAAAAD7/wMAAAADAAAAAAD7/wQAAAADAAAAAAD+////AAAAAAAAAAD///3/AAAAAAAAAAA=")
 tile_set = ExtResource("2_r8pl2")
+
+[node name="shadows" type="TileMapLayer" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0.768627)
+z_index = 1
+z_as_relative = false
+tile_set = ExtResource("2_r8pl2")
+script = ExtResource("3_xbcyl")
 
 [node name="Walls" type="TileMapLayer" parent="."]
 z_index = 2
