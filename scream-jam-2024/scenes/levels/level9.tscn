@@ -1,7 +1,7 @@
 [gd_scene load_steps=61 format=4 uid="uid://dusgik287yilc"]
 
 [ext_resource type="Script" path="res://scripts/get_map_coord.gd" id="1_ibnwb"]
-[ext_resource type="TileSet" uid="uid://cffn61d4fow0d" path="res://textures/area2.tres" id="2_kk3e3"]
+[ext_resource type="TileSet" uid="uid://bvlw3yk5ab4d7" path="res://textures/area2.tres" id="2_kk3e3"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="3_xhhks"]
 [ext_resource type="Texture2D" uid="uid://b21y2f46l3cnu" path="res://textures/loose sprites.png" id="4_cjwhq"]
 [ext_resource type="AudioStream" uid="uid://dbboemw23xegk" path="res://sounds/Level Victory.mp3" id="4_sj8yy"]
@@ -564,6 +564,7 @@ label_settings = SubResource("LabelSettings_uthvd")
 script = ExtResource("7_a5xri")
 
 [node name="totalLives" type="Label" parent="UI"]
+layout_mode = 0
 offset_left = 149.0
 offset_top = -120.0
 offset_right = 189.0

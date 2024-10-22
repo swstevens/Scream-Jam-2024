@@ -71,7 +71,8 @@ func _input(event):
 					return
 			
 			# Update the position of the character to where we clicked our mouse.
-
+			position = ground.map_to_local(apple)
+			$"Walk".play()
 			# UPDATES
 
 			# If it's a teleporter tile, update the position of the player.
