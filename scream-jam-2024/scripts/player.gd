@@ -70,8 +70,7 @@ func _input(event):
 					return
 			
 			# Update the position of the character to where we clicked our mouse.
-			position = ground.map_to_local(apple)
-			$"Walk".play()
+
 			# UPDATES
 
 			# Since we are moving our character, perform the enemy movements
@@ -82,8 +81,13 @@ func _input(event):
 			for spawner in spawners:
 				spawner.move(apple)
 			enemies = get_tree().get_root().find_children("enemy*", "", true, false)
-			
-			updateEnemies(apple)
+			if updateEnemies(apple):
+				return
+
+			position = ground.map_to_local(apple)
+			$"Walk".play()
+			if updateEnemies(apple):
+				return
 			
 			# Finally, perform 'special tile' checks.
 			
@@ -138,6 +142,8 @@ func updateEnemies(player_loc: Vector2i):
 				enemy.hide()
 		if position == enemy.position:
 			performDeathRoutine()
+			return 1
+	return 0
 
 func updateAnimation(MovementVector: Vector2i):
 	var animationString: String = "walk "
