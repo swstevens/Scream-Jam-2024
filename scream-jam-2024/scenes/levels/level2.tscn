@@ -1,7 +1,7 @@
 [gd_scene load_steps=49 format=4 uid="uid://bkkv4yjst1njk"]
 
 [ext_resource type="Script" path="res://scripts/get_map_coord.gd" id="1_8nj77"]
-[ext_resource type="TileSet" uid="uid://cy5cesw80bnhu" path="res://textures/area1.tres" id="2_r8pl2"]
+[ext_resource type="TileSet" uid="uid://t357gnsrojuh" path="res://textures/area1.tres" id="2_r8pl2"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="3_l3big"]
 [ext_resource type="AudioStream" uid="uid://dbboemw23xegk" path="res://sounds/Level Victory.mp3" id="3_ywpei"]
 [ext_resource type="Texture2D" uid="uid://b21y2f46l3cnu" path="res://textures/loose sprites.png" id="4_gnek2"]
@@ -25,6 +25,10 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vw4w1"]
 atlas = ExtResource("5_8n4a0")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6hd0o"]
+atlas = ExtResource("9_noiua")
 region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="Animation" id="Animation_fjavp"]
@@ -203,10 +207,6 @@ _data = {
 "walk upright": SubResource("Animation_486o4")
 }
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6hd0o"]
-atlas = ExtResource("9_noiua")
-region = Rect2(224, 0, 32, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_7gaad"]
 atlas = ExtResource("7_3lilr")
 region = Rect2(0, 0, 32, 32)
@@ -309,7 +309,7 @@ tile_set = ExtResource("2_r8pl2")
 z_index = 2
 z_as_relative = false
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAD8/wEAAAAGAAAAAAAAAP3/AAAGAAAAAAAAAAEAAAAGAAAAAAD8//3/AAAGAAAAAAD+////AAAGAAAAAAABAAEAAAAGAAAAAAD7/wEAAAAGAAAAAAD//wEAAAAGAAAAAAD+/wEAAAAGAAAAAAD+/wAAAAAGAAAAAAD7//3/AAAGAAAAAAD9//3/AAAGAAAAAAD///3/AAAGAAAAAAD+//3/AAAGAAAAAAAAAAMAAAAGAAAAAAACAAMAAAAGAAAAAAD6//3/AAAGAAAAAAD6//z/AAAGAAAAAAD7//v/AAAGAAAAAAD6//v/AAAGAAAAAAA=")
+tile_map_data = PackedByteArray("AAD8/wEAAAAGAAAAAAAAAP3/AAAGAAAAAAAAAAEAAAAGAAAAAAD8//3/AAAGAAAAAAD+////AAAGAAAAAAABAAEAAAAGAAAAAAD7/wEAAAAGAAAAAAD//wEAAAAGAAAAAAD+/wEAAAAGAAAAAAD+/wAAAAAGAAAAAAD7//3/AAAGAAAAAAD9//3/AAAGAAAAAAD///3/AAAGAAAAAAD+//3/AAAGAAAAAAA=")
 tile_set = ExtResource("2_r8pl2")
 y_sort_origin = 1
 
@@ -396,6 +396,14 @@ position = Vector2(0, -8)
 texture = SubResource("AtlasTexture_vw4w1")
 offset = Vector2(0, -8)
 
+[node name="Sprite2D11" type="Sprite2D" parent="player"]
+self_modulate = Color(1, 1, 1, 0.392157)
+z_index = 1
+z_as_relative = false
+position = Vector2(0, -8)
+texture = SubResource("AtlasTexture_6hd0o")
+offset = Vector2(0, 8)
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="player"]
 root_node = NodePath("../Sprite2D")
 libraries = {
@@ -408,14 +416,6 @@ stream = ExtResource("7_drdtv")
 [node name="LostLife" type="AudioStreamPlayer" parent="player"]
 stream = ExtResource("8_02tnh")
 volume_db = -24.0
-
-[node name="Sprite2D11" type="Sprite2D" parent="player"]
-self_modulate = Color(1, 1, 1, 0.392157)
-z_index = 1
-z_as_relative = false
-position = Vector2(0, -8)
-texture = SubResource("AtlasTexture_6hd0o")
-offset = Vector2(0, 8)
 
 [node name="enemy_a" type="Node2D" parent="."]
 z_index = 2

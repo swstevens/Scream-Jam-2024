@@ -1,43 +1,43 @@
-[gd_scene load_steps=15 format=3 uid="uid://0lp5anklcatl"]
+[gd_scene load_steps=15 format=3 uid="uid://ce4bs6q67x0dk"]
 
-[ext_resource type="Script" path="res://scripts/enemy_dumb.gd" id="1_li3k3"]
-[ext_resource type="Texture2D" uid="uid://dapnqabsdbfqt" path="res://textures/Zombie.png" id="2_6df1u"]
-[ext_resource type="Texture2D" uid="uid://chnxf0ujd0kvq" path="res://textures/area_3_tileset.png" id="3_8sep5"]
+[ext_resource type="Script" path="res://scripts/chaser_simpler.gd" id="1_uxcbb"]
+[ext_resource type="Texture2D" uid="uid://dapnqabsdbfqt" path="res://textures/Zombie.png" id="2_re7ww"]
+[ext_resource type="Texture2D" uid="uid://chnxf0ujd0kvq" path="res://textures/area_3_tileset.png" id="3_yjbc6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cqyoh"]
-atlas = ExtResource("2_6df1u")
+atlas = ExtResource("2_re7ww")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_phemv"]
-atlas = ExtResource("2_6df1u")
+atlas = ExtResource("2_re7ww")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_svvwr"]
-atlas = ExtResource("2_6df1u")
+atlas = ExtResource("2_re7ww")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gpqnh"]
-atlas = ExtResource("2_6df1u")
+atlas = ExtResource("2_re7ww")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7c7av"]
-atlas = ExtResource("2_6df1u")
+atlas = ExtResource("2_re7ww")
 region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pmp7w"]
-atlas = ExtResource("2_6df1u")
+atlas = ExtResource("2_re7ww")
 region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2t0oa"]
-atlas = ExtResource("2_6df1u")
+atlas = ExtResource("2_re7ww")
 region = Rect2(192, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y65kk"]
-atlas = ExtResource("2_6df1u")
+atlas = ExtResource("2_re7ww")
 region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7e0oi"]
-atlas = ExtResource("2_6df1u")
+atlas = ExtResource("2_re7ww")
 region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2ebya"]
@@ -76,13 +76,13 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e1d8m"]
-atlas = ExtResource("3_8sep5")
+atlas = ExtResource("3_yjbc6")
 region = Rect2(224, 0, 32, 32)
 
-[node name="enemy_dumb" type="Node2D"]
+[node name="enemy_smart" type="Node2D"]
 z_as_relative = false
 y_sort_enabled = true
-script = ExtResource("1_li3k3")
+script = ExtResource("1_uxcbb")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
 z_index = 2

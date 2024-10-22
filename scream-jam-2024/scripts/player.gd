@@ -53,6 +53,7 @@ func _input(event):
 	print(apple,beta)
 	
 	if abs(apple.x - beta.x) <= 1 and abs(apple.y - beta.y) <= 1:
+		
 		# update the player animation based on where we clicked
 		updateAnimation(Vector2i(apple.x - beta.x, apple.y - beta.y))
 		
@@ -70,27 +71,21 @@ func _input(event):
 					return
 			
 			# Update the position of the character to where we clicked our mouse.
-
+			position = ground.map_to_local(apple)
+			$"Walk".play()
 			# UPDATES
+
+			# If it's a teleporter tile, update the position of the player.
+			if colorOfTile.x == 5:
+				position = ground.map_to_local(base.teleportPlayerTo())
 
 			# Since we are moving our character, perform the enemy movements
 			enemies = get_tree().get_root().find_children("enemy*", "", true, false)
-
-			for enemy in enemies:
-				enemy.move(apple)
+			updateEnemies(position)
 			for spawner in spawners:
 				spawner.move(apple)
-			enemies = get_tree().get_root().find_children("enemy*", "", true, false)
-			if updateEnemies(apple):
-				return
 
-			position = ground.map_to_local(apple)
-			$"Walk".play()
-			if updateEnemies(apple):
-				return
-			
-			# Finally, perform 'special tile' checks.
-			
+			# Finally, perform 'special tile' checks.	
 			# If it's a victory tile, show the victory screen.
 			if colorOfTile.x == 2:
 				base.won()
@@ -101,10 +96,6 @@ func _input(event):
 				Score.SetLevelHasBeenCompleted()
 			else:
 				Score.DecrementLevelScore(base.levelScoreDecliner)
-
-			# If it's a teleporter tile, update the position of the player.
-			if colorOfTile.x == 5:
-				position = ground.map_to_local(base.teleportPlayerTo())
 
 			# Finally, we need to update the tile indicators so that viable next steps
 			# are visible to the player. Do this after teleporting so that it's updated
@@ -140,6 +131,14 @@ func updateEnemies(player_loc: Vector2i):
 				enemy.show()
 			else:
 				enemy.hide()
+
+		if position == enemy.position:
+			performDeathRoutine()
+		else:
+			# call local_to_map so that the chaser enemy has an accurate coordinate
+			enemy.move(ground.local_to_map(position))
+		
+		# check twice in case the player stood still (for some reason this is required?)
 		if position == enemy.position:
 			performDeathRoutine()
 			return 1
@@ -186,6 +185,7 @@ func performDeathRoutine():
 	base.stopBackgroundMusic()
 	$"LostLife".play()
 	if Score.getLives() == 0:
+		#go back to main menu
 		print("game over")
 	await get_tree().create_timer(2.0).timeout
 	get_tree().reload_current_scene()

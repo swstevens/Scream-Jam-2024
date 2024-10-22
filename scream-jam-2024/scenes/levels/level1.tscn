@@ -1,7 +1,7 @@
 [gd_scene load_steps=36 format=4 uid="uid://cjw58pwky5yfa"]
 
 [ext_resource type="Script" path="res://scripts/get_map_coord.gd" id="1_va1pe"]
-[ext_resource type="TileSet" uid="uid://cy5cesw80bnhu" path="res://textures/area1.tres" id="2_pk1ri"]
+[ext_resource type="TileSet" uid="uid://t357gnsrojuh" path="res://textures/area1.tres" id="2_pk1ri"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="3_42xld"]
 [ext_resource type="AudioStream" uid="uid://dbboemw23xegk" path="res://sounds/Level Victory.mp3" id="3_jqsjl"]
 [ext_resource type="Texture2D" uid="uid://b21y2f46l3cnu" path="res://textures/loose sprites.png" id="4_pdha2"]
@@ -232,7 +232,7 @@ tile_set = ExtResource("2_pk1ri")
 z_index = 2
 z_as_relative = false
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAD///7/AAAGAAAAAAD+//7/AAAGAAAAAAABAPz/AAAGAAAAAAABAP3/AAAGAAAAAAABAP7/AAAGAAAAAAABAP//AAAGAAAAAAABAAAAAAAGAAAAAAABAAEAAAAGAAAAAAAAAAEAAAAGAAAAAAD7/wEAAAAGAAAAAAD8/wEAAAAGAAAAAAD9//7/AAAGAAAAAAD7//3/AAAGAAAAAAAAAAIAAAAGAAAAAAD8/wIAAAAGAAAAAAD9////AAAGAAAAAAD//wAAAAAGAAAAAAD9//3/AAAGAAAAAAD9//z/AAAGAAAAAAD9//v/AAAGAAAAAAD///v/AAAGAAAAAAA=")
+tile_map_data = PackedByteArray("AAD///7/AAAGAAAAAAD+//7/AAAGAAAAAAABAPz/AAAGAAAAAAABAP3/AAAGAAAAAAABAP7/AAAGAAAAAAABAP//AAAGAAAAAAABAAAAAAAGAAAAAAABAAEAAAAGAAAAAAAAAAEAAAAGAAAAAAD7/wEAAAAGAAAAAAD8/wEAAAAGAAAAAAD9//7/AAAGAAAAAAD7//3/AAAGAAAAAAAAAAIAAAAGAAAAAAD8/wIAAAAGAAAAAAD9////AAAGAAAAAAD//wAAAAAGAAAAAAD9//3/AAAGAAAAAAD9//z/AAAGAAAAAAA=")
 tile_set = ExtResource("2_pk1ri")
 y_sort_origin = 1
 
@@ -383,6 +383,7 @@ grow_vertical = 2
 text = "You Won!"
 
 [node name="levelScore" type="Label" parent="UI"]
+visible = false
 layout_mode = 0
 offset_left = -213.0
 offset_top = -120.0
@@ -392,6 +393,7 @@ label_settings = SubResource("LabelSettings_4bis2")
 script = ExtResource("6_2ovee")
 
 [node name="totalScore" type="Label" parent="UI"]
+visible = false
 layout_mode = 0
 offset_left = -213.0
 offset_top = -107.0

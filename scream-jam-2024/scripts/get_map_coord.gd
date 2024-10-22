@@ -22,6 +22,10 @@ var key1Pressed = false
 
 @export var teleporterA1 = Vector2i(0, 0)
 @export var teleporterA2 = Vector2i(0, 0)
+@export var teleporterB1 = Vector2i(100, 0)
+@export var teleporterB2 = Vector2i(100, 0)
+@export var teleporterC1 = Vector2i(100, 0)
+@export var teleporterC2 = Vector2i(100, 0)
 @export var teleporterActive = false
 
 @export var backgroundMusicTrack = 0
@@ -58,11 +62,20 @@ func lost() -> void:
 
 func teleportPlayerTo() -> Vector2i:
 	if teleporterActive:
+		$"Teleporter".play()
 		match Ground.local_to_map(Player.position):
 			teleporterA1:
 				return teleporterA2
 			teleporterA2:
 				return teleporterA1
+			teleporterB1:
+				return teleporterB2
+			teleporterB2:
+				return teleporterB1
+			teleporterC1:
+				return teleporterC2
+			teleporterC2:
+				return teleporterC1
 			_:
 				# shouldn't hit this
 				return Ground.local_to_map(Player.position)

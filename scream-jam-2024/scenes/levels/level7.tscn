@@ -1,7 +1,7 @@
-[gd_scene load_steps=60 format=4 uid="uid://begj1gb0nhwuq"]
+[gd_scene load_steps=62 format=4 uid="uid://begj1gb0nhwuq"]
 
 [ext_resource type="Script" path="res://scripts/get_map_coord.gd" id="1_7u132"]
-[ext_resource type="TileSet" uid="uid://cffn61d4fow0d" path="res://textures/area2.tres" id="2_a8jam"]
+[ext_resource type="TileSet" uid="uid://bvlw3yk5ab4d7" path="res://textures/area2.tres" id="2_a8jam"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="3_a16iv"]
 [ext_resource type="AudioStream" uid="uid://dbboemw23xegk" path="res://sounds/Level Victory.mp3" id="4_888ke"]
 [ext_resource type="Texture2D" uid="uid://b21y2f46l3cnu" path="res://textures/loose sprites.png" id="4_eakya"]
@@ -14,6 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://cr2ofpefw4esk" path="res://textures/area_2_tileset.png" id="9_biovx"]
 [ext_resource type="AudioStream" uid="uid://bnh6c8padev3p" path="res://sounds/Walk.wav" id="10_yipud"]
 [ext_resource type="AudioStream" uid="uid://vdqbu3me0eqx" path="res://sounds/Lost Life.wav" id="11_mjips"]
+[ext_resource type="Script" path="res://scenes/levels/total_lives.gd" id="13_hc47y"]
+[ext_resource type="Texture2D" uid="uid://ia0iq2k5s202" path="res://textures/Zombie_red.png" id="15_rbgnm"]
 [ext_resource type="Texture2D" uid="uid://chnxf0ujd0kvq" path="res://textures/area_3_tileset.png" id="16_gx5sq"]
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="16_mpdxr"]
 [ext_resource type="AudioStream" uid="uid://jq6sskna84md" path="res://sounds/8-Bit-Adventure.mp3" id="16_tl843"]
@@ -214,80 +216,76 @@ font_size = 8
 [sub_resource type="LabelSettings" id="LabelSettings_uthvd"]
 font_size = 8
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cqyoh"]
-atlas = ExtResource("9_5dd6u")
-region = Rect2(0, 0, 32, 32)
+[sub_resource type="LabelSettings" id="LabelSettings_ogfbe"]
+font_size = 8
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_phemv"]
-atlas = ExtResource("9_5dd6u")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_svvwr"]
-atlas = ExtResource("9_5dd6u")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gpqnh"]
-atlas = ExtResource("9_5dd6u")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7c7av"]
-atlas = ExtResource("9_5dd6u")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pmp7w"]
-atlas = ExtResource("9_5dd6u")
-region = Rect2(160, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2t0oa"]
-atlas = ExtResource("9_5dd6u")
-region = Rect2(192, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_y65kk"]
-atlas = ExtResource("9_5dd6u")
+[sub_resource type="AtlasTexture" id="AtlasTexture_pr3ux"]
+atlas = ExtResource("16_gx5sq")
 region = Rect2(224, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7e0oi"]
-atlas = ExtResource("9_5dd6u")
-region = Rect2(0, 32, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_46xmg"]
+atlas = ExtResource("15_rbgnm")
+region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ajbsv"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntn3w"]
+atlas = ExtResource("15_rbgnm")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_33xwv"]
+atlas = ExtResource("15_rbgnm")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xfwg5"]
+atlas = ExtResource("15_rbgnm")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iq346"]
+atlas = ExtResource("15_rbgnm")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dgofn"]
+atlas = ExtResource("15_rbgnm")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_07gon"]
+atlas = ExtResource("15_rbgnm")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e76ge"]
+atlas = ExtResource("15_rbgnm")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_51kwk"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cqyoh")
+"texture": SubResource("AtlasTexture_46xmg")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_phemv")
+"texture": SubResource("AtlasTexture_ntn3w")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_svvwr")
+"texture": SubResource("AtlasTexture_33xwv")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gpqnh")
+"texture": SubResource("AtlasTexture_xfwg5")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7c7av")
+"texture": SubResource("AtlasTexture_iq346")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pmp7w")
+"texture": SubResource("AtlasTexture_dgofn")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2t0oa")
+"texture": SubResource("AtlasTexture_07gon")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_y65kk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7e0oi")
+"texture": SubResource("AtlasTexture_e76ge")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pr3ux"]
-atlas = ExtResource("16_gx5sq")
-region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_smo12"]
 atlas = ExtResource("9_5dd6u")
@@ -376,7 +374,7 @@ backgroundMusicTrack = 3
 
 [node name="Ground" type="TileMapLayer" parent="."]
 z_as_relative = false
-tile_map_data = PackedByteArray("AAD///3/AAADAAAAAAD//wQAAAAAAAAAAAD7/wAAAAAAAAAAAAADAAAAAAAAAAAAAAADAP//AAAAAAAAAAADAP7/AAAAAAAAAAADAP3/AAAAAAAAAAACAP3/AAADAAAAAAABAP3/AAADAAAAAAAAAP3/AAADAAAAAAD+//3/AAADAAAAAAD9//3/AAADAAAAAAD8//3/AAADAAAAAAD7//3/AAAAAAAAAAD7//7/AAAAAAAAAAD7////AAAAAAAAAAD7/wEAAAAAAAAAAAD7/wIAAAAAAAAAAAD7/wMAAAAAAAAAAAD7/wQAAAAAAAAAAAADAAQAAAAAAAAAAAADAAMAAAAAAAAAAAADAAIAAAAAAAAAAAADAAEAAAAAAAAAAAACAAQAAAAAAAAAAAABAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAD+/wQAAAAAAAAAAAD9/wQAAAAAAAAAAAD8/wQAAAAAAAAAAAD///z/AAAAAAAAAAD//wUAAAAAAAAAAAD//wYAAAABAAAAAAD//wcAAAACAAAAAAD+/wUAAAADAAAAAAD+/wYAAAADAAAAAAD+/wcAAAADAAAAAAD+/wgAAAADAAAAAAD//wgAAAADAAAAAAAAAAgAAAADAAAAAAAAAAcAAAADAAAAAAAAAAYAAAADAAAAAAAAAAUAAAADAAAAAAABAAUAAAADAAAAAAACAAUAAAADAAAAAAADAAUAAAADAAAAAAAEAAUAAAADAAAAAAAEAAQAAAADAAAAAAAEAAMAAAADAAAAAAAEAAIAAAADAAAAAAAEAAEAAAADAAAAAAAEAAAAAAADAAAAAAAEAP//AAADAAAAAAAEAP7/AAADAAAAAAAEAP3/AAADAAAAAAAEAPz/AAADAAAAAAADAPz/AAAAAAAAAAACAPz/AAAAAAAAAAABAPz/AAAAAAAAAAAAAPz/AAAAAAAAAAAAAPv/AAADAAAAAAD///v/AAAEAAAAAAD+//v/AAADAAAAAAD+//z/AAAAAAAAAAD9//z/AAAAAAAAAAD8//z/AAAAAAAAAAD7//z/AAAAAAAAAAD6//z/AAADAAAAAAD6//3/AAADAAAAAAD6//7/AAADAAAAAAD6////AAADAAAAAAD6/wAAAAADAAAAAAD6/wEAAAADAAAAAAD6/wIAAAADAAAAAAD6/wMAAAADAAAAAAD6/wQAAAADAAAAAAD6/wUAAAADAAAAAAD7/wUAAAADAAAAAAD8/wUAAAADAAAAAAD9/wUAAAADAAAAAAD8/wMAAAADAAAAAAD9/wMAAAADAAAAAAD+/wMAAAADAAAAAAD//wMAAAAAAAAAAAAAAAMAAAADAAAAAAABAAMAAAADAAAAAAACAAMAAAADAAAAAAACAAIAAAADAAAAAAACAAEAAAADAAAAAAACAAAAAAAAAAAAAAACAP//AAADAAAAAAACAP7/AAADAAAAAAD8//7/AAADAAAAAAD8////AAADAAAAAAD8/wAAAAAAAAAAAAD8/wEAAAADAAAAAAD8/wIAAAADAAAAAAD+//r/AAADAAAAAAD///r/AAADAAAAAAAAAPr/AAADAAAAAAABAPv/AAADAAAAAAACAPv/AAADAAAAAAADAPv/AAADAAAAAAAEAPv/AAADAAAAAAD9//v/AAADAAAAAAD8//v/AAADAAAAAAD7//v/AAADAAAAAAD6//v/AAADAAAAAAD9/wAAAAAAAAAAAAD+/wAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAD///7/AAAAAAAAAAD/////AAAAAAAAAAD//wEAAAAAAAAAAAD//wIAAAAAAAAAAAAAAP7/AAADAAAAAAABAP7/AAADAAAAAAABAP//AAADAAAAAAAAAP//AAADAAAAAAD9//7/AAADAAAAAAD+//7/AAADAAAAAAD+////AAADAAAAAAD9////AAADAAAAAAD9/wEAAAADAAAAAAD9/wIAAAADAAAAAAD+/wIAAAADAAAAAAD+/wEAAAADAAAAAAAAAAEAAAADAAAAAAAAAAIAAAADAAAAAAABAAIAAAADAAAAAAABAAEAAAADAAAAAAA=")
+tile_map_data = PackedByteArray("AAD///3/AAADAAAAAAD//wQAAAAAAAAAAAD7/wAAAAAAAAAAAAADAAAAAAAAAAAAAAADAP//AAAAAAAAAAADAP7/AAAAAAAAAAADAP3/AAAAAAAAAAACAP3/AAADAAAAAAABAP3/AAADAAAAAAAAAP3/AAADAAAAAAD+//3/AAADAAAAAAD9//3/AAADAAAAAAD8//3/AAADAAAAAAD7//3/AAAAAAAAAAD7//7/AAAAAAAAAAD7////AAAAAAAAAAD7/wEAAAAAAAAAAAD7/wIAAAAAAAAAAAD7/wMAAAAAAAAAAAD7/wQAAAAAAAAAAAADAAQAAAAAAAAAAAADAAMAAAAAAAAAAAADAAIAAAAAAAAAAAADAAEAAAAAAAAAAAACAAQAAAAAAAAAAAABAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAD+/wQAAAAAAAAAAAD9/wQAAAAAAAAAAAD8/wQAAAAAAAAAAAD///z/AAAAAAAAAAD//wUAAAAAAAAAAAD//wYAAAABAAAAAAD//wcAAAACAAAAAAD+/wUAAAADAAAAAAD+/wYAAAADAAAAAAD+/wcAAAADAAAAAAD+/wgAAAADAAAAAAD//wgAAAADAAAAAAAAAAgAAAADAAAAAAAAAAcAAAADAAAAAAAAAAYAAAADAAAAAAAAAAUAAAADAAAAAAABAAUAAAADAAAAAAACAAUAAAADAAAAAAADAAUAAAADAAAAAAAEAAUAAAADAAAAAAAEAAQAAAADAAAAAAAEAAMAAAADAAAAAAAEAAIAAAADAAAAAAAEAAEAAAADAAAAAAAEAP//AAADAAAAAAAEAP7/AAADAAAAAAAEAP3/AAADAAAAAAAEAPz/AAADAAAAAAADAPz/AAAAAAAAAAACAPz/AAAAAAAAAAABAPz/AAAAAAAAAAAAAPz/AAAAAAAAAAAAAPv/AAADAAAAAAD///v/AAAEAAAAAAD+//v/AAADAAAAAAD+//z/AAAAAAAAAAD9//z/AAAAAAAAAAD8//z/AAAAAAAAAAD7//z/AAAAAAAAAAD6//z/AAADAAAAAAD6//3/AAADAAAAAAD6//7/AAADAAAAAAD6////AAADAAAAAAD6/wAAAAADAAAAAAD6/wEAAAADAAAAAAD6/wIAAAADAAAAAAD6/wMAAAADAAAAAAD6/wQAAAADAAAAAAD6/wUAAAADAAAAAAD7/wUAAAADAAAAAAD8/wUAAAADAAAAAAD9/wUAAAADAAAAAAD8/wMAAAADAAAAAAD9/wMAAAADAAAAAAD+/wMAAAADAAAAAAD//wMAAAAAAAAAAAAAAAMAAAADAAAAAAABAAMAAAADAAAAAAACAAMAAAADAAAAAAACAAIAAAADAAAAAAACAAEAAAADAAAAAAACAAAAAAAAAAAAAAACAP//AAADAAAAAAACAP7/AAADAAAAAAD8//7/AAADAAAAAAD8////AAADAAAAAAD8/wAAAAAAAAAAAAD8/wEAAAADAAAAAAD8/wIAAAADAAAAAAD+//r/AAADAAAAAAD///r/AAADAAAAAAAAAPr/AAADAAAAAAABAPv/AAADAAAAAAACAPv/AAADAAAAAAADAPv/AAADAAAAAAAEAPv/AAADAAAAAAD9//v/AAADAAAAAAD8//v/AAADAAAAAAD7//v/AAADAAAAAAD6//v/AAADAAAAAAD9/wAAAAAAAAAAAAD+/wAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAD///7/AAAAAAAAAAD/////AAAAAAAAAAD//wEAAAAAAAAAAAD//wIAAAAAAAAAAAAAAP7/AAADAAAAAAABAP7/AAADAAAAAAABAP//AAADAAAAAAAAAP//AAADAAAAAAD9//7/AAADAAAAAAD+//7/AAADAAAAAAD+////AAADAAAAAAD9////AAADAAAAAAD9/wEAAAADAAAAAAD9/wIAAAADAAAAAAD+/wIAAAADAAAAAAD+/wEAAAADAAAAAAAAAAEAAAADAAAAAAAAAAIAAAADAAAAAAABAAIAAAADAAAAAAABAAEAAAADAAAAAAAFAAEAAAADAAAAAAAFAP//AAADAAAAAAAGAP//AAADAAAAAAAGAAAAAAADAAAAAAAGAAEAAAADAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAA=")
 tile_set = ExtResource("2_a8jam")
 
 [node name="Walls" type="TileMapLayer" parent="."]
@@ -397,7 +395,7 @@ volume_db = -24.0
 
 [node name="player" type="Node2D" parent="."]
 y_sort_enabled = true
-position = Vector2(-80, 40)
+position = Vector2(96, 48)
 script = ExtResource("3_a16iv")
 
 [node name="Sprite2D" type="Sprite2D" parent="player"]
@@ -539,6 +537,7 @@ grow_vertical = 2
 text = "You Won!"
 
 [node name="levelScore" type="Label" parent="UI"]
+visible = false
 layout_mode = 0
 offset_left = -213.0
 offset_top = -120.0
@@ -548,6 +547,7 @@ label_settings = SubResource("LabelSettings_v8ptq")
 script = ExtResource("6_3uqr2")
 
 [node name="totalScore" type="Label" parent="UI"]
+visible = false
 layout_mode = 0
 offset_left = -213.0
 offset_top = -107.0
@@ -556,6 +556,15 @@ offset_bottom = -84.0
 label_settings = SubResource("LabelSettings_uthvd")
 script = ExtResource("7_11wl8")
 
+[node name="totalLives" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 149.0
+offset_top = -120.0
+offset_right = 189.0
+offset_bottom = -97.0
+label_settings = SubResource("LabelSettings_ogfbe")
+script = ExtResource("13_hc47y")
+
 [node name="enemy_a2" type="Node2D" parent="."]
 z_index = 2
 z_as_relative = false
@@ -563,10 +572,6 @@ y_sort_enabled = true
 position = Vector2(-130, 0)
 script = ExtResource("8_upnxm")
 direction = Vector2i(0, -1)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemy_a2"]
-position = Vector2(4, -15)
-sprite_frames = SubResource("SpriteFrames_ajbsv")
 
 [node name="nextmove" type="Sprite2D" parent="enemy_a2"]
 self_modulate = Color(1, 1, 1, 0.784314)
@@ -577,16 +582,16 @@ position = Vector2(16, -15)
 texture = SubResource("AtlasTexture_pr3ux")
 offset = Vector2(-16, 16)
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemy_a2"]
+position = Vector2(4, -15)
+sprite_frames = SubResource("SpriteFrames_51kwk")
+
 [node name="enemy_a" type="Node2D" parent="."]
 z_index = 2
 z_as_relative = false
 y_sort_enabled = true
 position = Vector2(128, 0)
 script = ExtResource("8_upnxm")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemy_a"]
-position = Vector2(4, -15)
-sprite_frames = SubResource("SpriteFrames_ajbsv")
 
 [node name="nextmove" type="Sprite2D" parent="enemy_a"]
 self_modulate = Color(1, 1, 1, 0.784314)
@@ -597,16 +602,16 @@ position = Vector2(16, -15)
 texture = SubResource("AtlasTexture_pr3ux")
 offset = Vector2(-16, 16)
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemy_a"]
+position = Vector2(4, -15)
+sprite_frames = SubResource("SpriteFrames_51kwk")
+
 [node name="enemy_a3" type="Node2D" parent="."]
 z_index = 2
 z_as_relative = false
 y_sort_enabled = true
 position = Vector2(0, -64)
 script = ExtResource("8_upnxm")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemy_a3"]
-position = Vector2(4, -15)
-sprite_frames = SubResource("SpriteFrames_ajbsv")
 
 [node name="nextmove" type="Sprite2D" parent="enemy_a3"]
 self_modulate = Color(1, 1, 1, 0.784314)
@@ -617,16 +622,16 @@ position = Vector2(16, -15)
 texture = SubResource("AtlasTexture_pr3ux")
 offset = Vector2(-16, 16)
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemy_a3"]
+position = Vector2(4, -15)
+sprite_frames = SubResource("SpriteFrames_51kwk")
+
 [node name="enemy_a4" type="Node2D" parent="."]
 z_index = 2
 z_as_relative = false
 y_sort_enabled = true
 position = Vector2(0, 64)
 script = ExtResource("8_upnxm")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemy_a4"]
-position = Vector2(4, -15)
-sprite_frames = SubResource("SpriteFrames_ajbsv")
 
 [node name="nextmove" type="Sprite2D" parent="enemy_a4"]
 self_modulate = Color(1, 1, 1, 0.784314)
@@ -636,6 +641,10 @@ y_sort_enabled = true
 position = Vector2(16, -15)
 texture = SubResource("AtlasTexture_pr3ux")
 offset = Vector2(-16, 16)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemy_a4"]
+position = Vector2(4, -15)
+sprite_frames = SubResource("SpriteFrames_51kwk")
 
 [node name="enemy_a5" type="Node2D" parent="."]
 z_index = 2
