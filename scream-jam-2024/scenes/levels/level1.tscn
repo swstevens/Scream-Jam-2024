@@ -232,7 +232,7 @@ tile_set = ExtResource("2_pk1ri")
 z_index = 2
 z_as_relative = false
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAD///7/AAAGAAAAAAD+//7/AAAGAAAAAAABAPz/AAAGAAAAAAABAP3/AAAGAAAAAAABAP7/AAAGAAAAAAABAP//AAAGAAAAAAABAAAAAAAGAAAAAAABAAEAAAAGAAAAAAAAAAEAAAAGAAAAAAD7/wEAAAAGAAAAAAD8/wEAAAAGAAAAAAD9//7/AAAGAAAAAAD7//3/AAAGAAAAAAAAAAIAAAAGAAAAAAD8/wIAAAAGAAAAAAD9////AAAGAAAAAAD//wAAAAAGAAAAAAD9//3/AAAGAAAAAAD9//z/AAAGAAAAAAD9//v/AAAGAAAAAAD///v/AAAGAAAAAAA=")
+tile_map_data = PackedByteArray("AAD///7/AAAGAAAAAAD+//7/AAAGAAAAAAABAPz/AAAGAAAAAAABAP3/AAAGAAAAAAABAP7/AAAGAAAAAAABAP//AAAGAAAAAAABAAAAAAAGAAAAAAABAAEAAAAGAAAAAAAAAAEAAAAGAAAAAAD7/wEAAAAGAAAAAAD8/wEAAAAGAAAAAAD9//7/AAAGAAAAAAD7//3/AAAGAAAAAAAAAAIAAAAGAAAAAAD8/wIAAAAGAAAAAAD9////AAAGAAAAAAD//wAAAAAGAAAAAAD9//3/AAAGAAAAAAD9//z/AAAGAAAAAAA=")
 tile_set = ExtResource("2_pk1ri")
 y_sort_origin = 1
 
@@ -383,6 +383,7 @@ grow_vertical = 2
 text = "You Won!"
 
 [node name="levelScore" type="Label" parent="UI"]
+visible = false
 layout_mode = 0
 offset_left = -213.0
 offset_top = -120.0
@@ -392,6 +393,7 @@ label_settings = SubResource("LabelSettings_4bis2")
 script = ExtResource("6_2ovee")
 
 [node name="totalScore" type="Label" parent="UI"]
+visible = false
 layout_mode = 0
 offset_left = -213.0
 offset_top = -107.0
