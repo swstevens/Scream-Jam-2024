@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://bcxdf5c5vlqeq"]
+[gd_scene load_steps=50 format=4 uid="uid://bcxdf5c5vlqeq"]
 
 [ext_resource type="Script" path="res://scripts/get_map_coord.gd" id="1_nnkpf"]
 [ext_resource type="TileSet" uid="uid://t357gnsrojuh" path="res://textures/area1.tres" id="2_wcu8i"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cr2ofpefw4esk" path="res://textures/area_2_tileset.png" id="9_qjy0j"]
 [ext_resource type="Script" path="res://scenes/levels/total_score.gd" id="10_figv6"]
 [ext_resource type="Script" path="res://scenes/levels/total_lives.gd" id="11_u1bd8"]
+[ext_resource type="Texture2D" uid="uid://chnxf0ujd0kvq" path="res://textures/area_3_tileset.png" id="12_m2nt4"]
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="12_mstmc"]
 [ext_resource type="Texture2D" uid="uid://dapnqabsdbfqt" path="res://textures/Zombie.png" id="13_k1g4d"]
 [ext_resource type="AudioStream" uid="uid://jq6sskna84md" path="res://sounds/8-Bit-Adventure.mp3" id="14_xdnfn"]
@@ -279,7 +280,7 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bjtla"]
-atlas = ExtResource("6_naleb")
+atlas = ExtResource("12_m2nt4")
 region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="LabelSettings" id="LabelSettings_dcpwo"]
@@ -417,26 +418,6 @@ stream = ExtResource("7_iv4gl")
 stream = ExtResource("8_44b84")
 volume_db = -24.0
 
-[node name="enemy_a" type="Node2D" parent="."]
-z_index = 2
-z_as_relative = false
-y_sort_enabled = true
-position = Vector2(-64.4982, -16.6796)
-script = ExtResource("12_mstmc")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemy_a"]
-position = Vector2(4, -15)
-sprite_frames = SubResource("SpriteFrames_0crk8")
-
-[node name="nextmove" type="Sprite2D" parent="enemy_a"]
-self_modulate = Color(1, 1, 1, 0.784314)
-z_index = 1
-z_as_relative = false
-y_sort_enabled = true
-position = Vector2(16, -15)
-texture = SubResource("AtlasTexture_bjtla")
-offset = Vector2(-16, 16)
-
 [node name="enemy_a2" type="Node2D" parent="."]
 z_index = 2
 z_as_relative = false
@@ -462,7 +443,7 @@ offset = Vector2(-16, 16)
 z_index = 2
 z_as_relative = false
 y_sort_enabled = true
-position = Vector2(64, -16)
+position = Vector2(32, -32)
 script = ExtResource("12_mstmc")
 direction = Vector2i(0, 1)
 

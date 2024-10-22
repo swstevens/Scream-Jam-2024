@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://bkkv4yjst1njk"]
+[gd_scene load_steps=50 format=4 uid="uid://bkkv4yjst1njk"]
 
 [ext_resource type="Script" path="res://scripts/get_map_coord.gd" id="1_8nj77"]
 [ext_resource type="TileSet" uid="uid://t357gnsrojuh" path="res://textures/area1.tres" id="2_r8pl2"]
@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://vdqbu3me0eqx" path="res://sounds/Lost Life.wav" id="8_02tnh"]
 [ext_resource type="Script" path="res://scenes/levels/total_lives.gd" id="8_h5vbi"]
 [ext_resource type="Texture2D" uid="uid://cr2ofpefw4esk" path="res://textures/area_2_tileset.png" id="9_noiua"]
+[ext_resource type="Texture2D" uid="uid://chnxf0ujd0kvq" path="res://textures/area_3_tileset.png" id="12_4clu3"]
 [ext_resource type="AudioStream" uid="uid://jq6sskna84md" path="res://sounds/8-Bit-Adventure.mp3" id="14_eouym"]
 [ext_resource type="AudioStream" uid="uid://dayr6beq5ix61" path="res://sounds/8-Bit-Determination.mp3" id="15_8xtjh"]
 [ext_resource type="AudioStream" uid="uid://bm77iinsahqcu" path="res://sounds/8-Bit-Groove.mp3" id="16_k37dq"]
@@ -279,7 +280,7 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bjtla"]
-atlas = ExtResource("5_8n4a0")
+atlas = ExtResource("12_4clu3")
 region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="LabelSettings" id="LabelSettings_5kt5f"]

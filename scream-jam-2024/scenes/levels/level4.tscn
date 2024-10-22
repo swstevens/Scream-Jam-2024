@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://4h2hxinxem3h"]
+[gd_scene load_steps=50 format=4 uid="uid://4h2hxinxem3h"]
 
 [ext_resource type="Script" path="res://scripts/get_map_coord.gd" id="1_4v550"]
 [ext_resource type="TileSet" uid="uid://t357gnsrojuh" path="res://textures/area1.tres" id="2_3kngd"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cr2ofpefw4esk" path="res://textures/area_2_tileset.png" id="9_i0xbo"]
 [ext_resource type="Script" path="res://scenes/levels/total_score.gd" id="10_g2pi1"]
 [ext_resource type="Script" path="res://scenes/levels/total_lives.gd" id="11_8gyy1"]
+[ext_resource type="Texture2D" uid="uid://chnxf0ujd0kvq" path="res://textures/area_3_tileset.png" id="12_8824d"]
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="12_sqplv"]
 [ext_resource type="Texture2D" uid="uid://dapnqabsdbfqt" path="res://textures/Zombie.png" id="13_tmwvf"]
 [ext_resource type="AudioStream" uid="uid://jq6sskna84md" path="res://sounds/8-Bit-Adventure.mp3" id="14_hnc1e"]
@@ -279,7 +280,7 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bjtla"]
-atlas = ExtResource("6_mm6nt")
+atlas = ExtResource("12_8824d")
 region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="LabelSettings" id="LabelSettings_xdcdh"]
