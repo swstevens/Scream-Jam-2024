@@ -34,6 +34,7 @@ func _ready() -> void:
 	enemies = get_tree().get_root().find_children("enemy*", "", true, false)
 	spawners = get_tree().get_root().find_children("spawner*", "", true, false)
 	print("Found ", enemies.size(), " enemies")
+	print("Found ", spawners.size(), " spawners")
 	updateTiles()
 	if fogOfWarOn:
 		if shadows:
