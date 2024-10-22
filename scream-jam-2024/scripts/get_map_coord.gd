@@ -16,8 +16,14 @@ var normalWalkTile: Vector2i = Vector2i(0,0)
 @export var level_number = 1
 
 var key1Pressed = false
+var key2Pressed = false
+var key3Pressed = false
 @export var key1Tile: Vector2i = Vector2i(0, 0)
 @export var door1Tile: Vector2i = Vector2i(0, 0)
+@export var key2Tile: Vector2i = Vector2i(100, 0)
+@export var door2Tile: Vector2i = Vector2i(100, 0)
+@export var key3Tile: Vector2i = Vector2i(100, 0)
+@export var door3Tile: Vector2i = Vector2i(100, 0)
 @export var keydoorActive = false
 
 @export var teleporterA1 = Vector2i(0, 0)
@@ -46,6 +52,16 @@ func _process(_delta: float) -> void:
 			Ground.set_cell(door1Tile, 0, normalWalkTile, 0)
 			$"Door".play()
 		key1Pressed = true
+	if keydoorActive and PlayerPos == key2Tile:
+		if key2Pressed == false:
+			Ground.set_cell(door2Tile, 0, normalWalkTile, 0)
+			$"Door".play()
+		key2Pressed = true
+	if keydoorActive and PlayerPos == key3Tile:
+		if key3Pressed == false:
+			Ground.set_cell(door3Tile, 0, normalWalkTile, 0)
+			$"Door".play()
+		key3Pressed = true
 
 func won() -> void:
 	level_completion.level_completed[level_number-1] = 1

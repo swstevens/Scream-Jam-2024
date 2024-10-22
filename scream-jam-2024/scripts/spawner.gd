@@ -19,6 +19,12 @@ var totalSpawns = 0
 var id_num = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if timer_limit == counter:
+		if animated_sprite_2d:
+			animated_sprite_2d.show()
+	else:
+		if animated_sprite_2d:
+			animated_sprite_2d.hide()
 	position = ground.map_to_local(ground.local_to_map(base.to_local(global_position)))
 
 func move(player_loc: Vector2i)->void:
