@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=4 uid="uid://dusgik287yilc"]
+[gd_scene load_steps=63 format=4 uid="uid://dusgik287yilc"]
 
 [ext_resource type="Script" path="res://scripts/get_map_coord.gd" id="1_ibnwb"]
 [ext_resource type="TileSet" uid="uid://bvlw3yk5ab4d7" path="res://textures/area2.tres" id="2_kk3e3"]
@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://bnh6c8padev3p" path="res://sounds/Walk.wav" id="10_6i7t8"]
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="10_nugub"]
 [ext_resource type="AudioStream" uid="uid://vdqbu3me0eqx" path="res://sounds/Lost Life.wav" id="11_tngue"]
+[ext_resource type="Texture2D" uid="uid://chnxf0ujd0kvq" path="res://textures/area_3_tileset.png" id="12_tgwmn"]
 [ext_resource type="Script" path="res://scenes/levels/total_lives.gd" id="13_6q7em"]
 [ext_resource type="Texture2D" uid="uid://ia0iq2k5s202" path="res://textures/Zombie_red.png" id="14_tyd77"]
 [ext_resource type="AudioStream" uid="uid://jq6sskna84md" path="res://sounds/8-Bit-Adventure.mp3" id="16_nfhx6"]
@@ -215,7 +216,7 @@ _data = {
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pr3ux"]
-atlas = ExtResource("5_yrpnf")
+atlas = ExtResource("12_tgwmn")
 region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_46xmg"]
@@ -694,7 +695,7 @@ volume_db = -24.0
 
 [node name="8-bit-groove" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_6cpmh")
-volume_db = -32.0
+volume_db = -24.0
 
 [node name="8-bit-menu" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("19_pc3mk")

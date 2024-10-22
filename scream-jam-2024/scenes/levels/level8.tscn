@@ -550,7 +550,7 @@ volume_db = -24.0
 
 [node name="8-bit-groove" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_455gt")
-volume_db = -32.0
+volume_db = -24.0
 
 [node name="8-bit-menu" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("19_fw7c6")
