@@ -17,4 +17,5 @@ func move(player_loc: Vector2i)->void:
 		# also have the broadcast move to the enemies here
 		print("we can move!")
 		position = ground.map_to_local(direction+beta)
+	updateNextMove() 
 	return

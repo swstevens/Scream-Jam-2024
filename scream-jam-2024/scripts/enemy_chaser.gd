@@ -20,6 +20,7 @@ func move(player_loc: Vector2i)->void:
 		seen = true
 	else:
 		seen = false
+	updateNextMove() 
 	#print("enemy clicked ", "enemy current")
 	#print(direction)
 	#

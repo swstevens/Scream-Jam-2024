@@ -727,14 +727,6 @@ z_as_relative = false
 tile_set = ExtResource("2_c68i2")
 script = ExtResource("28_a33f7")
 
-[node name="shadows" type="TileMapLayer" parent="shadows"]
-visible = false
-self_modulate = Color(1, 1, 1, 0.768627)
-z_index = 1
-z_as_relative = false
-tile_set = ExtResource("2_c68i2")
-script = ExtResource("28_a33f7")
-
 [connection signal="pressed" from="UI/VBoxContainer/Next" to="UI/VBoxContainer" method="_on_next_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/Retry" to="UI/VBoxContainer" method="_on_retry_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/Levels" to="UI/VBoxContainer" method="_on_levels_pressed"]
