@@ -3,7 +3,7 @@ extends Control
 
 
 func _on_play_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/levels/basic iso.tscn")
+	get_tree().change_scene_to_file("res://scenes/levels/level1.tscn")
 
 func _on_levels_pressed() -> void:
 	# hide initial screen and show the secondary one

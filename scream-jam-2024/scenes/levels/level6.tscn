@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=4 uid="uid://c03xcemxj327o"]
+[gd_scene load_steps=64 format=4 uid="uid://c03xcemxj327o"]
 
 [ext_resource type="Script" path="res://scripts/get_map_coord.gd" id="1_6f6hg"]
 [ext_resource type="TileSet" uid="uid://t357gnsrojuh" path="res://textures/area1.tres" id="2_c68i2"]
@@ -27,6 +27,7 @@
 [ext_resource type="AudioStream" uid="uid://beyth5y08ieft" path="res://sounds/8-Bit-Shadows.mp3" id="18_j2fhh"]
 [ext_resource type="AudioStream" uid="uid://dat8sjbvtsnrv" path="res://sounds/8-Bit-Success.mp3" id="19_v4715"]
 [ext_resource type="Script" path="res://scenes/levels/levelmenu.gd" id="27_4dwh6"]
+[ext_resource type="Script" path="res://scripts/shadows.gd" id="28_a33f7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vw4w1"]
 atlas = ExtResource("5_34a2w")
@@ -717,6 +718,22 @@ text = "Retry"
 visible = false
 layout_mode = 2
 text = "Levels"
+
+[node name="shadows" type="TileMapLayer" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0.768627)
+z_index = 1
+z_as_relative = false
+tile_set = ExtResource("2_c68i2")
+script = ExtResource("28_a33f7")
+
+[node name="shadows" type="TileMapLayer" parent="shadows"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.768627)
+z_index = 1
+z_as_relative = false
+tile_set = ExtResource("2_c68i2")
+script = ExtResource("28_a33f7")
 
 [connection signal="pressed" from="UI/VBoxContainer/Next" to="UI/VBoxContainer" method="_on_next_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/Retry" to="UI/VBoxContainer" method="_on_retry_pressed"]

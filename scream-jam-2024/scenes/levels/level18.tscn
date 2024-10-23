@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=4 uid="uid://dhynvw64uqetm"]
+[gd_scene load_steps=86 format=4 uid="uid://dhynvw64uqetm"]
 
 [ext_resource type="Script" path="res://scripts/get_map_coord.gd" id="1_nmb00"]
 [ext_resource type="TileSet" uid="uid://bvlw3yk5ab4d7" path="res://textures/area2.tres" id="2_o6qiq"]
@@ -29,6 +29,8 @@
 [ext_resource type="Script" path="res://scripts/chaser_simpler.gd" id="26_2b54n"]
 [ext_resource type="Texture2D" uid="uid://b4j2lqtl2vb0n" path="res://textures/Zombie_purple.png" id="28_jtdwv"]
 [ext_resource type="AudioStream" uid="uid://dri20jeo8gai8" path="res://sounds/Teleporter.wav" id="29_c3qn0"]
+[ext_resource type="TileSet" uid="uid://t357gnsrojuh" path="res://textures/area1.tres" id="30_e1ls5"]
+[ext_resource type="Script" path="res://scripts/shadows.gd" id="31_rxq7g"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vw4w1"]
 atlas = ExtResource("7_7ks1r")
@@ -1039,6 +1041,14 @@ sprite_frames = SubResource("SpriteFrames_3s48u")
 [node name="Teleporter" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("29_c3qn0")
 volume_db = -16.0
+
+[node name="shadows" type="TileMapLayer" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0.768627)
+z_index = 1
+z_as_relative = false
+tile_set = ExtResource("30_e1ls5")
+script = ExtResource("31_rxq7g")
 
 [connection signal="pressed" from="UI/VBoxContainer/Next" to="UI/VBoxContainer" method="_on_next_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/Retry" to="UI/VBoxContainer" method="_on_retry_pressed"]

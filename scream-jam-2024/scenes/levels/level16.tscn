@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://ddm51i1tp5pml"]
+[gd_scene load_steps=25 format=4 uid="uid://ddm51i1tp5pml"]
 
 [ext_resource type="Script" path="res://scripts/get_map_coord.gd" id="1_ddqvj"]
 [ext_resource type="TileSet" uid="uid://t357gnsrojuh" path="res://textures/area1.tres" id="2_epbwo"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://scenes/levels/total_score.gd" id="7_5pwaj"]
 [ext_resource type="Script" path="res://scenes/levels/total_lives.gd" id="8_f3kbh"]
 [ext_resource type="Script" path="res://scenes/levels/levelmenu.gd" id="9_b2pug"]
+[ext_resource type="Script" path="res://scripts/shadows.gd" id="10_bybpe"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vw4w1"]
 atlas = ExtResource("5_42exi")
@@ -401,6 +402,14 @@ text = "Retry"
 visible = false
 layout_mode = 2
 text = "Levels"
+
+[node name="shadows" type="TileMapLayer" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0.768627)
+z_index = 1
+z_as_relative = false
+tile_set = ExtResource("2_epbwo")
+script = ExtResource("10_bybpe")
 
 [connection signal="pressed" from="UI/VBoxContainer/Next" to="UI/VBoxContainer" method="_on_next_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/Retry" to="UI/VBoxContainer" method="_on_retry_pressed"]
