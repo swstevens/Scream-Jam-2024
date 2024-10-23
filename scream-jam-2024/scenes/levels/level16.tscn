@@ -14,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://cipjpyssytj0q" path="res://textures/Green Portal Sprite Sheet.png" id="9_1ma18"]
 [ext_resource type="Texture2D" uid="uid://bc7ol1k7sgwnx" path="res://textures/area_4_tileset.png" id="9_6ecgv"]
 [ext_resource type="Script" path="res://scenes/levels/levelmenu.gd" id="9_b2pug"]
-[ext_resource type="Script" path="res://scripts/shadows.gd" id="10_bybpe"]
 [ext_resource type="AudioStream" uid="uid://dbboemw23xegk" path="res://sounds/Level Victory.mp3" id="10_unrrp"]
 [ext_resource type="AudioStream" uid="uid://bwnipnppbmyms" path="res://sounds/Door.wav" id="11_ncrpn"]
 [ext_resource type="AudioStream" uid="uid://jq6sskna84md" path="res://sounds/8-Bit-Adventure.mp3" id="12_61kqo"]
@@ -715,14 +714,6 @@ text = "Retry"
 visible = false
 layout_mode = 2
 text = "Levels"
-
-[node name="shadows" type="TileMapLayer" parent="."]
-visible = false
-self_modulate = Color(1, 1, 1, 0.768627)
-z_index = 1
-z_as_relative = false
-tile_set = ExtResource("2_epbwo")
-script = ExtResource("10_bybpe")
 
 [connection signal="pressed" from="UI/VBoxContainer/Next" to="UI/VBoxContainer" method="_on_next_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/Retry" to="UI/VBoxContainer" method="_on_retry_pressed"]

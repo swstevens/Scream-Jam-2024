@@ -746,7 +746,7 @@ offset_right = 20.0
 offset_bottom = 40.0
 grow_horizontal = 2
 script = ExtResource("24_jjeaf")
-next_level = "res://scenes/levels/level9.tscn"
+next_level = "res://scenes/levels/level19.tscn"
 
 [node name="Next" type="Button" parent="UI/VBoxContainer"]
 visible = false
