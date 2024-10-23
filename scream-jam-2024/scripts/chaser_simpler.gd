@@ -1,6 +1,10 @@
 extends Enemy
 
 func move(player_loc: Vector2i)->void:
+	#only move 50% of the time
+	if (randi() % 2 == 0):
+		return
+	
 	print("im trying to chase")
 	#where our character is
 	var enemy_loc: Vector2i = ground.local_to_map(base.to_local(global_position))
