@@ -41,17 +41,26 @@ func move(player_loc: Vector2i)->void:
 		print("we can move!")
 		position = ground.map_to_local(direction+beta)
 	updateNextMove()
+	colorOfTile = ground.get_cell_atlas_coords(direction+beta)
 	return
 
 func updateNextMove() -> void:
 	nextmove.position.x = 16
 	nextmove.position.y = -16
 	if direction.x:
-		nextmove.position.x += direction.x*16
-		nextmove.position.y += direction.x*10
+		if direction.x > 0:
+			nextmove.position.x += direction.x*16
+			nextmove.position.y += direction.x*10
+		if direction.x < 0:
+			nextmove.position.x += direction.x*16
+			nextmove.position.y += direction.x*7
 	if direction.y:
-		nextmove.position.x -= direction.y*16
-		nextmove.position.y += direction.y*10
+		if direction.y > 0:
+			nextmove.position.x -= direction.y*16
+			nextmove.position.y += direction.y*10
+		if direction.y < 0:
+			nextmove.position.x -= direction.y*16
+			nextmove.position.y += direction.y*7
 	pass
 
 func TileCanBeSteppedOn(tile: Vector2i) -> bool:
