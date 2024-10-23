@@ -1,4 +1,3 @@
-
 [gd_scene load_steps=56 format=4 uid="uid://p8xop8amfl6s"]
 
 [ext_resource type="Script" path="res://scripts/get_map_coord.gd" id="1_ddqvj"]

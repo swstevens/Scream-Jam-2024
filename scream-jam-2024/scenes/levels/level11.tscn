@@ -431,7 +431,7 @@ z_as_relative = false
 y_sort_enabled = true
 position = Vector2(-160, 32)
 script = ExtResource("14_y8b40")
-direction = Vector2i(0, 1)
+direction = Vector2i(0, -1)
 
 [node name="nextmove" type="Sprite2D" parent="enemy_a3"]
 self_modulate = Color(1, 1, 1, 0.784314)

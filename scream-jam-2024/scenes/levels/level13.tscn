@@ -546,7 +546,7 @@ z_as_relative = false
 y_sort_enabled = true
 position = Vector2(16, 24)
 script = ExtResource("14_wx24u")
-direction = Vector2i(0, 1)
+direction = Vector2i(0, -1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemy_a2"]
 position = Vector2(4, -15)
@@ -567,6 +567,7 @@ z_as_relative = false
 y_sort_enabled = true
 position = Vector2(-16, 24)
 script = ExtResource("14_wx24u")
+direction = Vector2i(-1, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemy_a6"]
 position = Vector2(4, -15)
