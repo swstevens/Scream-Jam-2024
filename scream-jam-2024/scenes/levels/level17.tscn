@@ -419,6 +419,7 @@ z_as_relative = false
 y_sort_enabled = true
 position = Vector2(213, 120)
 script = ExtResource("1_fasds")
+level_number = 17
 key1Tile = Vector2i(4, 5)
 door1Tile = Vector2i(-3, 4)
 keydoorActive = true
@@ -436,6 +437,7 @@ tile_set = ExtResource("2_ylyig")
 z_index = 2
 z_as_relative = false
 y_sort_enabled = true
+tile_map_data = PackedByteArray("AAD8/wAAAAAGAAAAAAD9//7/AAAGAAAAAAD///3/AAAGAAAAAAD///7/AAAGAAAAAAAAAP7/AAAGAAAAAAAAAAEAAAAGAAAAAAABAP7/AAAGAAAAAAACAP7/AAAGAAAAAAADAP7/AAAGAAAAAAAEAP7/AAAGAAAAAAAEAP3/AAAGAAAAAAAEAPz/AAAGAAAAAAADAPz/AAAGAAAAAAACAPz/AAAGAAAAAAABAPz/AAAGAAAAAAD7/wIAAAAGAAAAAAD7/wMAAAAGAAAAAAD7/wQAAAAGAAAAAAD7/wUAAAAGAAAAAAD8/wUAAAAGAAAAAAD9/wUAAAAGAAAAAAD9/wQAAAAGAAAAAAD9/wMAAAAGAAAAAAD9/wIAAAAGAAAAAAA=")
 tile_set = ExtResource("2_ylyig")
 y_sort_origin = 1
 

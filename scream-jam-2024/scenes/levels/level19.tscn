@@ -1,31 +1,37 @@
-[gd_scene load_steps=56 format=4 uid="uid://p8xop8amfl6s"]
+[gd_scene load_steps=59 format=4 uid="uid://jabp6l3jqvo5"]
 
-[ext_resource type="Script" path="res://scripts/get_map_coord.gd" id="1_ddqvj"]
-[ext_resource type="TileSet" uid="uid://dg5d6hm52gxrc" path="res://textures/area4.tres" id="2_6mlau"]
-[ext_resource type="Script" path="res://scripts/player.gd" id="3_vgbed"]
-[ext_resource type="Texture2D" uid="uid://b21y2f46l3cnu" path="res://textures/loose sprites.png" id="4_54f06"]
-[ext_resource type="Texture2D" uid="uid://cbf8waqy0cqu7" path="res://textures/iso_tileset.png" id="5_42exi"]
-[ext_resource type="AudioStream" uid="uid://bnh6c8padev3p" path="res://sounds/Walk.wav" id="6_r512s"]
-[ext_resource type="Script" path="res://scripts/level_score.gd" id="6_rvlnl"]
-[ext_resource type="Script" path="res://scenes/levels/total_score.gd" id="7_5pwaj"]
-[ext_resource type="AudioStream" uid="uid://vdqbu3me0eqx" path="res://sounds/Lost Life.wav" id="7_jn3qg"]
-[ext_resource type="Script" path="res://scripts/spawner.gd" id="8_128te"]
-[ext_resource type="Script" path="res://scenes/levels/total_lives.gd" id="8_f3kbh"]
-[ext_resource type="Texture2D" uid="uid://cipjpyssytj0q" path="res://textures/Green Portal Sprite Sheet.png" id="9_1ma18"]
-[ext_resource type="Texture2D" uid="uid://bc7ol1k7sgwnx" path="res://textures/area_4_tileset.png" id="9_6ecgv"]
-[ext_resource type="Script" path="res://scenes/levels/levelmenu.gd" id="9_b2pug"]
-[ext_resource type="AudioStream" uid="uid://dbboemw23xegk" path="res://sounds/Level Victory.mp3" id="10_unrrp"]
-[ext_resource type="AudioStream" uid="uid://bwnipnppbmyms" path="res://sounds/Door.wav" id="11_ncrpn"]
-[ext_resource type="AudioStream" uid="uid://jq6sskna84md" path="res://sounds/8-Bit-Adventure.mp3" id="12_61kqo"]
-[ext_resource type="AudioStream" uid="uid://dayr6beq5ix61" path="res://sounds/8-Bit-Determination.mp3" id="13_kmspt"]
-[ext_resource type="AudioStream" uid="uid://bm77iinsahqcu" path="res://sounds/8-Bit-Groove.mp3" id="14_kx4hm"]
-[ext_resource type="AudioStream" uid="uid://nse8551ks35" path="res://sounds/8-Bit-Menu.mp3" id="15_mbflf"]
-[ext_resource type="AudioStream" uid="uid://bg736hv8a684p" path="res://sounds/8-Bit-Mountains-Ahead.mp3" id="16_gt5fs"]
-[ext_resource type="AudioStream" uid="uid://beyth5y08ieft" path="res://sounds/8-Bit-Shadows.mp3" id="17_r62pa"]
-[ext_resource type="AudioStream" uid="uid://dat8sjbvtsnrv" path="res://sounds/8-Bit-Success.mp3" id="18_yrlnv"]
+[ext_resource type="Script" path="res://scripts/get_map_coord.gd" id="1_j55ud"]
+[ext_resource type="TileSet" uid="uid://dg5d6hm52gxrc" path="res://textures/area4.tres" id="2_3xr72"]
+[ext_resource type="AudioStream" uid="uid://dbboemw23xegk" path="res://sounds/Level Victory.mp3" id="3_0qq85"]
+[ext_resource type="AudioStream" uid="uid://bwnipnppbmyms" path="res://sounds/Door.wav" id="4_ye1rr"]
+[ext_resource type="AudioStream" uid="uid://dri20jeo8gai8" path="res://sounds/Teleporter.wav" id="5_y2mdo"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="6_qwgcr"]
+[ext_resource type="Texture2D" uid="uid://b21y2f46l3cnu" path="res://textures/loose sprites.png" id="7_ljesr"]
+[ext_resource type="Texture2D" uid="uid://cbf8waqy0cqu7" path="res://textures/iso_tileset.png" id="8_u4q6k"]
+[ext_resource type="Texture2D" uid="uid://cr2ofpefw4esk" path="res://textures/area_2_tileset.png" id="9_5w71v"]
+[ext_resource type="AudioStream" uid="uid://bnh6c8padev3p" path="res://sounds/Walk.wav" id="10_di81h"]
+[ext_resource type="AudioStream" uid="uid://vdqbu3me0eqx" path="res://sounds/Lost Life.wav" id="11_3vwbv"]
+[ext_resource type="AudioStream" uid="uid://jq6sskna84md" path="res://sounds/8-Bit-Adventure.mp3" id="12_s7qcs"]
+[ext_resource type="AudioStream" uid="uid://dayr6beq5ix61" path="res://sounds/8-Bit-Determination.mp3" id="13_8sv38"]
+[ext_resource type="AudioStream" uid="uid://bm77iinsahqcu" path="res://sounds/8-Bit-Groove.mp3" id="14_810ub"]
+[ext_resource type="AudioStream" uid="uid://nse8551ks35" path="res://sounds/8-Bit-Menu.mp3" id="15_62x0o"]
+[ext_resource type="AudioStream" uid="uid://bg736hv8a684p" path="res://sounds/8-Bit-Mountains-Ahead.mp3" id="16_oqryt"]
+[ext_resource type="AudioStream" uid="uid://beyth5y08ieft" path="res://sounds/8-Bit-Shadows.mp3" id="17_wk3hu"]
+[ext_resource type="AudioStream" uid="uid://dat8sjbvtsnrv" path="res://sounds/8-Bit-Success.mp3" id="18_t6rbq"]
+[ext_resource type="Script" path="res://scripts/level_score.gd" id="19_gncdj"]
+[ext_resource type="Script" path="res://scenes/levels/total_score.gd" id="20_myc2p"]
+[ext_resource type="Script" path="res://scenes/levels/total_lives.gd" id="21_ywx7p"]
+[ext_resource type="Script" path="res://scenes/levels/levelmenu.gd" id="22_wrknq"]
+[ext_resource type="Script" path="res://scripts/spawner.gd" id="26_pykln"]
+[ext_resource type="Texture2D" uid="uid://bc7ol1k7sgwnx" path="res://textures/area_4_tileset.png" id="27_nvey8"]
+[ext_resource type="Texture2D" uid="uid://cipjpyssytj0q" path="res://textures/Green Portal Sprite Sheet.png" id="28_66esd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vw4w1"]
-atlas = ExtResource("5_42exi")
+atlas = ExtResource("8_u4q6k")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sm4e2"]
+atlas = ExtResource("9_5w71v")
 region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="Animation" id="Animation_fjavp"]
@@ -204,75 +210,84 @@ _data = {
 "walk upright": SubResource("Animation_486o4")
 }
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jentn"]
-atlas = ExtResource("9_6ecgv")
+[sub_resource type="LabelSettings" id="LabelSettings_hmsau"]
+font_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_38ver"]
+font_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_a6wcy"]
+font_size = 8
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnbeh"]
+atlas = ExtResource("27_nvey8")
 region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oon6u"]
-atlas = ExtResource("9_1ma18")
+atlas = ExtResource("28_66esd")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vwq85"]
-atlas = ExtResource("9_1ma18")
+atlas = ExtResource("28_66esd")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uf0fs"]
-atlas = ExtResource("9_1ma18")
+atlas = ExtResource("28_66esd")
 region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vl2jo"]
-atlas = ExtResource("9_1ma18")
+atlas = ExtResource("28_66esd")
 region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_22wmv"]
-atlas = ExtResource("9_1ma18")
+atlas = ExtResource("28_66esd")
 region = Rect2(256, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e6idd"]
-atlas = ExtResource("9_1ma18")
+atlas = ExtResource("28_66esd")
 region = Rect2(320, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bh0tx"]
-atlas = ExtResource("9_1ma18")
+atlas = ExtResource("28_66esd")
 region = Rect2(384, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ixw7v"]
-atlas = ExtResource("9_1ma18")
+atlas = ExtResource("28_66esd")
 region = Rect2(448, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ngf0r"]
-atlas = ExtResource("9_1ma18")
+atlas = ExtResource("28_66esd")
 region = Rect2(0, 64, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m6bmw"]
-atlas = ExtResource("9_1ma18")
+atlas = ExtResource("28_66esd")
 region = Rect2(64, 64, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lkolu"]
-atlas = ExtResource("9_1ma18")
+atlas = ExtResource("28_66esd")
 region = Rect2(128, 64, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s0nkp"]
-atlas = ExtResource("9_1ma18")
+atlas = ExtResource("28_66esd")
 region = Rect2(192, 64, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ts4o"]
-atlas = ExtResource("9_1ma18")
+atlas = ExtResource("28_66esd")
 region = Rect2(256, 64, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gjj7y"]
-atlas = ExtResource("9_1ma18")
+atlas = ExtResource("28_66esd")
 region = Rect2(320, 64, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d8u8f"]
-atlas = ExtResource("9_1ma18")
+atlas = ExtResource("28_66esd")
 region = Rect2(384, 64, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c1ojk"]
-atlas = ExtResource("9_1ma18")
+atlas = ExtResource("28_66esd")
 region = Rect2(448, 64, 64, 64)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_upifj"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_aqw2q"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -333,47 +348,60 @@ animations = [{
 "speed": 20.0
 }]
 
-[sub_resource type="LabelSettings" id="LabelSettings_nkpr7"]
-font_size = 8
-
-[sub_resource type="LabelSettings" id="LabelSettings_lonbd"]
-font_size = 8
-
-[sub_resource type="LabelSettings" id="LabelSettings_0027h"]
-font_size = 8
-
-[node name="Base3" type="Node2D"]
+[node name="Base" type="Node2D"]
 z_as_relative = false
 y_sort_enabled = true
 position = Vector2(213, 120)
-script = ExtResource("1_ddqvj")
-level_number = 16
+script = ExtResource("1_j55ud")
+level_number = 8
+key1Tile = Vector2i(0, -1)
+door1Tile = Vector2i(2, 7)
+key2Tile = Vector2i(0, -1)
+door2Tile = Vector2i(2, 8)
+key3Tile = Vector2i(9, 1)
+door3Tile = Vector2i(2, 9)
+keydoorActive = true
+teleporterA1 = Vector2i(-11, 0)
+teleporterA2 = Vector2i(-5, 5)
+teleporterActive = true
 backgroundMusicTrack = 5
 
 [node name="Ground" type="TileMapLayer" parent="."]
 z_as_relative = false
-tile_map_data = PackedByteArray("AAD//wAAAAADAAAAAAD/////AAAAAAAAAAD///7/AAAAAAAAAAD///3/AAAAAAAAAAD//wEAAAAAAAAAAAD//wIAAAAAAAAAAAD//wMAAAAAAAAAAAD//wQAAAAAAAAAAAAAAAQAAAADAAAAAAAAAAMAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//AAAAAAAAAAAAAP7/AAAAAAAAAAAAAP3/AAAAAAAAAAD+//3/AAAAAAAAAAD+//7/AAAAAAAAAAD+////AAAAAAAAAAD+/wAAAAAAAAAAAAD+/wEAAAAAAAAAAAD+/wMAAAAAAAAAAAD+/wIAAAAAAAAAAAD+/wQAAAAAAAAAAAD9/wQAAAAAAAAAAAD9/wMAAAAAAAAAAAD9/wIAAAAAAAAAAAD9/wEAAAAAAAAAAAD9/wAAAAAAAAAAAAD9////AAAAAAAAAAD9//7/AAAAAAAAAAD9//3/AAAAAAAAAAACAAQAAAADAAAAAAABAAQAAAAAAAAAAAABAAMAAAAAAAAAAAABAAIAAAAAAAAAAAABAAEAAAAAAAAAAAABAAAAAAAAAAAAAAABAP//AAAAAAAAAAABAP7/AAAAAAAAAAABAP3/AAAAAAAAAAACAAMAAAADAAAAAAACAAEAAAADAAAAAAACAAIAAAADAAAAAAACAAAAAAADAAAAAAACAP//AAADAAAAAAACAP7/AAADAAAAAAACAP3/AAADAAAAAAACAPz/AAADAAAAAAABAPz/AAAAAAAAAAAAAPz/AAAAAAAAAAD///z/AAAAAAAAAAD+//z/AAADAAAAAAD9//z/AAAAAAAAAAD8//z/AAADAAAAAAD8//3/AAADAAAAAAD8//7/AAADAAAAAAD8////AAADAAAAAAD8/wAAAAADAAAAAAD8/wEAAAADAAAAAAD8/wIAAAADAAAAAAD8/wMAAAADAAAAAAD8/wQAAAADAAAAAAD9/wUAAAAAAAAAAAD+/wUAAAAAAAAAAAD//wUAAAAAAAAAAAACAAUAAAADAAAAAAABAAUAAAAAAAAAAAAAAAUAAAAAAAAAAAD8/wUAAAADAAAAAAD8//v/AAADAAAAAAD9//v/AAAAAAAAAAD+//v/AAAAAAAAAAD///v/AAAAAAAAAAAAAPv/AAAAAAAAAAABAPv/AAAAAAAAAAACAPv/AAADAAAAAAD8/wYAAAADAAAAAAD9/wYAAAAAAAAAAAD+/wYAAAAAAAAAAAD8//r/AAADAAAAAAD9//r/AAAAAAAAAAD+//r/AAAAAAAAAAD///r/AAAAAAAAAAAAAPr/AAAAAAAAAAABAPr/AAAAAAAAAAACAPr/AAADAAAAAAD//wYAAAAAAAAAAAAAAAYAAAAAAAAAAAABAAYAAAAAAAAAAAACAAYAAAADAAAAAAD8/wcAAAADAAAAAAD9/wcAAAADAAAAAAD+/wcAAAADAAAAAAD//wcAAAADAAAAAAAAAAcAAAADAAAAAAABAAcAAAADAAAAAAACAAcAAAADAAAAAAACAPn/AAADAAAAAAABAPn/AAADAAAAAAAAAPn/AAADAAAAAAD///n/AAACAAAAAAD9//n/AAADAAAAAAD8//n/AAADAAAAAAD+//n/AAADAAAAAAD+//j/AAADAAAAAAD///j/AAADAAAAAAAAAPj/AAADAAAAAAA=")
-tile_set = ExtResource("2_6mlau")
+tile_map_data = PackedByteArray("AAD6//v/AAADAAAAAAD6//z/AAADAAAAAAD6//3/AAADAAAAAAD6//7/AAADAAAAAAD6////AAADAAAAAAD6/wAAAAADAAAAAAD6/wEAAAADAAAAAAD6/wIAAAADAAAAAAD6/wMAAAADAAAAAAD6/wQAAAADAAAAAAD6/wUAAAADAAAAAAD6/wYAAAADAAAAAAD7/wYAAAADAAAAAAD8/wYAAAADAAAAAAD9/wYAAAADAAAAAAD+/wYAAAADAAAAAAAAAAYAAAADAAAAAAABAAYAAAADAAAAAAD//wYAAAADAAAAAAACAAYAAAADAAAAAAADAAYAAAADAAAAAAAEAAYAAAADAAAAAAAFAAYAAAADAAAAAAAFAAUAAAADAAAAAAAFAAQAAAADAAAAAAAFAAMAAAADAAAAAAAFAAIAAAADAAAAAAAEAPv/AAADAAAAAAAFAAEAAAADAAAAAAAFAAAAAAADAAAAAAAFAP//AAADAAAAAAAFAP7/AAADAAAAAAAFAP3/AAADAAAAAAAFAPz/AAADAAAAAAAFAPv/AAADAAAAAAADAPv/AAADAAAAAAACAPv/AAADAAAAAAABAPv/AAADAAAAAAAAAPv/AAADAAAAAAD///v/AAADAAAAAAD+//v/AAADAAAAAAD9//v/AAADAAAAAAD8//v/AAADAAAAAAD7//v/AAADAAAAAAD7//z/AAAAAAAAAAD7//3/AAAAAAAAAAD8//3/AAAAAAAAAAD9//3/AAAAAAAAAAD9//7/AAADAAAAAAD9////AAAAAAAAAAD+////AAAAAAAAAAD+/wAAAAAAAAAAAAD//wAAAAADAAAAAAD//wEAAAADAAAAAAAAAAEAAAADAAAAAAAAAAIAAAAAAAAAAAABAAIAAAAAAAAAAAABAAMAAAAAAAAAAAACAAMAAAADAAAAAAADAAMAAAAAAAAAAAADAAQAAAAAAAAAAAACAAQAAAAAAAAAAAD8//7/AAAAAAAAAAD7//7/AAAAAAAAAAD7////AAAAAAAAAAD8////AAAAAAAAAAD8/wAAAAAAAAAAAAD8/wEAAAAAAAAAAAD8/wIAAAAAAAAAAAD7/wEAAAAAAAAAAAD7/wAAAAADAAAAAAD7/wIAAAAAAAAAAAD7/wMAAAAAAAAAAAD7/wQAAAADAAAAAAD7/wUAAAAAAAAAAAD8/wUAAAAAAAAAAAD9/wUAAAAAAAAAAAD+/wUAAAAAAAAAAAD//wUAAAADAAAAAAAAAAUAAAAAAAAAAAABAAUAAAAAAAAAAAACAAUAAAAAAAAAAAADAAUAAAAAAAAAAAAEAAMAAAAAAAAAAAAEAAIAAAAAAAAAAAADAAIAAAAAAAAAAAADAAEAAAAAAAAAAAADAAAAAAAAAAAAAAADAP//AAAAAAAAAAADAP7/AAAAAAAAAAAEAP3/AAADAAAAAAAEAPz/AAACAAAAAAAEAP7/AAAAAAAAAAAEAP//AAAAAAAAAAAEAAAAAAAAAAAAAAAEAAEAAAADAAAAAAADAPz/AAAAAAAAAAACAPz/AAAAAAAAAAABAPz/AAAAAAAAAAAAAPz/AAADAAAAAAD+//z/AAAAAAAAAAD9//z/AAAAAAAAAAD8//z/AAAAAAAAAAD+//3/AAAAAAAAAAD///3/AAAAAAAAAAAAAP3/AAAAAAAAAAAAAP7/AAAAAAAAAAAAAP//AAAAAAAAAAABAAAAAAAAAAAAAAABAAEAAAAAAAAAAAD//wIAAAAAAAAAAAD+/wEAAAAAAAAAAAD+//7/AAAAAAAAAAD///7/AAAAAAAAAAABAP7/AAAAAAAAAAACAP7/AAADAAAAAAACAP//AAAAAAAAAAACAAEAAAAAAAAAAAD9/wEAAAAAAAAAAAD9/wAAAAAAAAAAAAAAAAMAAAAAAAAAAAD//wMAAAAAAAAAAAD+/wMAAAAAAAAAAAD9/wMAAAADAAAAAAD9/wIAAAAAAAAAAAD+/wIAAAAAAAAAAAD//wQAAAAAAAAAAAD+/wQAAAAAAAAAAAD9/wQAAAAAAAAAAAD8/wQAAAAAAAAAAAAAAAAAAAADAAAAAAD/////AAAAAAAAAAD///z/AAAAAAAAAAA=")
+tile_set = ExtResource("2_3xr72")
 
 [node name="Walls" type="TileMapLayer" parent="."]
 z_index = 2
 z_as_relative = false
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAD//wMAAAAGAAAAAAD+////AAAGAAAAAAD9//v/AAAGAAAAAAA=")
-tile_set = ExtResource("2_6mlau")
+tile_map_data = PackedByteArray("AAD8/wIAAAAGAAAAAAD+////AAAGAAAAAAD+/wAAAAAGAAAAAAD//wAAAAAGAAAAAAD/////AAAGAAAAAAD8//3/AAAGAAAAAAABAP3/AAAGAAAAAAABAAIAAAAGAAAAAAD+/wQAAAAGAAAAAAD6////AAAGAAAAAAD///v/AAAGAAAAAAADAAAAAAAGAAAAAAADAPz/AAAGAAAAAAA=")
+tile_set = ExtResource("2_3xr72")
 y_sort_origin = 1
+
+[node name="LevelVictory" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_0qq85")
+volume_db = -24.0
+
+[node name="Door" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ye1rr")
+volume_db = -24.0
+
+[node name="Teleporter" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_y2mdo")
+volume_db = -16.0
 
 [node name="player" type="Node2D" parent="."]
 y_sort_enabled = true
-position = Vector2(-99.4616, 46.8241)
-script = ExtResource("3_vgbed")
+position = Vector2(-144, 8)
+script = ExtResource("6_qwgcr")
 
 [node name="Sprite2D" type="Sprite2D" parent="player"]
 z_index = 2
 z_as_relative = false
 y_sort_enabled = true
 position = Vector2(0, -8)
-texture = ExtResource("4_54f06")
+texture = ExtResource("7_ljesr")
 hframes = 8
 vframes = 8
 
@@ -442,6 +470,14 @@ position = Vector2(0, -8)
 texture = SubResource("AtlasTexture_vw4w1")
 offset = Vector2(0, -8)
 
+[node name="Sprite2D11" type="Sprite2D" parent="player"]
+self_modulate = Color(1, 1, 1, 0.392157)
+z_index = 1
+z_as_relative = false
+position = Vector2(0, -8)
+texture = SubResource("AtlasTexture_sm4e2")
+offset = Vector2(0, 8)
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="player"]
 root_node = NodePath("../Sprite2D")
 libraries = {
@@ -449,171 +485,38 @@ libraries = {
 }
 
 [node name="Walk" type="AudioStreamPlayer" parent="player"]
-stream = ExtResource("6_r512s")
+stream = ExtResource("10_di81h")
 
 [node name="LostLife" type="AudioStreamPlayer" parent="player"]
-stream = ExtResource("7_jn3qg")
-volume_db = -24.0
-
-[node name="spawner11" type="Node2D" parent="."]
-z_as_relative = false
-y_sort_enabled = true
-position = Vector2(112.06, -23.8152)
-script = ExtResource("8_128te")
-timer_limit = 6
-counter = 6
-direction = Vector2i(0, 1)
-
-[node name="nextmove" type="Sprite2D" parent="spawner11"]
-self_modulate = Color(1, 1, 1, 0.784314)
-z_index = 1
-z_as_relative = false
-y_sort_enabled = true
-position = Vector2(16, -15)
-texture = SubResource("AtlasTexture_jentn")
-offset = Vector2(-16, 16)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="spawner11"]
-z_index = 2
-position = Vector2(0.0238953, -11.1848)
-scale = Vector2(0.515625, 0.5)
-sprite_frames = SubResource("SpriteFrames_upifj")
-animation = &"float"
-
-[node name="spawner12" type="Node2D" parent="."]
-z_as_relative = false
-y_sort_enabled = true
-position = Vector2(47.7698, -56.7538)
-script = ExtResource("8_128te")
-timer_limit = 6
-counter = 6
-direction = Vector2i(0, 1)
-
-[node name="nextmove" type="Sprite2D" parent="spawner12"]
-self_modulate = Color(1, 1, 1, 0.784314)
-z_index = 1
-z_as_relative = false
-y_sort_enabled = true
-position = Vector2(16, -15)
-texture = SubResource("AtlasTexture_jentn")
-offset = Vector2(-16, 16)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="spawner12"]
-z_index = 2
-position = Vector2(0.0238953, -11.1848)
-scale = Vector2(0.515625, 0.5)
-sprite_frames = SubResource("SpriteFrames_upifj")
-animation = &"float"
-
-[node name="spawner13" type="Node2D" parent="."]
-z_as_relative = false
-y_sort_enabled = true
-position = Vector2(95.5559, -33.3797)
-script = ExtResource("8_128te")
-timer_limit = 6
-counter = 6
-direction = Vector2i(0, 1)
-
-[node name="nextmove" type="Sprite2D" parent="spawner13"]
-self_modulate = Color(1, 1, 1, 0.784314)
-z_index = 1
-z_as_relative = false
-y_sort_enabled = true
-position = Vector2(16, -15)
-texture = SubResource("AtlasTexture_jentn")
-offset = Vector2(-16, 16)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="spawner13"]
-z_index = 2
-position = Vector2(0.0238953, -11.1848)
-scale = Vector2(0.515625, 0.5)
-sprite_frames = SubResource("SpriteFrames_upifj")
-animation = &"float"
-
-[node name="spawner14" type="Node2D" parent="."]
-z_as_relative = false
-y_sort_enabled = true
-position = Vector2(79.2924, -40.8043)
-script = ExtResource("8_128te")
-timer_limit = 6
-counter = 6
-direction = Vector2i(0, 1)
-
-[node name="nextmove" type="Sprite2D" parent="spawner14"]
-self_modulate = Color(1, 1, 1, 0.784314)
-z_index = 1
-z_as_relative = false
-y_sort_enabled = true
-position = Vector2(16, -15)
-texture = SubResource("AtlasTexture_jentn")
-offset = Vector2(-16, 16)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="spawner14"]
-z_index = 2
-position = Vector2(0.0238953, -11.1848)
-scale = Vector2(0.515625, 0.5)
-sprite_frames = SubResource("SpriteFrames_upifj")
-animation = &"float"
-
-[node name="spawner16" type="Node2D" parent="."]
-z_as_relative = false
-y_sort_enabled = true
-position = Vector2(61.9683, -46.4612)
-script = ExtResource("8_128te")
-timer_limit = 6
-counter = 6
-direction = Vector2i(0, 1)
-
-[node name="nextmove" type="Sprite2D" parent="spawner16"]
-self_modulate = Color(1, 1, 1, 0.784314)
-z_index = 1
-z_as_relative = false
-y_sort_enabled = true
-position = Vector2(16, -15)
-texture = SubResource("AtlasTexture_jentn")
-offset = Vector2(-16, 16)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="spawner16"]
-z_index = 2
-position = Vector2(0.0238953, -11.1848)
-scale = Vector2(0.515625, 0.5)
-sprite_frames = SubResource("SpriteFrames_upifj")
-animation = &"float"
-
-[node name="LevelVictory" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("10_unrrp")
-volume_db = -24.0
-
-[node name="Door" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("11_ncrpn")
+stream = ExtResource("11_3vwbv")
 volume_db = -24.0
 
 [node name="8-bit-adventure" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("12_61kqo")
+stream = ExtResource("12_s7qcs")
 volume_db = -24.0
 
 [node name="8-bit-determination" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("13_kmspt")
+stream = ExtResource("13_8sv38")
 volume_db = -24.0
 
 [node name="8-bit-groove" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("14_kx4hm")
+stream = ExtResource("14_810ub")
 volume_db = -32.0
 
 [node name="8-bit-menu" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("15_mbflf")
+stream = ExtResource("15_62x0o")
 volume_db = -24.0
 
 [node name="8-bit-mountains-ahead" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("16_gt5fs")
+stream = ExtResource("16_oqryt")
 volume_db = -32.0
 
 [node name="8-bit-shadows" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("17_r62pa")
+stream = ExtResource("17_wk3hu")
 volume_db = -32.0
 
 [node name="8-bit-success" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("18_yrlnv")
+stream = ExtResource("18_t6rbq")
 volume_db = -32.0
 
 [node name="UI" type="Control" parent="."]
@@ -666,8 +569,8 @@ offset_left = -213.0
 offset_top = -120.0
 offset_right = -173.0
 offset_bottom = -97.0
-label_settings = SubResource("LabelSettings_nkpr7")
-script = ExtResource("6_rvlnl")
+label_settings = SubResource("LabelSettings_hmsau")
+script = ExtResource("19_gncdj")
 
 [node name="totalScore" type="Label" parent="UI"]
 visible = false
@@ -676,8 +579,8 @@ offset_left = -213.0
 offset_top = -107.0
 offset_right = -173.0
 offset_bottom = -84.0
-label_settings = SubResource("LabelSettings_lonbd")
-script = ExtResource("7_5pwaj")
+label_settings = SubResource("LabelSettings_38ver")
+script = ExtResource("20_myc2p")
 
 [node name="totalLives" type="Label" parent="UI"]
 layout_mode = 0
@@ -685,8 +588,8 @@ offset_left = 149.0
 offset_top = -120.0
 offset_right = 189.0
 offset_bottom = -97.0
-label_settings = SubResource("LabelSettings_0027h")
-script = ExtResource("8_f3kbh")
+label_settings = SubResource("LabelSettings_a6wcy")
+script = ExtResource("21_ywx7p")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI"]
 layout_mode = 1
@@ -697,8 +600,8 @@ offset_left = -20.0
 offset_right = 20.0
 offset_bottom = 40.0
 grow_horizontal = 2
-script = ExtResource("9_b2pug")
-next_level = "res://scenes/levels/level7.tscn"
+script = ExtResource("22_wrknq")
+next_level = "res://scenes/levels/level9.tscn"
 
 [node name="Next" type="Button" parent="UI/VBoxContainer"]
 visible = false
@@ -714,6 +617,64 @@ text = "Retry"
 visible = false
 layout_mode = 2
 text = "Levels"
+
+[node name="spawner16" type="Node2D" parent="."]
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(0, 80)
+script = ExtResource("26_pykln")
+timer_limit = 2
+counter = 2
+isChaser = true
+maxSpawns = 100
+direction = Vector2i(-1, 0)
+
+[node name="nextmove" type="Sprite2D" parent="spawner16"]
+self_modulate = Color(1, 1, 1, 0.784314)
+z_index = 1
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(16, -15)
+texture = SubResource("AtlasTexture_vnbeh")
+offset = Vector2(-16, 16)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="spawner16"]
+z_index = 2
+position = Vector2(0.0238953, -11.1848)
+scale = Vector2(0.515625, 0.5)
+sprite_frames = SubResource("SpriteFrames_aqw2q")
+animation = &"float"
+
+[node name="spawner17" type="Node2D" parent="."]
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(0, -64)
+script = ExtResource("26_pykln")
+timer_limit = 6
+counter = 6
+isChaser = true
+maxSpawns = 100
+direction = Vector2i(-1, 0)
+
+[node name="nextmove" type="Sprite2D" parent="spawner17"]
+self_modulate = Color(1, 1, 1, 0.784314)
+z_index = 1
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(16, -15)
+texture = SubResource("AtlasTexture_vnbeh")
+offset = Vector2(-16, 16)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="spawner17"]
+z_index = 2
+position = Vector2(0.0238953, -11.1848)
+scale = Vector2(0.515625, 0.5)
+sprite_frames = SubResource("SpriteFrames_aqw2q")
+animation = &"float"
+
+[node name="Teleporter2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_y2mdo")
+volume_db = -16.0
 
 [connection signal="pressed" from="UI/VBoxContainer/Next" to="UI/VBoxContainer" method="_on_next_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/Retry" to="UI/VBoxContainer" method="_on_retry_pressed"]
