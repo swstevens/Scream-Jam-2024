@@ -801,7 +801,7 @@ offset_right = 20.0
 offset_bottom = 40.0
 grow_horizontal = 2
 script = ExtResource("23_i7cfy")
-next_level = "res://scenes/levels/level7.tscn"
+next_level = "res://scenes/levels/level18.tscn"
 
 [node name="Next" type="Button" parent="UI/VBoxContainer"]
 visible = false
@@ -824,7 +824,7 @@ z_as_relative = false
 y_sort_enabled = true
 position = Vector2(112, 24)
 script = ExtResource("25_ocbtx")
-direction = Vector2i(0, 1)
+direction = Vector2i(0, -1)
 
 [node name="nextmove" type="Sprite2D" parent="enemy_a5"]
 self_modulate = Color(1, 1, 1, 0.784314)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=4 uid="uid://cyl5dogeiirss"]
+[gd_scene load_steps=75 format=4 uid="uid://cyl5dogeiirss"]
 
 [ext_resource type="Script" path="res://scripts/get_map_coord.gd" id="1_1or3p"]
 [ext_resource type="TileSet" uid="uid://ldp606pfvl5y" path="res://textures/area3.tres" id="2_gcnm6"]
@@ -29,6 +29,8 @@
 [ext_resource type="AudioStream" uid="uid://beyth5y08ieft" path="res://sounds/8-Bit-Shadows.mp3" id="21_6065r"]
 [ext_resource type="AudioStream" uid="uid://dat8sjbvtsnrv" path="res://sounds/8-Bit-Success.mp3" id="22_6mhyl"]
 [ext_resource type="Script" path="res://scenes/levels/levelmenu.gd" id="29_b6gs6"]
+[ext_resource type="TileSet" uid="uid://t357gnsrojuh" path="res://textures/area1.tres" id="30_3ws6e"]
+[ext_resource type="Script" path="res://scripts/shadows.gd" id="31_iblgh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vw4w1"]
 atlas = ExtResource("8_p4x33")
@@ -604,6 +606,7 @@ z_as_relative = false
 y_sort_enabled = true
 position = Vector2(128, 32)
 script = ExtResource("11_lsd1u")
+direction = Vector2i(0, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemy_a2"]
 position = Vector2(4, -15)
@@ -624,7 +627,7 @@ z_as_relative = false
 y_sort_enabled = true
 position = Vector2(64, 32)
 script = ExtResource("17_1v0dw")
-direction = Vector2i(0, 1)
+direction = Vector2i(0, -1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemy_a3"]
 position = Vector2(4, -15)
@@ -765,6 +768,14 @@ text = "Retry"
 visible = false
 layout_mode = 2
 text = "Levels"
+
+[node name="shadows" type="TileMapLayer" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0.768627)
+z_index = 1
+z_as_relative = false
+tile_set = ExtResource("30_3ws6e")
+script = ExtResource("31_iblgh")
 
 [connection signal="pressed" from="UI/VBoxContainer/Next" to="UI/VBoxContainer" method="_on_next_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/Retry" to="UI/VBoxContainer" method="_on_retry_pressed"]

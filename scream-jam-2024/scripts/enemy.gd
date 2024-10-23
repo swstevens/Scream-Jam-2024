@@ -7,10 +7,12 @@ class_name Enemy
 @onready var base: Node2D = $".."
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var nextmove: Sprite2D = $"nextmove"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	position = ground.map_to_local(ground.local_to_map(base.to_local(global_position)))
+	updateNextMove() 
 	#animated_sprite_2d.play('default')
 	pass # Replace with function body.
 
@@ -38,8 +40,28 @@ func move(player_loc: Vector2i)->void:
 		# also have the broadcast move to the enemies here
 		print("we can move!")
 		position = ground.map_to_local(direction+beta)
+	updateNextMove()
+	colorOfTile = ground.get_cell_atlas_coords(direction+beta)
 	return
 
+func updateNextMove() -> void:
+	nextmove.position.x = 16
+	nextmove.position.y = -16
+	if direction.x:
+		if direction.x > 0:
+			nextmove.position.x += direction.x*16
+			nextmove.position.y += direction.x*10
+		if direction.x < 0:
+			nextmove.position.x += direction.x*16
+			nextmove.position.y += direction.x*7
+	if direction.y:
+		if direction.y > 0:
+			nextmove.position.x -= direction.y*16
+			nextmove.position.y += direction.y*10
+		if direction.y < 0:
+			nextmove.position.x -= direction.y*16
+			nextmove.position.y += direction.y*7
+	pass
 
 func TileCanBeSteppedOn(tile: Vector2i) -> bool:
 	#so far no tiles in y coord

@@ -92,7 +92,7 @@ y_sort_enabled = true
 position = Vector2(4, -15)
 sprite_frames = SubResource("SpriteFrames_2ebya")
 
-[node name="nextmove2" type="Sprite2D" parent="."]
+[node name="nextmove" type="Sprite2D" parent="."]
 self_modulate = Color(1, 1, 1, 0.784314)
 z_index = 1
 z_as_relative = false

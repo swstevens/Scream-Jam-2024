@@ -25,6 +25,8 @@ func move(player_loc: Vector2i)->void:
 		## also have the broadcast move to the enemies here
 		print("we can move!")
 		position = ground.map_to_local(direction+enemy_loc)
+		updateNextMove() 
+
 		return
 	var opposite : Vector2i = Vector2i(direction.y,direction.x)
 	colorOfTile = ground.get_cell_atlas_coords(opposite+enemy_loc)
@@ -34,3 +36,4 @@ func move(player_loc: Vector2i)->void:
 		## also have the broadcast move to the enemies here
 		print("next best move!")
 		position = ground.map_to_local(opposite+enemy_loc)
+	updateNextMove() 
