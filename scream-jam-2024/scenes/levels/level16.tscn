@@ -348,6 +348,7 @@ y_sort_enabled = true
 position = Vector2(213, 120)
 script = ExtResource("1_ddqvj")
 level_number = 16
+key1Tile = Vector2i(0, 1)
 backgroundMusicTrack = 5
 
 [node name="Ground" type="TileMapLayer" parent="."]

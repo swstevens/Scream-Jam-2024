@@ -44,5 +44,4 @@ layer_2/name = "level2"
 layer_2/y_sort_enabled = true
 layer_2/y_sort_origin = 2
 layer_2/z_index = 2
-layer_2/tile_data = PackedInt32Array()
 script = ExtResource("2_ka86q")
