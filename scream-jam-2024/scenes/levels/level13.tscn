@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=4 uid="uid://c1c7qkmvnwmpl"]
+[gd_scene load_steps=67 format=4 uid="uid://c1c7qkmvnwmpl"]
 
 [ext_resource type="Script" path="res://scripts/get_map_coord.gd" id="1_mrk6d"]
 [ext_resource type="TileSet" uid="uid://ldp606pfvl5y" path="res://textures/area3.tres" id="2_vibdn"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" path="res://scripts/level_score.gd" id="12_yi5g5"]
 [ext_resource type="Script" path="res://scenes/levels/total_score.gd" id="13_tco8t"]
 [ext_resource type="Script" path="res://scenes/levels/total_lives.gd" id="14_kvxdn"]
+[ext_resource type="Texture2D" uid="uid://bc7ol1k7sgwnx" path="res://textures/area_4_tileset.png" id="14_v7tqs"]
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="14_wx24u"]
 [ext_resource type="Texture2D" uid="uid://dapnqabsdbfqt" path="res://textures/Zombie.png" id="15_w6bhg"]
 [ext_resource type="Texture2D" uid="uid://chnxf0ujd0kvq" path="res://textures/area_3_tileset.png" id="16_g3rb8"]
@@ -286,6 +287,10 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yjkw7"]
+atlas = ExtResource("14_v7tqs")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2fa6f"]
 atlas = ExtResource("16_g3rb8")
 region = Rect2(224, 0, 32, 32)
 
@@ -522,6 +527,15 @@ position = Vector2(16, -15)
 texture = SubResource("AtlasTexture_yjkw7")
 offset = Vector2(-16, 16)
 
+[node name="currentMove" type="Sprite2D" parent="enemy_a"]
+self_modulate = Color(1, 1, 1, 0.392157)
+z_index = 1
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(16, -15)
+texture = SubResource("AtlasTexture_2fa6f")
+offset = Vector2(-16, 16)
+
 [node name="enemy_a4" type="Node2D" parent="."]
 z_index = 2
 z_as_relative = false
@@ -540,6 +554,15 @@ z_as_relative = false
 y_sort_enabled = true
 position = Vector2(16, -15)
 texture = SubResource("AtlasTexture_yjkw7")
+offset = Vector2(-16, 16)
+
+[node name="currentMove" type="Sprite2D" parent="enemy_a4"]
+self_modulate = Color(1, 1, 1, 0.392157)
+z_index = 1
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(16, -15)
+texture = SubResource("AtlasTexture_2fa6f")
 offset = Vector2(-16, 16)
 
 [node name="enemy_a2" type="Node2D" parent="."]
@@ -563,6 +586,15 @@ position = Vector2(16, -15)
 texture = SubResource("AtlasTexture_yjkw7")
 offset = Vector2(-16, 16)
 
+[node name="currentMove" type="Sprite2D" parent="enemy_a2"]
+self_modulate = Color(1, 1, 1, 0.392157)
+z_index = 1
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(16, -15)
+texture = SubResource("AtlasTexture_2fa6f")
+offset = Vector2(-16, 16)
+
 [node name="enemy_a6" type="Node2D" parent="."]
 z_index = 2
 z_as_relative = false
@@ -582,6 +614,15 @@ z_as_relative = false
 y_sort_enabled = true
 position = Vector2(16, -15)
 texture = SubResource("AtlasTexture_yjkw7")
+offset = Vector2(-16, 16)
+
+[node name="currentMove" type="Sprite2D" parent="enemy_a6"]
+self_modulate = Color(1, 1, 1, 0.392157)
+z_index = 1
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(16, -15)
+texture = SubResource("AtlasTexture_2fa6f")
 offset = Vector2(-16, 16)
 
 [node name="enemy_a3" type="Node2D" parent="."]
@@ -605,6 +646,15 @@ offset = Vector2(-16, 16)
 position = Vector2(4, -15)
 sprite_frames = SubResource("SpriteFrames_6axml")
 
+[node name="currentMove" type="Sprite2D" parent="enemy_a3"]
+self_modulate = Color(1, 1, 1, 0.392157)
+z_index = 1
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(16, -15)
+texture = SubResource("AtlasTexture_2fa6f")
+offset = Vector2(-16, 16)
+
 [node name="enemy_a5" type="Node2D" parent="."]
 z_index = 2
 z_as_relative = false
@@ -625,6 +675,15 @@ offset = Vector2(-16, 16)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemy_a5"]
 position = Vector2(4, -15)
 sprite_frames = SubResource("SpriteFrames_6axml")
+
+[node name="currentMove" type="Sprite2D" parent="enemy_a5"]
+self_modulate = Color(1, 1, 1, 0.392157)
+z_index = 1
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(16, -15)
+texture = SubResource("AtlasTexture_2fa6f")
+offset = Vector2(-16, 16)
 
 [node name="8-bit-adventure" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_wum54")

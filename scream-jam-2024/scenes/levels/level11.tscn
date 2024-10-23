@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=4 uid="uid://clycduodbh3yu"]
+[gd_scene load_steps=55 format=4 uid="uid://clycduodbh3yu"]
 
 [ext_resource type="Script" path="res://scripts/get_map_coord.gd" id="1_6lx40"]
 [ext_resource type="TileSet" uid="uid://ldp606pfvl5y" path="res://textures/area3.tres" id="2_fi2or"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cr2ofpefw4esk" path="res://textures/area_2_tileset.png" id="8_07sc2"]
 [ext_resource type="AudioStream" uid="uid://bnh6c8padev3p" path="res://sounds/Walk.wav" id="9_2ifb8"]
 [ext_resource type="AudioStream" uid="uid://vdqbu3me0eqx" path="res://sounds/Lost Life.wav" id="10_kblny"]
+[ext_resource type="Texture2D" uid="uid://bc7ol1k7sgwnx" path="res://textures/area_4_tileset.png" id="13_7lksa"]
 [ext_resource type="AudioStream" uid="uid://jq6sskna84md" path="res://sounds/8-Bit-Adventure.mp3" id="13_cprq6"]
 [ext_resource type="Script" path="res://scenes/levels/total_lives.gd" id="14_86hs4"]
 [ext_resource type="AudioStream" uid="uid://dayr6beq5ix61" path="res://sounds/8-Bit-Determination.mp3" id="14_n8ujw"]
@@ -213,7 +214,7 @@ _data = {
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hngt1"]
-atlas = ExtResource("15_ct783")
+atlas = ExtResource("13_7lksa")
 region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5atr5"]
@@ -279,6 +280,10 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ryv8k"]
+atlas = ExtResource("15_ct783")
+region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="LabelSettings" id="LabelSettings_0pj3a"]
 font_size = 8
@@ -445,6 +450,15 @@ offset = Vector2(-16, 16)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemy_a3"]
 position = Vector2(4, -15)
 sprite_frames = SubResource("SpriteFrames_uvfkc")
+
+[node name="currentMove" type="Sprite2D" parent="enemy_a3"]
+self_modulate = Color(1, 1, 1, 0.392157)
+z_index = 1
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(16, -15)
+texture = SubResource("AtlasTexture_ryv8k")
+offset = Vector2(-16, 16)
 
 [node name="8-bit-adventure" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_cprq6")

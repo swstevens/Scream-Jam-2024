@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ce4bs6q67x0dk"]
+[gd_scene load_steps=15 format=3 uid="uid://ce4bs6q67x0dk"]
 
 [ext_resource type="Script" path="res://scripts/chaser_simpler.gd" id="1_uxcbb"]
 [ext_resource type="Texture2D" uid="uid://b4j2lqtl2vb0n" path="res://textures/Zombie_purple.png" id="3_t1ehy"]
@@ -72,6 +72,10 @@ animations = [{
 atlas = ExtResource("3_yjbc6")
 region = Rect2(224, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_27q8u"]
+atlas = ExtResource("3_yjbc6")
+region = Rect2(224, 0, 32, 32)
+
 [node name="enemy_smart" type="Node2D"]
 z_index = 2
 z_as_relative = false
@@ -89,4 +93,13 @@ z_as_relative = false
 y_sort_enabled = true
 position = Vector2(16, -15)
 texture = SubResource("AtlasTexture_e1d8m")
+offset = Vector2(-16, 16)
+
+[node name="currentMove" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.392157)
+z_index = 1
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(16, -15)
+texture = SubResource("AtlasTexture_27q8u")
 offset = Vector2(-16, 16)

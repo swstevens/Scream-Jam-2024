@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://0lp5anklcatl"]
+[gd_scene load_steps=16 format=3 uid="uid://0lp5anklcatl"]
 
 [ext_resource type="Script" path="res://scripts/enemy_dumb.gd" id="1_li3k3"]
 [ext_resource type="Texture2D" uid="uid://dapnqabsdbfqt" path="res://textures/Zombie.png" id="2_6df1u"]
@@ -79,6 +79,10 @@ animations = [{
 atlas = ExtResource("3_8sep5")
 region = Rect2(224, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_logyx"]
+atlas = ExtResource("3_8sep5")
+region = Rect2(224, 0, 32, 32)
+
 [node name="enemy_dumb" type="Node2D"]
 z_index = 2
 z_as_relative = false
@@ -99,4 +103,13 @@ z_as_relative = false
 y_sort_enabled = true
 position = Vector2(16, -15)
 texture = SubResource("AtlasTexture_e1d8m")
+offset = Vector2(-16, 16)
+
+[node name="currentMove" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.392157)
+z_index = 1
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(16, -15)
+texture = SubResource("AtlasTexture_logyx")
 offset = Vector2(-16, 16)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=4 uid="uid://0nkbi0gpoxce"]
+[gd_scene load_steps=71 format=4 uid="uid://0nkbi0gpoxce"]
 
 [ext_resource type="Script" path="res://scripts/get_map_coord.gd" id="1_fasds"]
 [ext_resource type="TileSet" uid="uid://dg5d6hm52gxrc" path="res://textures/area4.tres" id="2_ylyig"]
@@ -347,7 +347,7 @@ font_size = 8
 font_size = 8
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_43ah5"]
-atlas = ExtResource("26_obgwx")
+atlas = ExtResource("9_vquwj")
 region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5atr5"]
@@ -413,6 +413,10 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ayir"]
+atlas = ExtResource("26_obgwx")
+region = Rect2(224, 0, 32, 32)
 
 [node name="Base2" type="Node2D"]
 z_as_relative = false
@@ -838,6 +842,15 @@ offset = Vector2(-16, 16)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemy_a5"]
 position = Vector2(4, -15)
 sprite_frames = SubResource("SpriteFrames_anfbw")
+
+[node name="currentMove" type="Sprite2D" parent="enemy_a5"]
+self_modulate = Color(1, 1, 1, 0.392157)
+z_index = 1
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(16, -15)
+texture = SubResource("AtlasTexture_7ayir")
+offset = Vector2(-16, 16)
 
 [connection signal="pressed" from="UI/VBoxContainer/Next" to="UI/VBoxContainer" method="_on_next_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/Retry" to="UI/VBoxContainer" method="_on_retry_pressed"]

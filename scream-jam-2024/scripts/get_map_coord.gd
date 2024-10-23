@@ -88,7 +88,8 @@ func lost() -> void:
 	complete = true
 	Player.set_process_input(false)
 	dead_text.show()
-	retry.show()
+	if Score.lives > 0:
+		retry.show()
 	levels.show()
 
 func teleportPlayerTo() -> Vector2i:
