@@ -300,7 +300,7 @@ position = Vector2(213, 120)
 script = ExtResource("1_8nj77")
 maxLevelScore = 200
 levelScoreDecliner = 10
-level_number = 3
+level_number = 2
 backgroundMusicTrack = 1
 
 [node name="Ground" type="TileMapLayer" parent="."]

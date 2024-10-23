@@ -86,6 +86,7 @@ y_sort_enabled = true
 script = ExtResource("1_tf6p7")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+z_index = 2
 position = Vector2(4, -15)
 sprite_frames = SubResource("SpriteFrames_km4g3")
 frame = 5

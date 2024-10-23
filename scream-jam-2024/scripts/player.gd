@@ -8,6 +8,7 @@ extends Node2D
 
 @onready var dead: Label = $"../UI/dead"
 @onready var won: Label = $"../UI/won"
+var isDead = false
 
 @export var fogOfWarOn = level_completion.fog_of_war
 
@@ -52,6 +53,9 @@ func _ready() -> void:
 
 func _input(event):
 	if event.is_action_pressed("move") == false:
+		return
+
+	if isDead:
 		return
 
 	#where we clicked
@@ -188,10 +192,11 @@ func TileCanBeSteppedOn(tile: Vector2i) -> bool:
 			return true
 
 func performDeathRoutine():
+	isDead = true
 	Score.DecrementLives()
 	base.stopBackgroundMusic()
 	$"LostLife".play()
-	if Score.getLives() == 0:
+	if Score.getLives() <= 0:
 		#go back to main menu
 		base.lost()
 		print("game over")
