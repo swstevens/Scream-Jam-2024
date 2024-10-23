@@ -370,7 +370,7 @@ position = Vector2(213, 120)
 script = ExtResource("1_7u132")
 level_number = 7
 key1Tile = Vector2i(-1, -5)
-door1Tile = Vector2i(1, -6)
+door1Tile = Vector2i(-1, 6)
 keydoorActive = true
 backgroundMusicTrack = 3
 

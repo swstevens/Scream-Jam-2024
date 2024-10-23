@@ -292,6 +292,8 @@ y_sort_enabled = true
 position = Vector2(213, 120)
 script = ExtResource("1_wjlel")
 level_number = 8
+key1Tile = Vector2i(-1, -7)
+door1Tile = Vector2i(-1, 6)
 keydoorActive = true
 backgroundMusicTrack = 3
 
