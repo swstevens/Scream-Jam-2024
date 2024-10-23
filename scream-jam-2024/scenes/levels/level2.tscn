@@ -540,6 +540,7 @@ grow_vertical = 2
 text = "You Won!"
 
 [node name="levelScore" type="Label" parent="UI"]
+visible = false
 layout_mode = 0
 offset_left = -213.0
 offset_top = -120.0
@@ -549,6 +550,7 @@ label_settings = SubResource("LabelSettings_5kt5f")
 script = ExtResource("6_beaxk")
 
 [node name="totalScore" type="Label" parent="UI"]
+visible = false
 layout_mode = 0
 offset_left = -213.0
 offset_top = -107.0

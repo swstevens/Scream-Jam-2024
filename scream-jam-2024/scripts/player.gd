@@ -137,10 +137,9 @@ func updateTiles():
 		
 func updateEnemies(player_loc: Vector2i):
 	for enemy in enemies:
-
-
 		if position == enemy.position:
 			performDeathRoutine()
+			return 1
 		else:
 			# call local_to_map so that the chaser enemy has an accurate coordinate
 			enemy.move(ground.local_to_map(position))

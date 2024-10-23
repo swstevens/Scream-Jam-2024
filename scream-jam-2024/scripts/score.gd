@@ -4,11 +4,13 @@ var totalScore = 0
 var levelScore = 0
 var lives = 3
 var isFirstTimeLoadingLevel = true
+var levelsCompleted = 0
 
 func SetLevelHasBeenLoaded():
 	isFirstTimeLoadingLevel = false
 
 func SetLevelHasBeenCompleted():
+	levelsCompleted += 1
 	isFirstTimeLoadingLevel = true
 
 func UpdateTotalScore(newValue: int):
