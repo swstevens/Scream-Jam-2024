@@ -1,74 +1,67 @@
-[gd_scene load_steps=15 format=3 uid="uid://ce4bs6q67x0dk"]
+[gd_scene load_steps=14 format=3 uid="uid://ce4bs6q67x0dk"]
 
 [ext_resource type="Script" path="res://scripts/chaser_simpler.gd" id="1_uxcbb"]
-[ext_resource type="Texture2D" uid="uid://dapnqabsdbfqt" path="res://textures/Zombie.png" id="2_re7ww"]
+[ext_resource type="Texture2D" uid="uid://b4j2lqtl2vb0n" path="res://textures/Zombie_purple.png" id="3_t1ehy"]
 [ext_resource type="Texture2D" uid="uid://chnxf0ujd0kvq" path="res://textures/area_3_tileset.png" id="3_yjbc6"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cqyoh"]
-atlas = ExtResource("2_re7ww")
+[sub_resource type="AtlasTexture" id="AtlasTexture_5atr5"]
+atlas = ExtResource("3_t1ehy")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_phemv"]
-atlas = ExtResource("2_re7ww")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ai05r"]
+atlas = ExtResource("3_t1ehy")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_svvwr"]
-atlas = ExtResource("2_re7ww")
+[sub_resource type="AtlasTexture" id="AtlasTexture_hk71u"]
+atlas = ExtResource("3_t1ehy")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gpqnh"]
-atlas = ExtResource("2_re7ww")
+[sub_resource type="AtlasTexture" id="AtlasTexture_v36uh"]
+atlas = ExtResource("3_t1ehy")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7c7av"]
-atlas = ExtResource("2_re7ww")
+[sub_resource type="AtlasTexture" id="AtlasTexture_js3s8"]
+atlas = ExtResource("3_t1ehy")
 region = Rect2(128, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pmp7w"]
-atlas = ExtResource("2_re7ww")
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1ebm"]
+atlas = ExtResource("3_t1ehy")
 region = Rect2(160, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2t0oa"]
-atlas = ExtResource("2_re7ww")
+[sub_resource type="AtlasTexture" id="AtlasTexture_i646a"]
+atlas = ExtResource("3_t1ehy")
 region = Rect2(192, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_y65kk"]
-atlas = ExtResource("2_re7ww")
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4i47"]
+atlas = ExtResource("3_t1ehy")
 region = Rect2(224, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7e0oi"]
-atlas = ExtResource("2_re7ww")
-region = Rect2(0, 32, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_2ebya"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_bkjm4"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cqyoh")
+"texture": SubResource("AtlasTexture_5atr5")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_phemv")
+"texture": SubResource("AtlasTexture_ai05r")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_svvwr")
+"texture": SubResource("AtlasTexture_hk71u")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gpqnh")
+"texture": SubResource("AtlasTexture_v36uh")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7c7av")
+"texture": SubResource("AtlasTexture_js3s8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pmp7w")
+"texture": SubResource("AtlasTexture_f1ebm")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2t0oa")
+"texture": SubResource("AtlasTexture_i646a")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_y65kk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7e0oi")
+"texture": SubResource("AtlasTexture_c4i47")
 }],
 "loop": true,
 "name": &"default",
@@ -80,16 +73,14 @@ atlas = ExtResource("3_yjbc6")
 region = Rect2(224, 0, 32, 32)
 
 [node name="enemy_smart" type="Node2D"]
+z_index = 2
 z_as_relative = false
 y_sort_enabled = true
 script = ExtResource("1_uxcbb")
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
-z_index = 2
-z_as_relative = false
-y_sort_enabled = true
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(4, -15)
-sprite_frames = SubResource("SpriteFrames_2ebya")
+sprite_frames = SubResource("SpriteFrames_bkjm4")
 
 [node name="nextmove2" type="Sprite2D" parent="."]
 self_modulate = Color(1, 1, 1, 0.784314)
